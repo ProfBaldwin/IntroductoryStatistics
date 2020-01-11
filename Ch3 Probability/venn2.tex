@@ -1,0 +1,46 @@
+\documentclass{standalone}
+
+\usepackage{venndiagram}
+\usepackage{mathtools}
+\usepackage{anyfontsize}
+
+\begin{document}
+
+$\begin{array}{l}
+    \begin{venndiagram2sets}
+\fillA
+\fillB
+\setpostvennhook{
+    \node at (2.5, 0.2) {$P(A\text{ OR }B)$};
+}
+\end{venndiagram2sets}
+\end{array}$
+=
+$\begin{array}{l}
+\begin{venndiagram2sets}
+\fillA
+\setpostvennhook{
+    \node at (2.5, 0.2) {$P(A)$};
+}
+\end{venndiagram2sets}
+\end{array}$
++
+$\begin{array}{l}
+\begin{venndiagram2sets}
+\fillB
+\setpostvennhook{
+    \node at (2.5, 0.2) {$P(B)$};
+}
+\end{venndiagram2sets}
+\end{array}$
+-
+$\begin{array}{l}
+\begin{venndiagram2sets}
+\fillACapB
+\setpostvennhook{
+    \node at (2.5, 0.2) {$P(A\text{ AND }B)$};
+}
+\end{venndiagram2sets}
+\end{array}$
+
+\end{document}

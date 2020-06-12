@@ -3,7 +3,7 @@
 * [1.2 Scales of Measurement](Ch1 Sampling and Data/1.2 Scales of Measurement.html)
 * [1.3 Sampling Techniques](Ch1 Sampling and Data/1.3 Sampling Techniques.html)
 * [1.4 Abuses of Statistics](Ch1 Sampling and Data/1.4 Abuses of Statistics.html)
-* [1.5 Stem-and-Leaf Plots, Bar Charts, Dot Plots, and Histograms](Ch1 Sampling and Data/1.5 Stem-and-Leaf Plots, Bar Charts, Dot Plots, and Histograms.html)
+* [1.5 Tables and Charts](Ch1 Sampling and Data/1.5 Tables and Charts.html)
 # Chapter 2: Descriptive Statistics
 * [2.1 Measures of Position](Ch2 Descriptive Statistics/2.1 Measures of Position.html)
 * [2.2 Measures of Central Tendency](Ch2 Descriptive Statistics/2.2 Measures of Central Tendency.html)

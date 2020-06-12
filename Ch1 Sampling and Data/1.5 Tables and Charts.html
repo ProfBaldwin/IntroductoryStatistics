@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>7.2 Goodness-of-Fit Test</title>
+<title>1.5 Tables and Charts</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13090,7 +13090,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="7.2-Goodness-of-Fit-Test">7.2 Goodness of Fit Test<a class="anchor-link" href="#7.2-Goodness-of-Fit-Test">&#182;</a></h1>
+<h1 id="1.5-Tables-and-Charts">1.5 Tables and Charts<a class="anchor-link" href="#1.5-Tables-and-Charts">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13098,9 +13098,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
-<li>Analyze a problem involving hypothesis testing, apply the correct techniques, and come to a conclusion for a claim about population proportion and mean, all this while using appropriate levels of statistical significance, $p$-values, and determining what would constitute a type I and type II error.</li>
-<li>Analyze categorical data using $2 \times 2$ tables and chi-square analysis.</li>
-<li>Conduct and interpret (a) tests involving non-parametric methods or (b) conduct and analyze process data using the techniques of Statistical Process Control.</li>
+<li>Create, analyze, and interpret statistical graphs including histograms, dot plots, stem-and-leaf plots, box plots, and scatter plots.</li>
 <li>Analyze an application in the disciplines business, social sciences, psychology, life sciences, health science, and education, and utilize the correct statistical processes to arrive at a solution.</li>
 </ul>
 
@@ -13110,28 +13108,194 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this type of hypothesis test, you determine whether the data <strong>"fit"</strong> a particular distribution or not. For example, you may suspect your unknown data fit a binomial distribution. You use a chi-square test (meaning the distribution for the hypothesis test is chi-square) to determine if there is a fit or not. <strong>The null and the alternative hypotheses for this test may be written in sentences or may be stated as equations or inequalities.</strong></p>
-<p>The test statistic for a goodness-of-fit test is:</p>
-$$ \chi^2 = \sum \frac{(O - E)^2}{E}, $$<p>where</p>
-<ul>
-<li>$O$ = <strong>observed values</strong> (sample data)</li>
-<li>$E$ = <strong>exepected values</strong> (from theory)</li>
-</ul>
-<p><strong>The observed values are the data values and the expected values are the values you would expect to get if the null hypothesis were true.</strong> Generally, the hypotheses of a goodness-of-fit test are</p>
-$$\begin{align}
-H_0:&amp;\ \text{The actual population fits the expected distribution.} \\
-H_a:&amp;\ \text{The actual population does not fit the expected distribution.}
-\end{align}$$<p>These hypotheses should be expressed in the context of the particular problem.</p>
-<p>The number of degrees of freedom is $df = \text{number of categories} - 1$.</p>
-<p><strong>The goodness-of-fit test is almost always right-tailed.</strong> If the observed values and the corresponding expected values are not close to each other, then the test statistic can get very large and will be way out in the right tail of the chi-square curve.</p>
-<p><strong>Note:</strong> The expected value for each cell needs to be at least five in order for you to use this test.</p>
-<p>The fundamental steps for performing a goodness-of-fit hypothesis test remain unchanged:</p>
-<ol>
-<li>State the null and alternative hypotheses.</li>
-<li>Assuming the null hypothesis is true, determine the features of the distribution used in the hypothesis test.</li>
-<li>Find the $p$-value.</li>
-<li>Make a conclusion about the null hypothesis.</li>
-</ol>
+<h2 id="Frequency">Frequency<a class="anchor-link" href="#Frequency">&#182;</a></h2><p>Once you have a set of data, you will need to organize it so that you can analyze how frequently each datum occurs in the set. A <strong>frequency</strong> is the number of times a value of the data occurs.</p>
+<p>For example, imagine twenty students were asked how many hours they worked per day. Their responses, in hours, are as follows:</p>
+<center>5, 6, 3, 3, 2, 4, 7, 5, 2, 3, 5, 6, 5, 4, 4, 3, 5, 2, 5, 3</center><p>By counting the number of times each value occurs, we can construct a <strong>frequency table</strong>.</p>
+<table>
+    <caption>Table 5.1: Frequency table of student work hours</caption>
+    <thead>
+            <tr>
+              <th>HOURS WORKED PER DAY</th>
+              <th>FREQUENCY</th>
+            </tr>
+</thead><tbody>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">2</span></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">3</span></td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">4</span></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">5</span></td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">6</span></td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">7</span></td>
+              <td>1</td>
+            </tr>
+    <tr>
+        <td></td>
+        <td><b>Total = 20</b></td>
+    </tr>
+          </tbody></table><p>By inspecting the table, we see, for example, that 6 of the students that were surveyed worked 5 hours per day.</p>
+<p>A <strong>relative frequency</strong> is the ratio (fraction or proportion) of the number of times a value of the data occurs to the total number of outcomes. To find the relative frequencies, divide each frequency by the total number of students in the sample–in this case, 20. Relative frequencies can be written as fractions, percents, or decimals.</p>
+<table>
+<caption>Table 5.2: Frequency table of student work hours with relative frequency</caption>
+<thead>
+            <tr>
+              <th>HOURS WORKED PER DAY</th>
+              <th>FREQUENCY</th>
+              <th>RELATIVE FREQUENCY</th>
+            </tr>
+</thead><tbody>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">2</span></td>
+              <td>3</td>
+                <td>$\dfrac{3}{20}$ or 0.15</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">3</span></td>
+              <td>5</td>
+                <td>$\dfrac{5}{20}$ or 0.25</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">4</span></td>
+              <td>3</td>
+                <td>$\dfrac{3}{20}$ or 0.15</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">5</span></td>
+              <td>6</td>
+                <td>$\dfrac{6}{20}$ or 0.30</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">6</span></td>
+              <td>2</td>
+                <td>$\dfrac{2}{20}$ or 0.10</td>
+            </tr>
+            <tr>
+              <td><span data-type="emphasis" class="normal" data-effect="normal">7</span></td>
+              <td>1</td>
+                <td>$\dfrac{1}{20}$ or 0.05</td>
+            </tr>
+        <tr>
+        <td></td>
+        <td><b>Total = 20</b></td>
+            <td><b>Total = 1.00</b></td>
+    </tr>
+          </tbody></table><p>Note that the sum of the relative frequencies should always add up to 1.00 or 100%.</p>
+<p>We could also <strong>group</strong> data and calculate the frequency and relative frequency for each group. For example, the table below represents the heights, in inches, of a sample of 100 male semiprofessional soccer players.</p>
+<table>
+<caption>Table 5.3: Frequency table of soccer player height</caption>
+<thead>
+<tr>
+<th>HEIGHT <span data-type="newline"><br/></span>(INCHES)</th>
+<th>FREQUENCY</th>
+<th>RELATIVE <span data-type="newline"><br/></span>FREQUENCY</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">59.95–61.95</span></td>
+<td>5</td>
+<td>
+$\dfrac{5}{100}$
+ = 0.05
+</td>
+</tr>
+
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">61.95–63.95</span></td>
+<td>3</td>
+<td>
+$\dfrac{3}{100}$
+ = 0.03
+</td>
+</tr>
+
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">63.95–65.95</span></td>
+<td>15</td>
+<td>
+$\dfrac{15}{100}$
+ = 0.15
+</td>
+</tr>
+
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">65.95–67.95</span></td>
+<td>40</td>
+<td>
+$\dfrac{40}{100}$
+ = 0.40
+</td>
+</tr>
+
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">67.95–69.95</span></td>
+<td>17</td>
+<td>
+$\dfrac{17}{100}$
+ = 0.17
+</td>
+</tr>
+
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">69.95–71.95</span></td>
+<td>12</td>
+<td>
+$\dfrac{12}{100}$
+ = 0.12
+</td>
+</tr>
+
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">71.95–73.95</span></td>
+<td>7</td>
+<td>
+$\dfrac{7}{100}$
+ = 0.07
+</td>
+</tr>
+
+<tr>
+<td><span data-type="emphasis" class="normal" data-effect="normal">73.95–75.95</span></td>
+<td>1</td>
+<td>
+$\dfrac{1}{100}$
+ = 0.01
+</td>
+</tr>
+
+<tr>
+<td/>
+<td><strong>Total = 100</strong></td>
+<td><strong>Total = 1.00</strong></td>
+<td/>
+</tr>
+
+</tbody></table><p>So, for example, a soccer player in the sample that is 64.5 inches tall will be counted in the group of athletes with heights between 63.95-65.95 inches.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bar-Charts">Bar Charts<a class="anchor-link" href="#Bar-Charts">&#182;</a></h2><p>Once you have organized your data, it can be useful to present the data graphically. For qualitative or categorical data, <strong>Bar charts</strong> or <strong>bar graphs</strong> can be used to visualize the frequency or relative frequency of each category. In a bar chart, each category has a rectangular bar associated with it, where the height of the bar (or the width of the bar, for a horizontal bar chart) represents the frequency or relative frequency of the category. The bars in a bar chart are separated by a small space or gap.</p>
+<p>We can use R to construct a bar chart for us by specifying both the categories and their frequencies or relative frequencies. We can use the <code>barplot</code> function:</p>
+<div class="highlight"><pre><span></span><span class="nf">barplot</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
+</pre></div>
+<p>Here, <code>height</code> is a list of the heights (the frequencies or relative frequencies) of each bar, and <code>names</code> is the corresponding list of categories. The <code>height</code> list and the <code>names</code> list must be in the same order.</p>
 
 </div>
 </div>
@@ -13140,68 +13304,23 @@ H_a:&amp;\ \text{The actual population does not fit the expected distribution.}
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3 id="Example-2.1">Example 2.1<a class="anchor-link" href="#Example-2.1">&#182;</a></h3><p>Absenteeism of college students from math classes is a major concern to math instructors because missing class appears to increase the drop rate. Suppose that a study was done to determine if the actual student absenteeism rate follows faculty perception. The faculty expected that a group of 100 students would miss class according to the table below</p>
-<table>
-<thead><tr>
-<th>Number of Absences per term</th>
-<th>Expected Number of Students</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0-2</td>
-<td>50</td>
-</tr>
-<tr>
-<td>3-5</td>
-<td>30</td>
-</tr>
-<tr>
-<td>6-8</td>
-<td>12</td>
-</tr>
-<tr>
-<td>9+</td>
-<td>8</td>
-</tr>
-</tbody>
-</table>
-<p>A random survey across all mathematics courses was then done to determine the actual number of absences in a course. The table below displays the results of the survey.</p>
-<table>
-<thead><tr>
-<th>Number of Absences per term</th>
-<th>Actual Number of Students</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0-2</td>
-<td>35</td>
-</tr>
-<tr>
-<td>3-5</td>
-<td>40</td>
-</tr>
-<tr>
-<td>6-8</td>
-<td>20</td>
-</tr>
-<tr>
-<td>9+</td>
-<td>5</td>
-</tr>
-</tbody>
-</table>
-<p>Perform a goodness-of-fit test at a significance level of 1% to determine whether or not student absenteeism fits faculty perception.</p>
-<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-null-and-alternative-hypotheses.">Step 1: State the null and alternative hypotheses.<a class="anchor-link" href="#Step-1:-State-the-null-and-alternative-hypotheses.">&#182;</a></h5><p>The null and alternative hypotheses are</p>
-$$\begin{align}
-H_0:&amp;\ \text{Student absenteeism fits faculty perception} \\
-H_a:&amp;\ \text{Student absenteeism does not fit faculty perception}
-\end{align}$$<h5 id="Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">Step 2: Assuming the null hypothesis is true, determine the features of the distribution used in the hypothesis test.<a class="anchor-link" href="#Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">&#182;</a></h5><p>This is a goodness-of-fit test. We are testing to see if student absenteeism is distributed in the same way that faculty expect it to be distributed; that is, we are testing whether or not faculty perception of student absenteeism is a <em>good fit</em> for actual student absenteeism. Since this is a goodness-of-fit test, we will use a chi-square distribution.</p>
-<p>The degrees of freedom of the distribution is</p>
-$$ df = \text{number of categories} - 1 = 4 - 1 = 3. $$<p>Note, to calculate the degrees of freedom for a goodness-of-fit test, we use the number of categories (in this case, the categories are 0-2, 3-5, 6-8, and 9+, for a total of 4 categories), <em>not</em> the sample size.</p>
-<h5 id="Step-3:-Find-the--$p$-value.">Step 3: Find the  $p$-value.<a class="anchor-link" href="#Step-3:-Find-the--$p$-value.">&#182;</a></h5><p>To find the $p$-value, we first must calculate the test statistic</p>
-$$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actual number of students in each category. The expected values $E$ are the numbers of students the faculty expect to be in each category. These value are found in the two tables above. We will use R to calculate the test statistic.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-5.1">Example 5.1<a class="anchor-link" href="#Example-5.1">&#182;</a></h3><p>The population in Park City is made up of children, working-age adults, and retirees. The table below shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a bar graph showing the proportions.</p>
+<table data-id="M01_Ch02_tbl011" summary="Table 2.10  ">
+<caption>Table 5.4: Population in Park City by age group.</caption>
+<thead>
+<tr><th>Age groups</th><th>Number of people</th><th>Proportion of population</th></tr>
+</thead><tbody>
+<tr><td>Children</td>   <td>67,059</td> <td>19%</td></tr>
+<tr><td>Working-age adults</td> <td>152,198</td>    <td>43%</td></tr>
+<tr><td>Retirees</td>   <td>131,662</td>    <td>38%</td></tr>
+</tbody></table><h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><p>In this example, we have three categories of age groups ("Children", "Working-age adults", "Retirees"). We are given the frequency of each age group in the "Number of people" column and the relative frequency in the "Proportion of the population" column. We will use R to construct a bar graph of the relative frequencies of each category.</p>
 
 </div>
 </div>
@@ -13211,11 +13330,10 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
-<span class="n">E</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">age_groups</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Children&quot;</span><span class="p">,</span> <span class="s">&quot;Working-age Adults&quot;</span><span class="p">,</span> <span class="s">&quot;Retirees&quot;</span><span class="p">)</span>
+<span class="n">proportions</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">43</span><span class="p">,</span> <span class="m">38</span><span class="p">)</span>
 
-<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span> <span class="o">/</span> <span class="n">E</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">chisq</span><span class="p">)</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="n">proportions</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">age_groups</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13231,10 +13349,174 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 14.29167
-</pre>
+
+
+<div class="output_png output_subarea ">
+<img alt="Bar chart of data in table 5.4 generated by above R code" src="data:image/png;base64,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
+hdXxTfuvHvTff3wf/3V8U3y4++jdzdiePRiGtxdKHhanTza8nv91//YZh8uT3CyG1fPl+d4d
+PmBZwoMAAAGNSURBVDV9fIh4+c3ThCOL8+e+x5unK3K4dXdq8rwc79XHDwrcMpbv82yOY5zO
+/Xg+X2/u8ubNT/hHGos0Nz5/uPP334TpQSR9xoeCu/WwCX8TbgYi6fP2KvZX/1/Af3wTbgYi
+NeBh/2xg+d1dzo/fhFuBSAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogE
+kAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJ
+IBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAi
+ASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJA
+AogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSASAAJIBJAAogEkAAiASSA
+SAAJIBJAAogEkAAiASSASAAJIBJAAogEkMD/AfKyHVNHsi5LAAAAAElFTkSuQmCC"
+>
 </div>
+
 </div>
 
 </div>
@@ -13244,7 +13526,54 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The test statistic is $\chi^2 = 14.2917$. Since goodness-of-fit tests are almost always right-tailed tests, we will perform a right-tailed test to find the $p$-value. That means the $p$-value is $P(\chi^2 \geq 14.2917)$.</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-5.2">Example 5.2<a class="anchor-link" href="#Example-5.2">&#182;</a></h3><p>The columns in the table below contain: the race or ethnicity of students in U.S. Public Schools for the class of 2011, percentages for the Advanced Placement examine population for that class, and percentages for the overall student population. Create a bar graph with the student race or ethnicity (qualitative data) on the x-axis, and the Advanced Placement examinee population percentages on the y-axis.</p>
+<table data-id="M01_Ch02_tbl012" summary="Table 2.11  ">
+<caption>Table 5.5: Race/Ethnicity of AP Examinee population vs. Overall Student Population<thead>
+<tr>
+<th>Race/Ethnicity</th>
+<th>AP Examinee Population</th>
+<th>Overall Student Population</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1 = Asian, Asian American or Pacific Islander</td>
+<td>10.3%</td>
+<td>5.7%</td>
+</tr>
+<tr>
+<td>2 = Black or African American</td>
+<td>9.0%</td>
+<td>14.7%</td>
+</tr>
+<tr>
+<td>3 = Hispanic or Latino</td>
+<td>17.0%</td>
+<td>17.6%</td>
+</tr>
+<tr>
+<td>4 = American Indian or Alaska Native</td>
+<td>0.6%</td>
+<td>1.1%</td>
+</tr>
+<tr>
+<td>5 = White</td>
+<td>57.1%</td>
+<td>59.2%</td>
+</tr>
+<tr>
+<td>6 = Not reported/other</td>
+<td>6.0%</td>
+<td>1.7%</td>
+</tr>
+</tbody></table><h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><p>This table provides us with the relative frequecy of each ethnicity in two different populations: the population of all AP examinees and the overall student population. In this case, we will only use the data in the "AP Examinee Population" column to construct our bar chart; we will not use the "Overall Student Population" data in this example.</p>
 
 </div>
 </div>
@@ -13254,7 +13583,10 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">14.2917</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">race</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+<span class="n">APproportion</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">10.3</span><span class="p">,</span> <span class="m">9.0</span><span class="p">,</span> <span class="m">17.0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">57.1</span><span class="p">,</span> <span class="m">6.0</span><span class="p">)</span>
+
+<span class="nf">barplot</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="n">APproportion</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">race</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13271,8 +13603,130 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
 
 
 
-<div class="output_html rendered_html output_subarea ">
-0.00253382515522107
+
+<div class="output_png output_subarea ">
+<img alt="Bar chart of data in table 5.5 generated by above R code" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAM1BMVEUAAABNTU1oaGh8fHyM
+jIyampqnp6eysrK9vb2+vr7Hx8fQ0NDZ2dnh4eHp6enw8PD////ojgWfAAAACXBIWXMAABJ0
+AAASdAHeZh94AAAYy0lEQVR4nO3d7VIjV5aG0RQIwRQFqvu/2jFUu1zd9brsfbQzk5Os9Wdw
+xETu86HHgESHl2/AzZa9FwBHICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRo
+ICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRo
+ICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRo
+ICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRo
+ICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRo
+ICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICRoICSKljXtvblh866cnSz/t555
+X47zrpydCCmZd+XsREjJvCtnJ0JK5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXz
+rpydCCmZd+XsREjJvCtnJ0JK5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXzrpyd
+CCmZd+XsREjJvCtnJ0JK5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXzrpydCCmZ
+d+XsREjJvCtnJ0JK5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXzrpydCCmZd+Xs
+REjJvCtnJ0JK5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXzrpydCCmZd+XsREjJ
+vCtnJ0JK5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXzrpydCCmZd+XsREjJvCtn
+J0JK5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXzrpydCCmZd+XsREjJvCtnJ0JK
+5l05OxFSMu/K2YmQknlXzk6ElMy7cnYipGTelbMTISXjK//6eF7enC9fG9fDhyekZHTl17vl
+L/etS+JjE1IyuvLLcvry8v7V6/NpufQtiI9OSMnoyk/Ly4+vX5ZTz2KYgZCS0ZUvy9/9Awcn
+pMR3JIqElNzwO9Lz6/tXfkf6ZISUDK/8/qd37e6unUviYxNScsPnSJf3z5FO50efI30qQkrm
+XTk7EVKy0sqXn60zgp0IKblx5U93y3J+XnUEH4yQkts+R/rPOw6/f9Nu3sMhEVJyU0iX5XL9
+9u31sjytMYKPSUjJTSGdlvf3va/L3Roj+JiElNwU0p/vI/z+/YR5D4dESMlNIT38GdJv/0Ro
+3sMhEVIyHtL58el5+fLHl9fL799tmPdwSISUjIf04zOiZTn99k+E5j0cEiElwyt/eXl6Op/f
+33K4/P5P7eY9HBIhJRusfN7DIRFSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVCokhI
+iZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVC
+okhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIki
+ISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSU
+CIkiISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIk
+ioSUCIkiISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgS
+UiIkioSUCIkiISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJ
+kCgSUiIkioSUCIkiISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJeMr
+//p4Xt6cL1/XGsFHJKRkdOXXu+Uv96uM4GMSUjK68sty+vLy/tXr82m5rDGCj0lIyejKT8vL
+j69fltMaI/iYhJSMrnxZ/u4f2kbwMQkp8R2JIiElN/yO9Pz6/pXfkT4ZISXDK7//6V27u+sq
+I/iQhJTc8DnS5f1zpNP50edIn4qQEn/ZQJGQkpVWvvxsnRHsREjJ7Sv/x1DmPRwSISVCokhI
+yfgHsv/6p7d5D4dESMnoyr+ehPRJCSkZXvn1vNy/fyLrR7tPRkjJDSv/sixfvgnp0xFScsvK
+X++X81VIn42QkttW/ricnoX0yQgpuXHlL3f//IHrvIdDIqTk5pU/COmTEVLib+0oElIiJIqE
+lAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVCokhIiZAoElIi
+JIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVCokhIiZAo
+ElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVCokhI
+iZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVC
+okhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIki
+ISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSU
+CIkiISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIk
+ioSUCIkiISVCokhIiZAoElIiJIqElAiJIiEl4yv/+nhe3pwvX9cawUckpGR05de75S/3q4zg
+YxJSMrryy3L68vL+1evzabmsMYKPSUjJ6MpPy8uPr1+W0xoj+JiElIyufFn+7h/aRvAxCSnx
+HYkiISU3/I70/Pr+ld+RPhkhJcMrv//pXbu76yoj+JCElNzwOdLl/XOk0/nR50ifipASf9lA
+kZCSlVa+/GydEexESMmtK386LXdP647gYxFSMrzyl/Nyevr26E+EPh0hJaMrf3kv6LI8XL+9
+npfffk+a93BIhJSMrvzh7bOjy/dPYq/L3Roj+JiElNz2J0LL+ad/6B7BxySk5LaQvnz/mc6f
+CH0mQkrGf7R7+PPPGa4P/kToMxFSMvw/7Dv9+Hlu+f03JCEdjJCS8ZVf/szn9NvvR0I6GiEl
+/kSIIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVCokhIiZAoElIi
+JIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVCokhIiZAo
+ElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVCokhI
+iZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIkiISVC
+okhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSUCIki
+ISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIkioSU
+CIkiISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSIiSKhJQIiSIhJUKiSEiJkCgSUiIk
+ioSUCIkiISVCokhIiZAoElIiJIqElAiJIiElQqJISImQKBJSMr7yr4/n5c358nWtEXxEQkpG
+V369W/5yv8oIPiYhJaMrvyynLy/vX70+n5bLGiP4mISUjK78tLz8+PplOa0xgo9JSMnoypfl
+7/6hbQQfk5AS35EoElJyw+9Iz6/vX/kd6ZMRUjK88vuf3rW7u64ygg9JSMkNnyNd3j9HOp0f
+fY70qQgp8ZcNFAkpWWnly8/WGcFOhJQMr/z6sCz3z/95iLe/PxEhJcN/InT6/od23x8ipE9E
+SMn4299Pf9T0dHr/MzshfSZCSsY/kH3/P6+nu1chfS5CSm79E6Hr/b2QPhchJaMrv1v+/BD2
+7l5In4qQktGVPy0P//nqdbkX0mcipGR45Zcf9Tz/w0dF8x4OiZCS8ZW/nP/86vVBSJ+IkBJ/
+IkSRkBIhUSSkREgUCSkREkVCSoREkZASIVEkpERIFAkpERJFQkqERJGQEiFRJKRESBQJKRES
+RUJKhESRkBIhUSSkREgUCSkREkVCSoREkZASIVEkpERIFAkpERJFQkqERJGQEiFRJKRESOtY
+VrT31oQUCGkdK77a9j5PISVCWoeQptzbOCGtQ0hT7m2ckNYhpCn3Nk5I6xDSlHsbJ6R1CGnK
+vY0T0jqENOXexglpHUKacm/jhLQOIU25t3FCWoeQptzbOCGtQ0hT7m2ckNYhpCn3Nk5I6xDS
+lHsbJ6R1CGnKvY0T0jqENOXexglpHUKacm/jhLQOIU25t3FCWoeQptzbOCGtQ0hT7m2ckNYh
+pCn3Nk5I6xDSlHsbJ6R1CGnKvY0T0jqENOXexglpHUKacm/jhLQOIU25t3FCWoeQptzbOCGt
+Q0hT7m2ckNYhpCn3Nk5I6xDSlHsbJ6R1CGnKvY0T0jqENOXexglpHUKacm/jhLQOIU25t3FC
+WoeQptzbOCGtQ0hT7m2ckNYhpCn3Nk5I6xDSlHsbJ6R1CGnKvY0T0jqENOXexglpHUKacm/j
+hLQOIU25t3FCWoeQptzbOCGtQ0hT7m2ckNYhpCn3Nk5I6xDSlHsbJ6R1CGnKvY0T0jqENOXe
+xglpHUKacm/jhLQOIU25t3FCWoeQptzbOCGtQ0hT7m2ckNYhpCn3Nk5I6xDSlHsbJ6R1CGnK
+vY0T0jqENOXexglpHUKacm/jhLQOIU25t3FCWoeQptzbOCGtQ0hT7m2ckNYhpCn3Nk5I6xDS
+lHsbJ6R1CGnKvY0T0jqENOXexglpHUKacm/jhLQOIU25t3HjK//6eF7enC9f1xoxMSFNubdx
+oyu/3i1/uV9lxNSENOXexo2u/LKcvry8f/X6fFoua4yYmpCm3Nu40ZWflpcfX78spzVGTE1I
+U+5t3OjKl+Xv/qFtxNSENOXexvmOtA4hTbm3cTf8jvT8+v7V+O9Iy5oG99VFSFPubdzwyu9/
+etHeXYdGHPlGhDTl3sbd8DnS5f1zpNP5cfRzpCPfiJCm3Nu4Pf+y4cg3IqQp9zZupZX/q19X
+jnwjQppyb+N8R1qHkKbc2zghrUNIU+5tnJDWIaQp9zZu/C8b/vWnNkKytVn2Nm505U9C+i0h
+Tbm3ccMrfzn9/n888S9GHPlGhDTl3saNr/zl938Y9C9GHPlGhDTl3sbdsPKnn/5udWjEkW9E
+SFPubZx37dYhpCn3Nu7zhLTCX5j/5s0WIU25t3GfKKSjTNv7xSakREjTTdv7xSakREjTTdv7
+xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7
+xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7
+xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7
+xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7
+xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7xSakREjTTdv7
+xbbxQW75n4e75VQ6H1YccZiXtpDW29ssBymk6aYJabVht5xK58OKIw5zIxPf/wAHGU+l82HF
+EYe5kYnvf4CDjKfS+bDiiMPcyMT3P8BBxlPpfFhxxGFuZOL7H+Ag46l0Pqw44jA3MvH9D3CQ
+8VQ6H1YccZgbmfj+BzjIeCqdDyuOOMyNTHz/AxxkPJXOhxVHHOZGJr7/AQ4ynkrnw4ojDnMj
+E9//AAcZT6XzYcURh7mRie9/gIOMp9L5sOKIw9zIxPc/wEHGU+l8WHHEYW5k4vsf4CDjqXQ+
+rDjiMDcy8f0PcJDxVDofVhxxmBuZ+P4HOMh4Kp0PK444zI1MfP8DHGQ8lc6HFUcc5kYmvv8B
+DjKeSufDiiMOcyMT3/8ABxlPpfNhxRGHuZGJ73+Ag4yn0vmw4ojD3MjE9z/AQcZT6XxYccRh
+bmTi+x/gIOOpdD6sOOIwNzLx/Q9wkPFUOh9WHHGYG5n4/gc4yHgqnQ8rjjjMjUx8/wMcZDyV
+zocVRxzmRia+/wEOMp5K58OKIw5zIxPf/wAHGU+l82HFEYe5kYnvf4CDjKfS+bDiiMPcyMT3
+P8BBxlPpfFhxxGFuZOL7H+Ag46l0Pqw44jA3MvH9D3CQ8VQ6H1YccZgbmfj+BzjIeCqdDyuO
+OMyNTHz/AxxkPJXOhxVHHOZGJr7/AQ4ynkrnw4ojDnMjE9//AAcZT6XzYcURh7mRie9/gIOM
+p9L5sOKIw9zIxPc/wEHGU+l8WHHEYW5k4vsf4CDjqXQ+rDjiMDcy8f0PcJDxVDofVhxxmBuZ
++P4HOMh4Kp0PK444zI1MfP8DHGQ8lc6HFUcc5kYmvv8BDjKeSufDiiMOcyMT3/8ABxlPpfNh
+xRGHuZGJ73+Ag4yn0vmw4ojD3MjE9z/AQcZT6XxYccRhbmTi+x/gIOOpdD6sOOIwNzLx/Q9w
+kPFUOh9WHHGYG5n4/gc4yHgqnQ8rjjjMjUx8/wMcZDyVzocVRxzmRia+/wEOMp5K58OKIw5z
+IxPf/wAHGU+l82HFEYe5kYnvf4CDjKfS+bDiiMPcyMT3P8BBxlPpfFhxxGFuZOL7H+Ag46l0
+Pqw44jA3MvH9D3CQ8VQ6H1YccZgbmfj+BzjIeCqdDyuOOMyNTHz/AxxkPJXOhxVHHOZGdr//
+ZUWf6iDHCWm6aSmkLacd+SDHjT/s6+P5/d9Y58vXwRGHuZHd719IPcNuMPqw691P3/3vx0Yc
+5kZ2v38h9Qy7wejDLsvpy8v7V6/Pp+UyNOIwN7L7/QupZ9gNRh92Wl5+fP2ynIZGHOZGdr9/
+IfUMu8How/7r3Zxf39r5/fs+6f9p/TebDjNt25P8VAc5boPvSHB8N/yO9Pz6/tU//o4Exzf8
+7e3+p2+Rd9fOJcF8bvgc6fL+OdLp/PgPnyPB8e39h1twCEKCBkKCBkKCBkKCBkKCBkKCBkKC
+BkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKCBkKC
+BkKCBkKCBkKCBkKCBtOE9LThSp/ultNlq//m0/VhWR5e/vn/r83XzU5yhf/C5O+8vJ3k61bT
+/scsIb1sdx/fLu/Xf9qopNP7tO1Kup62OsmXbUN63vTa/tckIb2cNvwX2/JwffsO+LDJtMvb
+nMty3mTYm/NmJ/my4a7+cDq9fLue9/rPsM4R0tNyv11I5++TNhp4Wq7bDfvDl+2+RTwtjxtN
+evPlPaHrXv9h8DlC+uOMNvzR7j8ztxy42fW/bvivpKflaaNJbx42/PE4mCOkl41f19/e/tV2
+v92wy2YvufvldbOTPC/PD8tpqx+17pZvj6f3n8p3MUdI37YP6Wl53mrUHz9tbfVqe1y+bHeS
+5+/vNWz0L6Rl+f4fB99m2q/jd5pbtnFIr6ftflF+Op82+m3i/df/zU5y+aPab9etvtv+0dDL
+22cJW/5e9vP4fcbWbRvS9bThD3bf3n7A3+TVdvf25vDG/0q6LnebzPn+EcLrRtN+Hb/P2Lpt
+r/9+4+vY5s2mh/cfV7f+IXmjecumb7b+On6fsXVbHtDr3f3WH5Bvsr3lhw2G/TR1kzHbfmrx
+CyH96nnLN+y+f460zU8kG4f059a2+W3z8f3b7euWd/czIf1i27t4/8uG63nDj1w2O8nL25uR
+18tGb3/+8e+i69ubDV82mfYLIf3iYduff05bvkf8ZrOTvH7f2nZv7W98kP9FSGHStr9IXE7L
+3ZZ/ArDdSV633drz/XYf//5impDgIxMSNBASNBASNBASNBASNBASNBASNBASNBASNBASNBAS
+NBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBAS
+NBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBAS
+NBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBAS
+NBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNBASNPh/maPDgTQEmscAAAAA
+SUVORK5CYII="
+>
 </div>
 
 </div>
@@ -13284,9 +13738,27 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(\chi^2 \geq 14.2917) = 0.0025$. That is, if student absenteeism actually does fit faculty perception, then there is only a 0.25% chance that the values we observe in our sample are as extreme as they are.</p>
-<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>We are conducting this hypothesis test at the 1% level of significance, so $\alpha = 0.01$. Since</p>
-$$ p\text{-value} = 0.0025 &lt; 0.01 = \alpha, $$<p>we reject the null hypothesis. We conclude that the actual student absenteeism does not fit faculty perception.</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pie-Charts">Pie Charts<a class="anchor-link" href="#Pie-Charts">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Qualitative data can also be visualized using a pie chart. In a <strong>pie chart</strong>, a circle is sliced (like a pie) so that the number of categories in the data is equal to the number of slices, and the size of each slice is proportional to the corresponding category's quantity.</p>
+<p>We can create a pie chart in R using the <code>pie</code> function:</p>
+<div class="highlight"><pre><span></span><span class="nf">pie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+<p>Here, <code>x</code> is a list of quantities for each category, and <code>labels</code> is a list of labels for each category. The two lists must be in the same order.</p>
+<p>Let's revisit <a href="#Example-5.1">example 5.1</a>, but this time construct a pie chart of the data.</p>
 
 </div>
 </div>
@@ -13295,126 +13767,36 @@ $$ p\text{-value} = 0.0025 &lt; 0.01 = \alpha, $$<p>we reject the null hypothesi
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3 id="Example-2.2">Example 2.2<a class="anchor-link" href="#Example-2.2">&#182;</a></h3><p>Suppose you roll a six-sided die 80 times, with the following results:</p>
-<table>
-<thead><tr>
-<th></th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Number of Rolls</td>
-<td>16</td>
-<td>21</td>
-<td>14</td>
-<td>9</td>
-<td>7</td>
-<td>13</td>
-</tr>
-</tbody>
-</table>
-<p>Use a goodness-of-fit test with a 5% level of significance to determine whether or not the die is fair.</p>
-<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1:-State-the-null-and-alternative-hypotheses.">Part 1: State the null and alternative hypotheses.<a class="anchor-link" href="#Part-1:-State-the-null-and-alternative-hypotheses.">&#182;</a></h5><p>The null hypothesis is that the true distribution of rolls of your die matches the distribution of rolls of a fair die. This could be said more succinctly as:
-$$\begin{align}
-H_0:&amp;\ \text{The die is fair.} \\
-H_a:&amp;\ \text{The die is not fair.}
-\end{align}$$</p>
-<h5 id="Part-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">Part 2: Assuming the null hypothesis is true, determine the features of the distribution used in the hypothesis test.<a class="anchor-link" href="#Part-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">&#182;</a></h5><p>Since we want to see if the distribution of rolls of a fair die is a <em>good fit</em> for the distribution of rolls of your die, we will use a chi-square distribution to test the hypothesis. Since there are six categories, the degrees of freedom is</p>
-$$ df = \text{number of categories} - 1 = 6 - 1 = 5.$$<h4 id="Part-3:-Find-the-$p$-value.">Part 3: Find the $p$-value.<a class="anchor-link" href="#Part-3:-Find-the-$p$-value.">&#182;</a></h4><p>To find the $p$-value, we first must calculate the test statistic</p>
-$$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>Note that the table above are the observed values. But if we roll a fair die 80 times, we <em>expect</em> to roll each number $\frac{1}{6}80 = 13.3333$ times:</p>
-<table>
-<thead><tr>
-<th></th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Observed Number of Rolls</td>
-<td>16</td>
-<td>21</td>
-<td>14</td>
-<td>9</td>
-<td>7</td>
-<td>13</td>
-</tr>
-<tr>
-<td>Expected Number of Rolls</td>
-<td>13.3333</td>
-<td>13.3333</td>
-<td>13.3333</td>
-<td>13.3333</td>
-<td>13.3333</td>
-<td>13.3333</td>
-</tr>
-</tbody>
-</table>
-<p>Let's use R to calculate the test statistic $\chi^2$:</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">21</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">13</span><span class="p">)</span>
-<span class="n">E</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">)</span>
-
-<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span><span class="o">/</span><span class="n">E</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">chisq</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 9.400024
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The test statistic is $\chi^2 = 9.400$.</p>
-<p>Since a goodness-of-fit test is almost always right-tailed, the $p$-value we want to find is equal to $P(\chi^2 \geq 9.400)$.</p>
+<h3 id="Example-5.3">Example 5.3<a class="anchor-link" href="#Example-5.3">&#182;</a></h3><p>The population in Park City is made up of children, working-age adults, and retirees. The table below shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a pie chart of the data</p>
+<table data-id="M01_Ch02_tbl011" summary="Table 2.10  ">
+<caption>Table 5.6: Population in Park City by age group.</caption>
+<thead>
+<tr><th>Age groups</th><th>Number of people</th><th>Proportion of population</th></tr>
+</thead><tbody>
+<tr><td>Children</td>   <td>67,059</td> <td>19%</td></tr>
+<tr><td>Working-age adults</td> <td>152,198</td>    <td>43%</td></tr>
+<tr><td>Retirees</td>   <td>131,662</td>    <td>38%</td></tr>
+</tbody></table><h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><p>We use R to construct a pie chart.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">9.400</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">age_groups</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Children&quot;</span><span class="p">,</span> <span class="s">&quot;Working-age Adults&quot;</span><span class="p">,</span> <span class="s">&quot;Retirees&quot;</span><span class="p">)</span>
+<span class="n">proportions</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">43</span><span class="p">,</span> <span class="m">38</span><span class="p">)</span>
+
+<span class="nf">pie</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">proportions</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">age_groups</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13431,8 +13813,150 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>Note that the table above are the obs
 
 
 
-<div class="output_html rendered_html output_subarea ">
-0.0941343840306237
+
+<div class="output_png output_subarea ">
+<img alt="A pie chart of the data in table 5.6" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAANlBMVEUAAABNTU1oaGh8fHyM
+jIyampqnp6et2OaysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD/5OH///8OW/OeAAAACXBIWXMA
+ABJ0AAASdAHeZh94AAAdGUlEQVR4nO3ci1YiTRJF4RJtf+8O7/+yw90CAYmqQ1WeiP2tNdN2
+40hkktsC2p5uCWC0bu4BgAwICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFC
+AgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIE
+CAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJ
+ECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAg
+JECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRA
+gJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQ
+AAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAAB
+QgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUIC
+BAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQI
+CRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQ
+ICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAk
+QICQXHQ3mHvGwtj75u0i+e8G9DQbNr1ZXaAgepobu92ewQGd74mHeArsclM0BZ0Pau615cb2
+NuMeDf3qae5FpsXOtuAuF6KLNc292pTY1ZlN11A/prlXnQ9bOqPpG+q1xCMvxXbOZbaIejHN
+vQeJsJfzmLuiLS5MMuzjHNrIaIuWJNjEyc3+nO4XLkzjsYHTaq+iHVIah+2bULMVbZDSGGze
+ZJquaIOUhmPrJtJ+Rmu8WBqKfZtC28/p+rolKQ3Crt3bfD++MEC3nXjuPTPEnt2VU0Rr3WHs
+effNDxt2R2YVHTrazj7fvjliu+7GLqOjkEgphs26F7+MTkIipQi26j4ML0e/OlqS0u3YqHuw
+zOhcSKR0K7ZJzzSjsx0teQvvNuyRmmtGF0Naclm6ATuk5ZvRtZBI6U/sj5JzRlc7WpLSH9gd
+IeeM/gyJlK5ib2SsL0c3dLTktFzB1oiYZ3RbSFyULmJjJOwzujEkDswl7IuCf0a3dsRF6QJ2
+ZbwEl6NASJyZs9iU0TJkFOmIi9I5bMlIKS5HwZA4Nr+xI+PkyCgcEhelU+zHGEkuR/GOlqR0
+gt0YIUtGg0IipSPsxWBpLkcDO1pyenrYiqHyZDQ8JC5KB2zEMIkuR/+NCIkDtMc+DJIqozEd
+cVHaYRcGyHU5GhkSZ2iDTYhLltHYjjhEa+xBWLaOxofEKWILwrI9rftPERLHiB0IypeRoiPO
+ERsQk7AjTUjlD1L19cfQ0ZW9qX2Uaq8+JuHLo/90IRU/S6UXH5MyI2VIpS9KhZceREe3bJL0
+qzmpu/KgpB2JQ6p7nsouPIiObt0o9Rc0UXXdQVk70odU9YVSzVVHpe3oDiEVPVMlFx1FR8H9
+ustXbVvFNUfl7ehOIVU8VQWXHEVHA/bsXl+4WfVWHJTzxxl27vfolztX5RYclDmje4ZU7mBV
+W28QHQ3funt+8fYUW25Q7o7uG1Kxo1VrtUF0NG777vz1m1JqsUHJO7p7SKUOV6W1BmXv6P4h
+VTpdhZYaREeKTZzgPtpQZ6VB6TuaJKQ656vMQoPydzRNSGUOWJV1BtGRbCenuZvZVVlnTIGO
+pgqpygkrsswYOpLu5mT3NKcaq4yp0NGEIdU4YyUWGVOioylDKnHIKqwxho7usKeT3tssCiwx
+iJDusanT3t0M8q8wiI7us61T3+HURi/wofte//LddfsPHs7dTff7o9EeTu7q+Etvfvce/Zo1
+Opo+pPQljV7fU/ex/uV9FdLm1H50T+fu5g4hHe7y/Jde/24RvbMiHc0QUvaSRi/vtXtd//Kv
+e+6ee78/vZs7bOP6Lv9dvpP176J3S0d3dNOdfv576P5tvz0ef/PtPZRN/l9Qjp7pY3uYV8/w
+tk+0/m2vUKd3c4e1r+7v4feTuaPfBe+2SkfthvTcbSy+luVC+u4Wq//+Wj2he+rWy19sXiq9
+LrrF5sq0euW0WN22Xftz97LblK+n7uFl879/flhdyfpb8/7UdQ/Py9MbV1/x4eha97a66bl7
+O/nE7SfvPto8KOsv+dh1jze8XKoS0kwH8e+7fekeVg/T9+qXr7MveX992I7xM22uCusndNsn
+dZvr0uPmCD+uf9ututjF8Lz+k+0Zf1jf/rL/zH+9rXnZfk/alNS78enwFfceV5e+j92fbD7x
+6VJIr9svee4p5/FezH3ApzLXQfzrfr82AS3XT2v+1Qvpqftcbq5G66vS8nP9X2/dw+fy82F9
+uVgd/vUVar32511Zuz98XV/K3nef2d+lt/UX2FxIfm58X/8vvh97by5sn0lu3zN8+/nEo5B2
+v3tYT/i2uXJe3Yq5z/dkZjuIf9zxc7d9lrL8fnrdPHjP2+ctPw9l75nH5plO75lK/2nODMbv
+6cv6W/3uVK+/+7+ss1of+PftBWjzkmmzKY+7j3Z/uP5o/5mnY+yuQocbnzbBfPfeEXzbXLS2
+z+227xy+Xwrp5M29C+hoAtfv+nH9He/nc7un3ROJw0PZf+axeabTe6bSe5ozh/Gb+r66DG/f
+cVi/z/BvfWh3XfReI67W+pPUyWlfnlysv95fHjd/cPRldg6ftdh8uc/NdebX/R2HtHoF+/TZ
+f4jOqdNRuyGdPpnbP2/ZP5RHzzw2z3R6z1R+Pn0W4zf1a/X94GV37XhZfc/4Oh/S6vvF4vgP
+j0M6dPJ4+OhaSF+HPzl3f8chLV/W36t2T78v7cPcp3s6s77CuHrnpyHtn7fs/3P0zGPzbbn3
+TOXn02chuN/V7IvdehbL3wXsPvz43Lz6+TOkf93i9f3rwpf58XII6eXvkFab/7y4/r2KkCZy
+7d7Pvb3QfyjPfoPeH5yfT5+F4H5XL2V2h3Sx+uhp+fPi5ulo7S+bF1LHa/79Gmnz4dfv10gn
+L3MW3fYC87W+6+2tH4cv/fErpOUfW1yoo4ZDejq8Rnr/LhjS8+r1z/Yl3svqo/VbAEfv2m3v
+Zv3LYn/1+FnzuXftPpaf29dIvRs3X3H1DHj/ZsPn4aP1C9TeJy5WL06/H392fvtXW29/vGtH
+R9O5cv8v+7cKPvavjP4O6efr2of01u2esK6vBNu/Ie3/PdL2bta/fK5/rvXkm8fj6ZsIu7/b
+3nzF3o3bDw+vc54PV6j3w3s3m79wej36G6VFt74Kvv18xQubMPfhntLcIV05coe/R3rcv1d3
++hrp+JnH0TMV/5A+fzpYfbS9OL8+HH6yYfnzy8vuZxz6a35+6B4/+stf9fD4sX2K2L/xdRXF
+v8P7BQ8/P/e9+fDl8CMQq4/+He7kY7F5Orn5yYajjo6XXSmk2Tv6tfm9j/9tfrJh/fdBy3Mh
+vZ/+fWH/mYp/SAJHP7IQunHwPfY/nvtwT6mFB7y78PHhOUjvZ+2Ontb9PPPYB/PzTKV2SJun
+gt9P3XP4xvH3fPho7rM9qRZC+jl1v87926qVx7febcevj16Of6Zy2XumUjuk3bvY5/4t4B83
+jnd4Pjr32Z5SEx0d9r6RaRTmXsrr6tq8uHTJuXrjeLuXb3Of7UnN/XjvdYf/SiLTWsI2zxHm
+PtqTaubh7mZ8FnYXqRYT1xHSTHJlVD6kYh21FNLcA4hlW08QHc2mpVkEki0nipBm09IsAsmW
+E0RHM2prmrFyrSaoWEeNhZTr7KVaTBQhzaqxccZJtZggOppZcwONkGktQdU6ai+kTKcv0VKi
+qoXU4EPd4EhDJVpKULWOWgwp0fHLs5Kgch01GVKe85dmIVHlQmrzkW5zqgHSLCSoXEeNhpTm
+AGZZR1S5kJp9oJsdLCbJMqLKdURId5ZkGVGE1I52J4vIsYooOmpIw6MF5FhFFCG1pOXZbpZi
+EVF01JSmh7tVikUE1euo7ZBSHMIMa4gipMa0Pd1tMqwhiI6a0/p8N0iwhChCak7r890gwRKC
+6Kg9zQ/4twRLCCKkBrU/4V/8VxBUsCNCmoD/CoIKhuTwGDvMeJX9AoIKdkRIU7BfQFDBkDwe
+Yo8pL3OfP6hgR4Q0Cff5gwipWSZjXmI+fhAdtctlzgvMxw8ipIbZDHqW9/RBdNQyn0nP8Z4+
+iJCaZjTqb9bDRxFS04xG/c16+CA6apvTrL9YDx9ESI2zGvaE8+xBdNQ6r2mPOc8eREjNMxu3
+z3j0oIodEdJkjEcPqhiS3aNrN/CB7+RRhGTAbuAD38mD6MiB38R7vpMHEZIFw5G3bAcPqtgR
+IU3IdvCgiiFZPraWQy995w6q2BEhTcl17qCKIZk+tIzdMkKywdgNq9iRa0imR9Jz6qiKIdk+
+sp6De04dRUhGPAf3nDqIjpx4Tu45dRAhWbEc3XLoKEKyYjm65dBBdOTFcnbLoYMIyYzj8I4z
+RxUMyfthdZzeceYoQnJjOL7hyFEFOyKkyRmOHFUwJPtH1W8BfhOHEZIfvwX4TRxFR4b8VuA3
+cRQhObJbgt3AYYTkyG4JdgOH1Qspw2Nqtwa7gaPqdURIc7AbOKpeSDkeUrdVuM0bRkie3Fbh
+Nm9UvY4IaRZu80bVCynJI+q2DLd5owjJlNsy3OaNKhdSlgfUbR1u8waV6yhNSG4n02zcKEKy
+ZbYQs3GjyoWU5/E0W4nZuEHlOiKkuZiNG0RIvsxWYjZuULmQMj2cXmvxmjaKkIx5rcVr2iA6
+cua1GK9pgwjJmddivKYNIiRrVquxGjaqWkjJHkyr5VgNG0VI1qyWYzVsEB15s1qP1bBBhOTN
+aj1WwwYRkjmnBTnNGlUspHwPpdOKnGaNIiRzTitymjWqVkgJH0mnJTnNGkVI5pyW5DRrUK2O
+CGleTrMG1Qop4wPptCanWYMIyZ7RooxGjSoVUs7H0WhVRqNGEZI9o1UZjRpFSPaMVmU0alSl
+kJI+jEbLMho1ipDsGS3LaNQgOvJntC6jUYMIKQGfhflMGkVICfgszGfSqEIhJX4Q5x7gZj6T
+RhFSAj4r85k0qk5IeR9Do+PpM2kUISXgszSfSYPqdERILfCZNKhOSGkfwqXT8fSZNIiQUrBZ
+nM2gUWVCSvsIbtiszmbQKEJKwWZ1NoNGEVIKNquzGTSqSkhpH8Atm+XZDBpFSCnYLM9m0Kgi
+IaV9/HZs1mczaBQhpWCzPptBowgpBZv12QwaVSOktA/fns0CbQaNIqQUbBZoM2hUiZDSPnoH
+Niu0GTSKkFKwWaHNoFGElILNCm0GjaoQUtoH74fNEm0GjSKkFGyWaDNoVIGQ0j52PTZrtBk0
+qkJIFcx9jm5lM2hU/pC6/xVgcz5tBo1KH1KJjghpdtlDqtERIc0ueUhFOiKk2eUOqUpHhDS7
+1CGV6YiQZpc5pDodEdLsEodUqCNCml3akLpKHRHS7LKGVCojQppf0pCKdURIs8sZUrWOCGl2
+KUMq1xEhzS5jSPU6IqTZJQypYEeENLt8IVXsiJDml62kkh0R0vyShVSzI0KaX66Q6KhxPpNG
+pQqpaEeE1IBMIVXtiJAakCiksh0RUgPyhFS3I0JqQJqQCndESA3IElLljgipATlCqvXP+E4Z
+nU6jUYNShFQ6I0JqQoaQindESC1IEFL1jgipBf4hle+IkFpgHxIdEVITzEuiI0Jqg3dIdGTV
+ESE1io7+R0iNcA6JjtacDqfTrEHGIdHRhtPhdJo1yrYkOtpyOpxOs0a5hkRHO06H02nWKNOQ
+6GjP6XA6zRrlGRIdHTgdTqdZwxxLoqMDq7NpNWyUYUh09MPqbFoNG2UXUu1/xnfK6mxaDRvl
+FhIZHbE6m1bDRpmFREfHrM6m1bBhViXR0Qmrs2k1bJhTSHR0yupsWg0bZhQSHZ3yOppe00b5
+hERHv3gdTa9po2xCoqPfvI6m17RhJiXR0RleR9Nr2jCPkOjoHK+j6TVtmEVIdHSO2ck0GzfK
+ISQ6OsvsZJqNG9Z+SXR0ntnJNBs3rPmQ6OgCs5NpNm5Y6yHR0QVuB9Nt3qjGQ6KjS9wOptu8
+UW2HREcXuR1Mt3nDWi6Jji6yO5d2A0e1GxL/HPYKu3NpN3BUsyGR0TV259Ju4KhWQ6Kjq+zO
+pd3AUY2GREdX+R1Lv4mjmiyJjq7zO5Z+E0e1GBId/cHvWPpNHNZeSXT0B8NTaThyVHMh0dFf
+DE+l4chhjZVER38yPJWGI4e1FRId/c3wVBqOHNZUSHT0N8dD6ThzWEMl0dENHA+l48xh7YRE
+R7dwPJSOM4c1ExId3cLyTFoOHdVKSHR0E8szaTl0WBsl0dFNPI+k59RRTYRER7fxPJKeU0c1
+EBL/jO9GpifSdOyo2Usio1uZnkjTsaPmDomObmZ6Ik3Hjpo5JDq6meuBdJ07ataS6Oh2rgfS
+de6oOUOiowDXA+k6d9SMIdFRgO15tB08araS6CjC9jzaDh41V0h0FGJ7Hm0HD5unJDoK8T2O
+vpNHzRISHcX4HkffycNmKImOYoxPo/HoUdOHREdBxqfRePSoyUOioyDnw+g8e9TEJdFRlPNh
+dJ49atqQ6CjM+TA6zx42ZUl0FGZ9Fq2Hj5ouJP4Z3wDWZ9F6+LCpSiKjAbyPovf0UROFREdD
+eB9F7+mjpgmJjoYwP4nm40dNURIdDWJ+Es3Hj5ogJDoaxP0gus8fdfeS6GgY94PoPn/UvUOi
+o2Hsz6H9AqLuWxIdDWR/Du0XEHbPkuhoIP9j6L+CqDuGREdD+R9D/xWE3a0kOhoqwSlMsISo
+e4VER4MlOIUJlhB2n5LoaLAMhzDDGqLuEhIdDZfhEGZYQ9gdSqKj4VKcwRSLiNKHREcjpDiD
+KRYRpi6JjkbIcQRzrCJKGxL/HHaMJCcwyTKilCWR0ShJTmCSZUQJQ6KjUbIcwCzriJKVREfj
+ZDmAWdYRJiqJjsZJc/7SLCRKExIdjZTm/KVZSJiiJDoaKc/xy7OSsPEl0dFYeY5fnpWEjQ6J
+jsZKdPoSLSVsZEl0NFamw5dpLWGjSqKj0TIdvkxrCRsTEh2NlurspVpM2PCS6Gi0XEcv12rC
+hpZER+PlOnq5VhM2MCQ6Gi/ZyUu2nLBBJdHReNkOXrb1hA0oiY4Esh28bOsJC4fEP+NTSHfu
+0i0oLFgSGSnkO3b5VhQWKomOJPIdu3wrCouEREcSCU9dwiWF3V4SHUlkPHQZ1xR2a0l0pJHx
+0GVcU9iNIdGRRsozl3JRYTeVREcaOY9czlWF3VASHWkkPXFJlxX1d0h0pJH1wGVdV9RfJdGR
+SNYDl3VdYddLoiORtOct7cLCrpVERyJ5j1velUVdCYmORBKftsRLi7pYEh2JZD5smdcWdaEk
+OlLJfNgyry3sbEl0pJL6rKVeXNjvkvhnfDK5j1ru1YWdlkRGMslPWvLlhXV0dB/ZD1r29YV1
+dHQP6c9Z+gWGdXR0B+nPWfoFxnV0JJf/mOVfYVxHR2IFTlmBJcZ1dCRV4ZBVWGNcR0dCJc5Y
+iUXG0ZFOjSNWY5VxlKRS5IQVWWYcJWlUOWBV1hlGSBJlzleZhYZRkkCd41VnpWGUNFqh01Vo
+qWGUNFKlw1VprWGUNEqps1VqsWGUNEKto1VrtWGUNFixk1VsuWGUNFC1g1VtvWGUNEi5c1Vu
+wWGUNEC9Y1VvxWH8HwmFFTxVBZccR0khXcVDVXHNcZQUUPNI1Vx1GCXdrOiJKrrsMEq6UdUD
+VXXdYbzlcJOy56nswuMo6W91j1PdlcdR0l8Kn6bCS4+jpOsqH6bKa4+jpGtKn6XSi4+jpItK
+/jXsj9qrj6OkC6ofpOrrD6Okc4pfjpaEFMdfKP3GKSKkASjpGJejJSENwkWpjyO0xi4MQkl7
+XI622IZhuChtcX522IihKInLUQ87MRgXJQ7PD/ZihNolcTnqYzPGqHxR4uQcYTvGqVoSl6MT
+7MdINS9KHJtT7Mho9UricvQbWzJetYsSZ+YMNkWhUklcjs5iVyTqXJQ4MOexLyI1UuJydAkb
+I1MgJU7LRWyNUPKUuBxdwd5IJU6JjK5id8SSpkRGf2B/5BKWREZ/Yof0sl2UyOgG7NE9ZEqJ
+jG7CLt1HlpTI6Ebs071kSImMbsZO3Y97SmQUwF7dk3FKHRmFsFv3ZZoSFUWxYffW+bVERnFs
+2QS8UiKjIdi0SdikxEujgdi2iXg8wyOjodi46XSNx7S5GnEghmHfptVqS93+OR0HYhj2bXLt
+pXT0wogTMQjbNoOWUupO317gRAzCts2ikWd4Z9+j40gMwa7NZe63Hn5dig6DTbwRObBrc+rm
+qunqXxdxJgZg02Y3dU0XL0WHgSZaeCpsWhumiummn1zgUMSxZ+24d0t/XooOg9x5oRmxZ025
+14WpuzkiDMPuNkf6mqnraGgSbHGbdgFQkAt2umndkUBAgsd194UeP05veN/eOv4eMmE7jHQ3
+uMO9nZS06La36u4pA7YDF+xSee4ez/45jrApuGAfzGk4hHQOm4ILTkJ6XXQPr8vdM77tn3bd
+96J76t129OH74+oF1vv0c8+DkHDB8VO7p+07Dychrf70uXdb/8PX7Qus1/kWMClCwgWHNxs+
+V7957x6/l9+P3fs+sG1Iqz88uq334cP6f/fWLeZdxGQICRfs3/5ed7S60qyT+V4/keuH9HFy
+29GnlXlat0ZIuGATzOLhffebw9vr/ZB+33b48Hn1xO/zc7bpp0ZIuGCTyUfXfW1/Ew1p+fKw
++vXha7b5p0VIuGCbydPmbbn+e95nQjq5be/9ecFrJFS3jeJz+2bD088rnl8h9W57On1hVOYv
+naqsE2GHTNaXpLfu4XP9lvbmXYSv5VFIvdt6Hy66N961A/aZfG8vSY+blz7rlzyL1S9HIfVu
+6334dvYH9dIiJFywz+R5+yrpdRXQv3UrH4vTkH5u63+4+cmGKh0REqBASIAAIQEChAQIEBIg
+QEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBI
+gAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAA
+IQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEB
+AoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKE
+BAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQI
+EBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBAS
+IEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBA
+SIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiA
+ACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAh
+AQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEC
+hAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQE
+CBASIEBIgAAhAQL/B2eQmyOgiZgUAAAAAElFTkSuQmCC"
+>
 </div>
 
 </div>
@@ -13444,10 +13968,695 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>Note that the table above are the obs
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So the $p$-value is $P(\chi^2 \geq 9.400) = 0.0941$. That is, assuming the die is fair, there is a 9.41% chance of obtaining the sample we did.</p>
-<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>Since the level of significance for this hypothesis test is 5%, the value of $\alpha = 0.05$. Because</p>
-$$ p\text{-value} = 0.091 \geq 0.05 = \alpha, $$<p>we do not reject the null hypothesis.</p>
-<p>There is not enough evidence to conclude that your die is not fair.</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compare the bar chart in <a href="#Example-5.1">example 5.1</a> with the pie chart in <a href="#Example-5.3">example 5.3</a>. Which do you think is easier to read? Notice that it is a little difficult to decide if the "working-age adults" category or the "retirees" category is larger with the pie chart, but it is immediately obvious which category is larger using the bar chart. This isn't just a quirk with this data: bar charts tend to be easier to read than pie charts.</p>
+<p>As another example, consider the pie charts and bar charts below. Notice how hard it is to compare the sizes of the categories in the pie charts; notice how much easier it is to compare the sizes of the categories in the corresponding bar charts.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img alt="Three pie charts and three corresponding bar charts" src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While pie charts are still commonly used in media and in business, most visualization experts recommend against using pie charts in favor of other visualization tools, like bar charts.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Histograms">Histograms<a class="anchor-link" href="#Histograms">&#182;</a></h2><p>We apporach graphs for quantitative data similarly, though with a few important distinctions.</p>
+<p>First, with quantitative data, it is often up to the statistician how to group or categorize the data. For example, if we are gathering data on eye color (qualitative data), we naturally have a category of blue eyes and a category of brown eyes; there is no opportunity adjust the categories. But if we are gathering data on the heights of adult males (quantitative data), the statistician could partition the data so they get a group of individuals 50-59 inches tall, or they could partition the data so they get a group of individuals 50-54 inches tall and another group of individuals 55-59 inches tall.</p>
+<p>Second, we can measure how far apart quantitative data is. It doesn't make sense to ask how far apart blue eyes are from brown eyes. But it does make sense to ask how far apart 50 inches is from 59 inches (they are 59 - 50 = 9 inches apart).</p>
+<p>A common way to visualize quantitative data is to use a histogram. A <strong>histogram</strong> is similar to a bar chart, but it is better at displaying quantitative data. Unlike a bar chart, a histogram consists of contiguous (adjoining) boxes so there is no gap between the bars. This helps emphasize the "distance" between quantitative data. A histogram has both a horizontal axis and a vertical axis. The horizontal axis is labeled with what the data represents (for instance, distance from your home to school). The vertical axis is labeled either frequency or relative frequency (or percent frequency or probability). The graph will have the same shape with either label. The histogram can give you the shape of the data, the center, and the spread of the data.</p>
+<p>We will use R to construct histograms. To construct a histogram in R, use the <code>hist</code> function:</p>
+<div class="highlight"><pre><span></span><span class="nf">hist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>Here, <code>x</code> is the list of data we want a histogram of.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-5.3">Example 5.3<a class="anchor-link" href="#Example-5.3">&#182;</a></h3><p>The following data are the heights (in inches to the nearest half inch) of 100 male semiprofessional soccer players. The heights are continuous data, since height is measured.</p>
+<p>60, 60.5, 61, 61, 61.5, 63.5, 63.5, 63.5, 64, 64, 64, 64, 64, 64, 64, 64.5, 64.5, 64.5, 64.5, 64.5, 64.5, 64.5, 64.5, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66.5, 66.5, 66.5, 66.5, 66.5, 66.5, 66.5,    66.5, 66.5, 66.5, 66.5, 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 67, 67.5, 67.5, 67.5, 67.5, 67.5, 67.5, 68, 68, 69, 69, 69, 69, 69, 69, 69, 69, 69, 69, 69.5, 69.5, 69.5, 69.5, 69.5, 70, 70, 70, 70, 70, 70, 70.5, 70.5, 70.5, 71, 71, 71, 72, 72, 72, 72.5, 72.5, 73, 73.5, 74</p>
+<p>Construct a histogram of the data. Where do the data seem to be concentrated?</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">60</span><span class="p">,</span> <span class="m">60.5</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">61.5</span><span class="p">,</span> <span class="m">63.5</span><span class="p">,</span> <span class="m">63.5</span><span class="p">,</span> <span class="m">63.5</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">64.5</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">66.5</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">67.5</span><span class="p">,</span> <span class="m">67.5</span><span class="p">,</span> <span class="m">67.5</span><span class="p">,</span> <span class="m">67.5</span><span class="p">,</span> <span class="m">67.5</span><span class="p">,</span> <span class="m">67.5</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69.5</span><span class="p">,</span> <span class="m">69.5</span><span class="p">,</span> <span class="m">69.5</span><span class="p">,</span> <span class="m">69.5</span><span class="p">,</span> <span class="m">69.5</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">70.5</span><span class="p">,</span> <span class="m">70.5</span><span class="p">,</span> <span class="m">70.5</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">72</span><span class="p">,</span> <span class="m">72</span><span class="p">,</span> <span class="m">72</span><span class="p">,</span> <span class="m">72.5</span><span class="p">,</span> <span class="m">72.5</span><span class="p">,</span> <span class="m">73</span><span class="p">,</span> <span class="m">73.5</span><span class="p">,</span> <span class="m">74</span><span class="p">)</span>
+
+<span class="nf">hist</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img alt="Histogram of data in example 5.3 generated using R" src="data:image/png;base64,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
+ymgpiBQpmtpTRktBpEjR1J4yWgoiRYqm9pTRUhApUjS1p4yWgkiRoqk9ZbQURIoUTe0po6Ug
+UqRoak8ZLQWRIkVTe8poKYgUKZraU0ZLQaRI0dSeMloKIkWKpvaU0VIQKVI0taeMloJIkaKp
+PWW0FESKFE3tKaOlIFKkaGpPGS0FkSJFU3vKaCmIFCma2lNGS0GkSNHUnjJaCiJFiqb2lNFS
+EClSNLWnjJaCSJGiqT1ltBREihRN7SmjpSBSpGhqTxktBZEiRVN7ymgpiBQpmtpTRktBpEjR
+1J4yWgoiRYqm9pTRUhApUjS1p4yWgkiRoqk9ZbQURIoUTe0po6UgUqRoak8ZLQWRIkVTe8po
+KYgUKZraU0ZLQaRI0dSeMloKIkWKpvaU0VIQKVI0taeMloJIkaKpPWW0FESKFE3tKaOlIFKk
+aGpPGS0FkSJFU3vKaCmIFCma2lNGS0GkSNHUnjJaCiJFiqb2lNFSEClSNLWnjJaCSJGiqT1l
+tBREihRN7SmjpSBSpGhqTxktBZEiRVN7ymgpiBQpmtpTRktBpEjR1J4yWgoiRYqm9pTRUhAp
+UjS1p4yWgkiRoqk9ZbQURIoUTe0po6UgUqRoak8ZLQWRIkVTe8poKYgUKZraU0ZLQaRI0dSe
+MloKIkWKpvaU0VIQKVI0taeMlvJmz80ipXKbdRPjMN211J4wWsrYnqn9xmVqqbJs4i1Mdy21
+J4yW8pZIVarq4/FQpU2OTbyF6a6l9oTRUt4SqUh1c7tOixybeAvTXUvtCaOlvCVSSp1PHv66
+w/8zMjLy3/UCTOSU2S4z8pZIq6tIxahNuO7afNHUto0eL1K53mzT1+lmXT0/2oBIIbKpnTV6
+vEi3R8eUinrUJti1U2ZTO2v06LD9frMpy/aQQ/XUI0SKkU3trNGfvLKBXTtlNrWzRiNSpGhq
+20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1Kk
+aGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20Yj
+UqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrb
+RiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRo
+attGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNS
+pGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattG
+I1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq
+20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1Kk
+aGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20Yj
+UqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20YjUqRoattGI1KkaGrb
+RiNSpGhq20YjUqRoattGI1KkaGrbRiNSpGhq20aPD9uty9RQVruRm2DXTplN7azRY8PqRbqz
+HLcJdu2U2dTOGj02rErF1769ddgWqRq1CXbtlNnUzho9NqxI+9vtfSpGbYJdO2U2tbNGjw1L
+6X+fXO7p8P8MgA8ycvZ/HuaR3zfgEQlg/rzxGml7aG/9+hoJYP6Mfnhbdh4iF7WyEoAfb5xH
+qtrzSEW5/uU8EsD8meDKBoD5g0gAAhAJQAAiAQhAJAABiAQgAJEABCASgABEAhCASAACEAlA
+ACIBCEAkAAGIBCAAkQAEIBKAAEQCEIBIAAI+KdKHfgkTwBnpMCvDAm3b5fcKTpdN7azRiBQp
+mtq20YgUKZrattGIFCma2rbRiBQpmtq20YgUKZrattGIFCma2rbRiBQpmtq20YgUKZrattGI
+FCma2rbRiBQpmtq20YgUKZrattFc/Q0gAJEABCASgABEAhCASAACEAlAACIBCEAkAAGIBCAA
+kQAEIBKAAEQCEIBIAAIQCUAAIgEIQCQAAZ8Qab9KaXVob1ZFKqo6T/Zmoc3uRJ/YSVeuk93f
+jDK6Fq9275fRa7N70dod+fgr9EU78gMibdt/RtGszLK9uciSXd1vqqNP1IVy5TrZ22y1D8X5
+pkzS60QWR/me7EaLd2Q3+qjbkR8QqSj2x7pMVfOfwenmvki7DNn7tDot/Sat9NENpfRNQTrZ
+/c0oo1dtaKVbkTPbZvfp9+QtWr4j79ENqh05vUhf7f6sm/8RqrRt71hnyC7P/zLZvHei28+U
+InWy+5uRRifxipypi/KYYU/eo9U7shN9FO7I6UVapf31Zpmapxn7VGbIviBb/170IS2VO7aT
+/f1fIIu+PIeROXqmTPUxw568R1/QinSN1u3I6UVapOO6aB+u9f9HdrLP1GmZI3qZDsod28n+
+9i/QRa8vT+2kjxr785PQHI92++7zW92O7EXrduT0IqVUXl/ryZe/k31m0z7lUEev05d0ZnpL
+8vAv0EUfN83RhmKjim65/NeeQ6TeA5JuR3ajhTvyEyI1L39XzX+MGUS6ZbccCtlzjU50+wxG
+K1JnSfr/AmH0aWwaxA9Iq8tmuh+k0S3CHdmJVu7IT4jUPGs/NIdKM4h0y26oC93zgU70ojkU
+qxWpsyS9f4EyetM8nzk5pXxIqi4PFBlEqjqPQcod2YlW7shPiHT7UOhF6gUuhWeo7tGrdjdo
+Rbp9UE9kJ2/RPp+plaftrntQvyfv0Q3KHXmPlu7I6UXqHM48H+s56I719A6VHhZL4QUC92j9
+28v3luR2Ux2d5elXed2MeE92jwBqd+Q9Wrojpxdp3f4/cGiOwpxvbnVnHzvZp1jp04F7tF6k
+b0tykHXv5J3/H9adojo2zxY33c0I9+Q9Wr0j79HmIp2er9fNU/WvDOfDO9m6WfwW3aL8j71X
+u78ZYXSVmgvWKuGwnx6ILmep9Fc23KLVO7IT3WL71O5y8KhdncX9pjp7pX/Y6HWVHuntZK/F
+S9LJW6pX+/Ky63xLnH2Llu/ITusGX5GO22Uqzv8tnq9HzpItf/7VqX3OlwX3s/ubkUbLV/u+
+CPI9eYvW78h+lLFIALMDkQAEIBKAAEQCEIBIAAIQCUAAIgEIQCQAAYgEIACRAAQgEoAARAIQ
+gEgAAhAJQAAiAQhAJAABiAQgAJEABCASgABEAhCASAACEAlAACIBCEAkAAGIBCAAkQAEIBKA
+AEQCEIBIAAIQCUAAIgEIQCQAAYgEIACRvHh8f7ntZ2rAI4jkxYNIC/ZfENgRXjyIpH0nWxgP
+O8ILRAoKO8KGqkjV2Zxtmc5vIX59t+/bHfApEMmFZSNN2Xizbv05WXUV6X4HfApEMuErFfvj
+vmi8Semr+bzZdeendp074EOw+CaUaXf6c3u3pSNS5w74ECy+CRdNzh8O2/WyJ9LtDvgQLL4J
+XZGW6XqU4XLv/Q74ECy+CR2RVmmx2R46InXugA/B4ptQpuZqoN35YMPp1qF3sOF2B3wIFt+E
+bfeo3e64v75GOhx7d8CHYPFdKJtXQavGlur8iqg5jLdIqejdAR8CkWxY365sOOm03G1TeUL8
+zlwAAACASURBVHqqt2hE6twBHwKRAAQgEoAARAIQgEgAAhAJQAAiAQhAJAABiAQgAJEABCAS
+gABEAhCASAACEAlAACIBCEAkAAGIBCAAkQAEIBKAAEQCEIBIAAIQCUAAIgEIQCQAAYgEIACR
+AAQgEoAARAIQgEgAAhAJQAAiAQhAJAAB/wB5KIn/po9c5AAAAABJRU5ErkJggg=="
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note:</strong> For histograms in R, each bar represents the frequency of values that lie between the endpoints to left and rigt of the bar, but <em>not including</em> the endpoint to the left and <em>including</em> the value to the right. For example, the bar between 70 and 72 counts only the data 70.5, 70.5, 70.5, 71, 71, 71, 72, 72, 72. So it includes the data points of value 72 (the right endpoint) but not the data points of value 70 (the left endpoint). The one exception to this rule is the bar on the far left, which includes both endpoints.</p>
+<p>From the histogram, we can see that most of the players' heights are between 64 inches and 70 inches.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-5.4">Example 5.4<a class="anchor-link" href="#Example-5.4">&#182;</a></h3><p>Create a histogram for the following data: the number of books bought by 50 part-time college students at ABC College. The number of books is discrete data, since books are counted.</p>
+<p>0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">books</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+
+<span class="nf">hist</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">books</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img alt="Histogram of data in example 5.4 generated using R" src="data:image/png;base64,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
+KSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhq
+ECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJI
+ahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKC
+SGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFS
+gkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaR
+UoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQG
+kVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYik
+BpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWI
+pAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkl
+iKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahAp
+JYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQ
+KSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhq
+ECkliKQGkVKCSGoQKSWIpAaRUoJIahApJYikBpFSgkhqECkliKQGkVKCSGoQKSWIpAaRUoJI
+ahApJYikBpFSgkhqECkliKQGkVLySpHKhDy/zJvlGifBTV4q0vOzQ0chUkUgkm8UIlUEIvlG
+IVJFIJJvFCJVBCL5RiFSRSCSbxQiVQQi+UYhUkUgkm8UIlUEIvlGIVJFIJJvFCJVBCL5RiFS
+RSCSbxQiVQQi+UYhUkUgkm8UIlUEIvlGIVJFIJJvFCJVBCL5RiFSRSCSbxQiVQQi+UYhUkUg
+km8UIlUEIvlGIVJFIJJvFCJVBCL5RiFSRSCSbxQiVQQi+UYhUkU83oyP1aL/DtPF8uPBiJBL
+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
+TkSuQmCC"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>
@@ -13458,6 +14667,7 @@ $$ p\text{-value} = 0.091 \geq 0.05 = \alpha, $$<p>we do not reject the null hyp
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Attribution">Attribution<a class="anchor-link" href="#Attribution">&#182;</a></h2><p>Significant portions of this textbook were written by Barbara Illowsky and Susan Dean in their textbook <em>Introductory Statistics</em>, published by OpenStax.</p>
 <p>Access for free at <a href="https://openstax.org/books/introductory-statistics/pages/1-introduction">https://openstax.org/books/introductory-statistics/pages/1-introduction</a></p>
+<p>The image with three pie charts and three bar charts was adapted from <a href="https://commons.wikimedia.org/wiki/File:Piecharts.svg">an image created by Wikipedia user Shutz</a>. It is licensed under the <a href="https://creativecommons.org/licenses/by/1.0/deed.en">CC BY 1.0 license</a>.</p>
 
 </div>
 </div>

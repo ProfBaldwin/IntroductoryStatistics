@@ -13162,6 +13162,13 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3.1">Example 3.1<a class="anchor-link" href="#Example-3.1">&#182;</a></h3><p>A doctor checks the resting heart rate of 5 of his patients. Their resting heart rates, in beats-per-minute, are</p>
 <p>70, 73, 94, 62, 81</p>
 <ol>
@@ -13175,16 +13182,15 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">beats</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">70</span><span class="p">,</span> <span class="m">73</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">81</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Sample Mean</span>
-<span class="n">sumx</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">beats</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">beats</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">beats</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="n">sumx</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">beats</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
 </pre></div>
 
@@ -13222,16 +13228,11 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Sample Standard Deviation</span>
-<span class="n">deviations</span> <span class="o">&lt;-</span> <span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span>
-<span class="n">squared_deviations</span> <span class="o">&lt;-</span> <span class="n">deviations^2</span>
-<span class="n">sum_squared_deviations</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">squared_deviations</span><span class="p">)</span>
-
-<span class="n">variance</span> <span class="o">&lt;-</span> <span class="n">sum_squared_deviations</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">variance</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
@@ -13274,12 +13275,10 @@ for <em>every</em> data value $x$. Since we stored our list of data values in <c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">deviations</span> <span class="o">&lt;-</span> <span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">deviations</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13295,10 +13294,18 @@ for <em>every</em> data value $x$. Since we stored our list of data values in <c
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1]  -6  -3  18 -14   5
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+<ol class=list-inline>
+	<li>-6</li>
+	<li>-3</li>
+	<li>18</li>
+	<li>-14</li>
+	<li>5</li>
+</ol>
+
 </div>
+
 </div>
 
 </div>
@@ -13310,23 +13317,21 @@ for <em>every</em> data value $x$. Since we stored our list of data values in <c
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that what we get are the deviations <em>for each data value</em>. For example, for our first data value of 70, the deviation is
 $$ x - \bar{x} = 70 - 76 = -6, $$
-which is the first value in our list of <code>deviations</code>.</p>
+which is the first value in our resulting list.</p>
 <p><br><br>
 But note in the formula that we <em>square</em> each deviation:
 $$ (x - \bar{x})^2 $$
-So we take our list of <code>deviations</code> and square all the values in that list:</p>
+So we take our list of deviations and square all the values in that list:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">squared_deviations</span> <span class="o">&lt;-</span> <span class="n">deviations^2</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">squared_deviations</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span>
 </pre></div>
 
     </div>
@@ -13342,10 +13347,18 @@ So we take our list of <code>deviations</code> and square all the values in that
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1]  36   9 324 196  25
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+<ol class=list-inline>
+	<li>36</li>
+	<li>9</li>
+	<li>324</li>
+	<li>196</li>
+	<li>25</li>
+</ol>
+
 </div>
+
 </div>
 
 </div>
@@ -13357,9 +13370,9 @@ So we take our list of <code>deviations</code> and square all the values in that
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again, double check that we are indeed getting our deviation values squared. For our first data value, the deviation was -6. When we square that, we get
 $$ (x - \bar{x})^2 = (-6)^2 = 36, $$
-which matches the first entry in our list of <code>squared_deviations</code>.</p>
+which matches the first entry in our resulting list.</p>
 <p><br><br>
-Once we have the <code>squared_deviations</code>, we want to add them up to get
+Once we have the list of squared deviations, we want to add together the values in the list to get
 $$ \sum (x - \bar{x})^2 $$</p>
 
 </div>
@@ -13367,12 +13380,10 @@ $$ \sum (x - \bar{x})^2 $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">sum_squared_deviations</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">squared_deviations</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">sum_squared_deviations</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13388,10 +13399,11 @@ $$ \sum (x - \bar{x})^2 $$</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 590
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+590
 </div>
+
 </div>
 
 </div>
@@ -13414,12 +13426,10 @@ This is simple to do in R.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">variance</span> <span class="o">&lt;-</span> <span class="n">sum_squared_deviations</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13435,10 +13445,11 @@ This is simple to do in R.</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 147.5
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+147.5
 </div>
+
 </div>
 
 </div>
@@ -13450,7 +13461,7 @@ This is simple to do in R.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Recall from above that we call this quantity the <strong>variance</strong> of the data. We denote it mathematically as $s^2$, the square of the standard deviation.</p>
 <p><br><br>
-The only thing left to do is take the square root of the <code>variance</code>:
+The only thing left to do is take the square root of the variance:
 $$ s = \sqrt{\frac{\sum(x - \bar{x})^2}{n - 1}} $$
 To do so, we use the <code>sqrt</code> function:</p>
 <div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -13463,11 +13474,10 @@ To do so, we use the <code>sqrt</code> function:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
-
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)</span> <span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
@@ -13498,6 +13508,13 @@ To do so, we use the <code>sqrt</code> function:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3.2">Example 3.2<a class="anchor-link" href="#Example-3.2">&#182;</a></h3><p>Use the following data (first exam scores) from Susan Dean's spring pre-calculus class:</p>
 <p>33, 42, 49, 49, 53, 55, 55, 61, 63, 67, 68, 68, 69, 69, 72, 73, 74, 78, 80, 83, 88, 88, 88, 90, 92, 94, 94, 94, 94, 96, 100</p>
 <ol>
@@ -13511,16 +13528,15 @@ To do so, we use the <code>sqrt</code> function:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">scores</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">33</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="m">49</span><span class="p">,</span> <span class="m">49</span><span class="p">,</span> <span class="m">53</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">63</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">72</span><span class="p">,</span> <span class="m">73</span><span class="p">,</span> <span class="m">74</span><span class="p">,</span> <span class="m">78</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">83</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">92</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">96</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Sample Mean</span>
-<span class="n">sumx</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">scores</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">scores</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="n">sumx</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
 </pre></div>
 
@@ -13557,16 +13573,11 @@ To do so, we use the <code>sqrt</code> function:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Sample Standard Deviation</span>
-<span class="n">deviations</span> <span class="o">&lt;-</span> <span class="n">scores</span> <span class="o">-</span> <span class="n">xbar</span>
-<span class="n">squared_deviations</span> <span class="o">&lt;-</span> <span class="n">deviations^2</span>
-<span class="n">sum_squared_deviations</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">squared_deviations</span><span class="p">)</span>
-
-<span class="n">variance</span> <span class="o">&lt;-</span> <span class="n">sum_squared_deviations</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">variance</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">scores</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
@@ -13618,6 +13629,13 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3.3">Example 3.3<a class="anchor-link" href="#Example-3.3">&#182;</a></h3><p>In a fifth grade class, the teacher was interested in the average age and the population standard deviation of the ages of her students. The following data are the ages for all N = 20 fifth grade students in her class. The ages are rounded to the nearest half year:</p>
 <p>9, 9.5, 9.5, 10, 10, 10, 10, 10.5, 10.5, 10.5, 10.5, 11, 11, 11, 11, 11, 11, 11.5, 11.5, 11.5</p>
 <ol>
@@ -13633,16 +13651,15 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">ages</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">9.5</span><span class="p">,</span> <span class="m">9.5</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11.5</span><span class="p">,</span> <span class="m">11.5</span><span class="p">,</span> <span class="m">11.5</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Population Mean</span>
-<span class="n">sumx</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">ages</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">ages</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
 
-<span class="n">mu</span> <span class="o">&lt;-</span> <span class="n">sumx</span><span class="o">/</span><span class="n">N</span>
+<span class="n">mu</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
 </pre></div>
 
@@ -13680,16 +13697,11 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Population Standard Deviation</span>
-<span class="n">deviations</span> <span class="o">&lt;-</span> <span class="n">ages</span> <span class="o">-</span> <span class="n">mu</span>
-<span class="n">squared_deviations</span> <span class="o">&lt;-</span> <span class="n">deviations^2</span>
-<span class="n">sum_squared_deviations</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">squared_deviations</span><span class="p">)</span>
-
-<span class="n">variance</span> <span class="o">&lt;-</span> <span class="n">sum_squared_deviations</span><span class="o">/</span><span class="n">N</span>
-<span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">variance</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">ages</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
 </pre></div>
 
@@ -13726,10 +13738,10 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">ages</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">boxplot</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13748,139 +13760,109 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAB8lBMVEUAAAABAQECAgIDAwME
-BAQFBQUGBgYHBwcICAgKCgoLCwsMDAwNDQ0ODg4QEBARERESEhIUFBQVFRUWFhYYGBgZGRka
-GhobGxscHBwdHR0eHh4iIiIjIyMkJCQmJiYoKCgpKSkqKiosLCwtLS0uLi4wMDAxMTEzMzM0
-NDQ2NjY3Nzc4ODg5OTk6Ojo7Ozs8PDw9PT0+Pj4/Pz9AQEBBQUFCQkJGRkZHR0dISEhJSUlK
-SkpLS0tMTExNTU1OTk5PT09QUFBRUVFSUlJTU1NUVFRVVVVWVlZXV1dZWVlbW1tdXV1eXl5f
-X19gYGBiYmJjY2NmZmZnZ2doaGhpaWlqamptbW1ubm5vb293d3d5eXl6enp8fHx9fX1+fn5/
-f3+AgICBgYGDg4OHh4eIiIiPj4+QkJCTk5OWlpaYmJidnZ2hoaGjo6Opqamqqqqrq6usrKyt
-ra20tLS2tra4uLi7u7u8vLy9vb2/v7/AwMDCwsLExMTFxcXGxsbHx8fJycnKysrLy8vMzMzP
-z8/Q0NDR0dHS0tLT09PV1dXW1tbZ2dna2trb29vc3Nze3t7f39/h4eHm5ubn5+fo6Ojr6+vs
-7Ozu7u7v7+/x8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7///+X
-mlFmAAAACXBIWXMAABJ0AAASdAHeZh94AAAZm0lEQVR4nO3c+5uXVdXH8U2DAhJSKCBYAtqU
-yngg02DEQ2GKpAKW9SihjlYeMw+MUFoqCuQxECRNUHD4/p/PyGFQrufZbGWtdc/9We/XD8P3
-anYzs3K9L5l79lQGAM5Z6foLABQQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAAD
-hAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAAD
-hAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAAD
-hAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAAD
-hAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAAD
-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
-2fkJKZbsIjWSnZ+QYskuUiPZ+QkpluwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJ
-KZbsIjWSnZ+QYskuUiPZ+QkpluwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbs
-IjWSnZ+QYskuUiPZ+QkpluwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWS
-nZ+QYskuUiPZ+QkpluwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+Q
-YskuUiPZ+QkpluwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYsku
-UiPZ+QkpluwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYskuUiPZ
-+QkpluwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYskuUiPZ+Qkp
-luwiNZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYskuUiPZ+Qkpluwi
-NZKdn5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYskuUiPZ+QkpluwiNZKd
-n5BiyS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYskuUiPZ+QkpluwiNZKdn5Bi
-yS5SI9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYskuUiPZ+QkpluwiNZKdn5BiyS5S
-I9n5CSmW7CI1kp2fkGLJLlIj2fkJKZbsIjWSnZ+QYskuUiPZ+eNDOnZg78TZzhCSKtn5g0Pa
-cffi80oZuuSuHdVjhKRKdv7QkA6vLmXR1aOjK5eUsvazykFCUiU7f2hIW8vqnSde7VlfxioH
-CUmV7PyhIa1cdvTUy2OrrqkcJCRVsvOHhjTvntOvH5pXOUhIqmTnDw1pZPkXU69vHKkcJCRV
-svOHhvRIuXn3iVfvbCiPVg4SkirZ+WOf2o2WsvS6W29bdWkpa3hql5Hs/ME/R9q+fuFQKUML
-73y5eoyQVMnOH3+zYeLDfdxsSEt2fu7axZJdpEay8xNSLNlFaiQ7f1chHRwerryXkFTJzt9V
-SAdK7aMQkirZ+bsK6cj4eOW9hKRKdn6+R4olu0iNZOfnF/tiyS5SI9n5p88v9k1s3zbl97oh
-3bQttZsI6TSfX+x7f8H8KXPKx9/2c0xzD89P7uGu/wk44Rf7AAP8Yh9ggF/sAwzwi325PKz6
-PUrX+MW+XGQfP3eNX+zLhZCc8It9uRCSE36xLxdCcsJdu1w2buz6KxBFSLns3dv1VyCKkAAD
-hAQYCA3pwq+pHCQk9ExoSE+sKGXF5adUDhKSF242OIn9q92ny0rt57BTCMkLj7+dBH+P9Bgh
-dYuQnASH9NJsQuoUITnhqV0uhOSEkHLhZoMTQsqFmw1OCAkwQEiAAUICDBBSLtxscEJIufD4
-2wkh5UJITggpF0JyQki5EJITQsqFmw1OCCkXbjY4ISTAACEBBggJMEBIuXCzwQkh5cLjbyeE
-lAshOSGkXAjJCSHlQkhOCCkXbjY4IaRcuNnghJAAA4QEGCAkwAAh5cLNBieElAuPv50QUi6E
-5ISQciEkJ4SUCyE5IaRcuNnghJBy4WaDE0ICDBASYICQAAOElAs3G5wQUi48/nZCSLkQkhNC
-yoWQnBBSLoTkhJBy4WaDE0LKhZsNTggJMEBIgAFCAgwQUi7cbHBCSLnw+NsJIeVCSE4IKRdC
-ckJIuRCSE0LKhZsNTggpF242OCEkwAAhAQYICTBASLlws8EJIeXC428nhJQLITkhpFwIyQkh
-5UJITggpF242OCGkXLjZ4ISQAAOEBBggJMAAIeXCzQYnhJQLj7+dEFIuhOSEkHIhJCeElAsh
-OSGkXLjZ4ISQcuFmgxNCAgwQEmCAkAADhJQLNxucEFIuPP52Qki5EJITQsqFkJwQUi6E5ISQ
-cuFmgxNCyoWbDU66CGni7T1H6ycICT0TGtKWpybfHBmbU8r5931UO0hI6JnQkMoNk282lfnr
-No+Uyw5VDhISeiY8pLdmXLV/8uXTZUvlICF54WaDk/CQnjz5Ca+9snKQkLzw+NtJeEhbTzZy
-/wWVg4TkhZCchIf0TNl1/PXtSyoHCckLITmJDWnR2HOvLbjj2OTLV2euqxwkJC+E5CQ0pCUz
-ypdeHAwemDV7Z+UgIXnhZoOT2B/IHtr1/OMbr982GFx8xT9r5wjJCzcbnHR0Rei9+rsJCT3D
-XTvAACEBBroK6eDw8Bn/yUe/3TTlekJyws0GJ12FdKCc+VEIKQKPv510FdKR8fHKe/mrnRdC
-csL3SLkQkpP4kD55d/9ZzxCSF0JyEhvS0b/8dG4pZdYPH/x39RwheeFmg5PQkD5eWb77k++X
-H6xaWobGagcJyQs3G5yEhvRg+d3hwcQf5u4e/GOkPFc5SEjomdCQVv5o4ss/frx2MPjP4msq
-BwkJPRMa0tzNx//YfNHkm1/PrRwkJPRMaEjLbzr+xy1f/k7fLxdWDhKSF242OAkN6f4Zf518
-+7eZvxgMXpj5q8pBQvLC428noSHtv6j87DdrvnP+vwZ/LN97t3KQkLwQkpPYnyN98PMZpSz/
-+2Dw5w0f1M4RkhdCchJ9s+GTN/Y1nCIkL4TkhLt2uXCzwQkh5cLNBieEBBggJMAAIQEGCCkX
-bjY4IaRcePzthJByISQnhJQLITkhpFwIyQkh5cLNBieElAs3G5wQEmCAkAADhAQYIKRcuNng
-hJBy4fG3E0LKhZCcEFIuhOSEkHIhJCeElAs3G5wQUi7cbHBCSIABQgIMEBJggJBy4WaDE0LK
-hcffTggpF0JyQki5EJITQsqFkJwQUi7cbHBCSLlws8EJIQEGCAkwQEiAAULKhZsNTggpFx5/
-OyGkXAjJCSHlQkhOCCkXQnJCSLlws8EJIeXCzQYnhAQYICTAACEBBggpF242OCGkXHj87YSQ
-ciEkJ4SUCyE5IaRcCMkJIeXCzQYnhJQLNxucEBJggJAAA4QEGCCkXLjZ4ISQcuHxtxNCyoWQ
-nBBSLoTkhJByISQnhJQLNxucEFIu3GxwQkiAAUICDBASYICQcuFmgxNCyoXH304IKRdCckJI
-uRCSE0LKhZCcEFIu3GxwQki5cLPBCSEBBggJMEBIgAFCyoWbDU4IKRcefzshpFwIyQkh5UJI
-TggpF0JyQki5cLPBCSHlws0GJ4QEGCAkwAAhAQYIKRduNjghpFx4/O0kPqRjB/ZOnO0MIXkh
-JCfBIe24e/F5pQxdcteO6jFC8kJITkJDOry6lEVXj46uXFLK2s8qBwnJCyE5CQ1pa1m988Sr
-PevLWOUgIXnhZoOT0JBWLjt66uWxVddUDhKSF242OAkNad49p18/NK9ykJDQM6EhjSz/Yur1
-jSOVg4SEngkN6ZFy8+4Tr97ZUB6tHCQk9EzsU7vRUpZed+ttqy4tZQ1P7brAzQYnwT9H2r5+
-4VApQwvvfLl6jJC88PjbSfzNhokP93GzoTOE5IS7drkQkhNCyoWQnHQV0sHh4TP+k/cXzJ8y
-p/zX4HMoGpt/bmbNOscPULuQkllXIR0oZ36Uie3bpvypfG7wORTt3XZunn32HD8ANyP+b12F
-dGR8vPLeVwgJ/TI9v0ciJPRMfEifvLv/rGcICT0TG9LRv/x0bill1g8f/Hf1HCGhZ0JD+nhl
-+e5Pvl9+sGppGao+/SEk9ExoSA+W3x0eTPxh7u7BP0bKc5WDhISeif3Fvh8dvxz047WDwX8W
-136xj5DQM6Ehzd18/I/NF02++fXcykFCQs+EhrT8puN/3LJk8s0vF1YOEhJ6JjSk+2f8dfLt
-32b+YjB4YeavKgcJCT0TGtL+i8rPfrPmO+f/a/DH8r13KwcJCT0T+3OkD34+o5Tlfx8M/rzh
-g9o5QkLPRN9s+OSNfQ2nCAk9w107wAAhAQYICTBASIABQgIMEBJggJAAA4QEGJieIb1egJ55
-/RuvuX9IgzffAHrlzW++5QEhAfoICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIAB
-QgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIAB
-QgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIAB
-QgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIAB
-QgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIAB
-QgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIAB
-QgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIAB
-QgIMEBJggJAAA4QEGCAkwAAhAQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQb+F9V9+CIb
-Ak/hAAAAAElFTkSuQmCC"
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAMFBMVEUAAABNTU1oaGh8fHyM
+jIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD////QFLu4AAAACXBIWXMAABJ0AAAS
+dAHeZh94AAAVEklEQVR4nO3d0XKb15GF0R8kBFIUSL7/245Mxw6rMqZOJd0NaJ+1LlL0RebP
+buUbiQSgHO/A/+y49X8ASCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAk
+KCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAk
+KCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAk
+KCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAk
+KCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAk
+KCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKCAkKDAQ0gG/mf/iv+X14dzgEVBJSFBA
+SFBASFBgPqTnh+M4v7Q+AqYNhvTnDzYe//wZx6XlEXAj0yFdjsvb+/vr5XjueATcyHRIp+Pt
+j6/fjoeOR8CNTIf01wtXX7+AJSR+M9MhffsrpFPHI+BGRkM6Pz2/HN9/fvl2+fqnDULiNzMa
+0t9vSjqO01vHI+BGJl9Hul6fn8/njx85XL7sSEj8bryzAQoICQoICQrcKiSvIxFFSFDAH+2g
+gJCggJCggJCgwP2E9D/+3UZ7GP0Lpv4/tz7A3bqfkIYfsSeH7XKDN60u/P82v95NHLbLYEjP
+Qro5h+0y+u7v02P3I/iaw3YZ/R7p+ou/PKjgEXATsz9seD6u3Y+AW/BTOyggpK04bBchbcVh
+uwhpKw7bRUhbcdguQtqKw3bxFiEo4C1CUMBbhKCAtwhtxWG7eIvQVhy2i5/abcVhuwhpKw7b
+RUhbcdguQoICQoICQoICQtqKw3YR0lYctouQtuKwXYS0FYftIqStOGwXIUEBIUEBIUEBIW3F
+YbsIaSsO20VIW3HYLkLaisN2EdJWHLaLkKCAkKCAkKCAkLbisF2EtBWH7SKkrThsFyFtxWG7
+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
+FYftIiQoICQoICQoIKStOGwXIW3FYbsIaSsO20VIW3HYLkLaisN2ERIUEBIUEBIUENJWHLaL
+kLbisF2EtBWH7SKkrThsFyFtxWG7CAkKCAkKCAkKCGkrDttFSFtx2C5C2orDdhHSVhy2i5C2
+4rBdhAQFhAQFhAQFhLQVh+0ipK04bBchbcVhuwhpKw7bRUhbcdguQoICQoICQoICQtqKw3YR
+0lYctouQtuKwXYS0FYftIqStOGwXIUEBIUGB0ZB+PJ2PP5wvP7oeATcxGNLbw/Fvjy2P4Bcc
+tstgSJfj9P368dXry+m4dDyCX3DYLoMhnY7r319fj1PHI/gFh+0yGNJx/NM/lD2CX3DYLn5H
+2orDdpn9Hunl9eMr3yORZvLH34+ffmr38NbyCLiN2deRLh+vI53OT15HIot3NmzFYbsIaSsO
+20VIW3HYLrcKyetIN+GwXe4npOOzikckOm7t1ge4W/5oBwWEBAWEBAVGQ7pe/nxzw8P5e9cj
+4CYmQ3r69E3ruecRcBuDIb0c317f3388nt+vzw/HS8cj4EYGQ3o8Pt6oej2efub09W9JQuI3
+c4MP9n18FMkLskQZ/WDfx+9Ibx8NCYkoox/se/zx/v56Pr69v337+S8Nj4AbucEH+05vP38/
+Or22PAJuY/R1pOefKT08/fzidPnyA7JC4nfjnQ1QQEhQQEhQQEhQQEhQQEhQQEhQQEhQQEhQ
+QEhQ4E5Dgt/Mf/Hf8vpwYD9CggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJC
+ggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJC
+ggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJC
+ggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJC
+ggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJC
+ggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJC
+ggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJCggJC
+ggL/B/gVNbe59GgqAAAAAElFTkSuQmCC"
 >
 </div>
 
@@ -13902,6 +13884,39 @@ Ak/hAAAAAElFTkSuQmCC"
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3.4">Example 3.4<a class="anchor-link" href="#Example-3.4">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/jP7PPzsJYkg?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Attribution">Attribution<a class="anchor-link" href="#Attribution">&#182;</a></h2><p>Significant portions of this textbook were written by Barbara Illowsky and Susan Dean in their textbook <em>Introductory Statistics</em>, published by OpenStax.</p>
 <p>Access for free at <a href="https://openstax.org/books/introductory-statistics/pages/1-introduction">https://openstax.org/books/introductory-statistics/pages/1-introduction</a></p>
 

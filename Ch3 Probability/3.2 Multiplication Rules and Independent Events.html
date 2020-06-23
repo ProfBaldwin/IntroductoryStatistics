@@ -13110,7 +13110,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Multiplication-Rule">The Multiplication Rule<a class="anchor-link" href="#The-Multiplication-Rule">&#182;</a></h2><p>Recall the general formulas for conditional probability:
 $$P(A|B) = \frac{P(A\text{ AND }B)}{P(B)}, \hspace{1cm} P(B|A) = \frac{P(A\text{ AND }B)}{P(A)}.$$
-By multiplying $P(B)$ to the other side of the first equation and $P(A)$ to the other side fo the second equation, we obtain the <strong>multiplication rules</strong></p>
+By multiplying $P(B)$ to the other side of the first equation and $P(A)$ to the other side of the second equation, we obtain the <strong>multiplication rules</strong></p>
 $$P(A\text{ AND }B) = P(A|B)P(B),$$$$P(A\text{ AND }B) = P(B|A)P(A).$$<p>We can use either rule to calculate $P(A\text{ AND }B)$.</p>
 
 </div>
@@ -13120,6 +13120,13 @@ $$P(A\text{ AND }B) = P(A|B)P(B),$$$$P(A\text{ AND }B) = P(B|A)P(A).$$<p>We can 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2.1">Example 2.1<a class="anchor-link" href="#Example-2.1">&#182;</a></h3><p>Carlos plays college soccer. He makes a goal 65% of the time he shoots. Carlos is going to attempt two goals in a row in the next game. $A$ = the event Carlos is successful on his first attempt. $P(A) = 0.65$. $B$ = the event Carlos is successful on his second attempt. $P(B) = 0.65$. Carlos tends to shoot in streaks. The probability that he makes the second goal GIVEN that he made the first goal is 0.90. What is the probability that Carlos makes both goals?</p>
 <h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><p>Let's first translate this problem into math. We know that</p>
 $$ P(A) = 0.65, P(B) = 0.65.$$<p>We are told that the porbability that Carlos makes the second goal GIVEN that he made his first goal is 0.90. Mathematically, that means</p>
@@ -13127,6 +13134,13 @@ $$ P(B|A) = 0.90. $$<p>We want to find the probability that Carlos makes both go
 $$ P(A \text{ AND } B). $$<p>We know by the formula that</p>
 $$ P(A \text{ AND } B) = P(A|B)P(B),$$<p>but we don't know what $P(A|B)$ is. (Remember $P(A|B) \neq P(B|A)$.) Instead, have $A$ and $B$ swap places:</p>
 $$P(A \text{ AND } B) = P(B \text{ AND } A) = P(B|A)P(A) = 0.90\cdot 0.65 = 0.585.$$<p>We calculate that Carlos as a 58.5% chance of making both the first and the second goals.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>
@@ -13140,11 +13154,11 @@ $$P(A \text{ AND } B) = P(B \text{ AND } A) = P(B|A)P(A) = 0.90\cdot 0.65 = 0.58
 <li>$P(A|B) = P(A)$</li>
 <li>$P(B|A) = P(B)$</li>
 </ul>
-<p>In words, this means that whether or not event $B$ occurs has no impact on the probability of $A$; the likelihood that event $A$ happens is independent of $B$. Note, you need only show that <strong>one</strong> of the above conditions is satisfied to establish that the events are independent; if either one of the conditions is satisfied. If two events are NOT independent, then we say that they are <strong>dependent</strong>.</p>
-<p>When $A$ and $B$ are independent, our multiplication rule $P(A\text{ AND }B) = P(A|B)P(B)$ above simplifies to</p>
-$$ P(A \text{ AND } B) = P(A)P(B) $$<p>since $P(A|B) = P(A)$ in the case of independent events.</p>
+<p>In words, this means that whether or not event $B$ occurs has no impact on the probability of $A$; the likelihood that event $A$ happens is independent of $B$. Note, you need only show that <strong>one</strong> of the above conditions is satisfied to establish that the events are independent; if either one of the conditions is satisfied, then the other condition is true as well. If two events are NOT independent, then we say that they are <strong>dependent</strong>.</p>
+<p>Since $P(A|B) = P(A)$ when $A$ and $B$ are independent, our multiplication rule $P(A\text{ AND }B) = P(A|B)P(B)$ above simplifies to</p>
+$$ P(A \text{ AND } B) = P(A)P(B). $$<p>in the case where $A$ and $B$ are independent.</p>
 <p>The day of the week and rain are independent events: it's just as likely to rain on a Tuesday as it is to rain on a Friday. The outcome of the first event (which day of the week it is) does not affect the probability of the second event (whether or not it rains).</p>
-<p>Drawing one card, then drawing another card without putting the first card back is an example of two events that are not independent. If you draw an Ace of Spades for your first card, you can't draw an Ace of Spades for your second draw; the probability of the second event depends on the outcome of the first event.</p>
+<p>Drawing one card, then drawing another card without putting the first card back is an example of two events that are dependent. If you draw an Ace of Spades for your first card, you can't draw an Ace of Spades for your second draw; the probability of the second event depends on the outcome of the first event.</p>
 <p>If it is not known whether A and B are independent or dependent, <strong>assume they are dependent until you can show otherwise</strong>.</p>
 
 </div>
@@ -13154,6 +13168,13 @@ $$ P(A \text{ AND } B) = P(A)P(B) $$<p>since $P(A|B) = P(A)$ in the case of inde
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2.2">Example 2.2<a class="anchor-link" href="#Example-2.2">&#182;</a></h3><p>Felicity attends Modesto JC in Modesto, CA. The probability that Felicity enrolls in a math class is 0.2 and the probability that she enrolls in a speech class is 0.65. The probability that she enrolls in a math class GIVEN that she enrolls in speech class is 0.25.</p>
 <p>Let: $M$ = math class, $S$ = speech class</p>
 <ol>
@@ -13170,6 +13191,13 @@ so $M$ and $S$ are <em>not</em> independent events.</p>
 <h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Since $M$ and $S$ are not independent events, we must use the general multiplication rule, not the simpler multiplication rule for independent events. Thus,
 $$P(M\text{ AND }S) = P(M|S)P(S) = 0.25\cdot 0.65 = 0.1625. $$
 There is a $16.25% chance that Felicity enrolls in a math and speech.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>
@@ -13191,6 +13219,39 @@ So there is an 8.33% chance that Esmeralda wins the game.</p>
 <h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Note that there is a 100% chance (a probability of 1.00) that Esmeralda either wins the game or loses the game, since those are the only two possibilities. Because the probability that Esmeralda wins the game is 0.0833, the probability that Esmeralda loses the game is
 $$ 1.00 - 0.0833 = 0.9167. $$
 So there is a 91.67% chance that Esmeralda will lose the game.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2.4">Example 2.4<a class="anchor-link" href="#Example-2.4">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/30FqJXopZoo?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>
@@ -13202,7 +13263,7 @@ So there is a 91.67% chance that Esmeralda will lose the game.</p>
 <h2 id="Sampling-With-Replacement-and-Without-Replacement">Sampling With Replacement and Without Replacement<a class="anchor-link" href="#Sampling-With-Replacement-and-Without-Replacement">&#182;</a></h2><p>Sampling may be done <strong>with replacement</strong> or <strong>without replacement</strong>.</p>
 <ul>
 <li><strong>With replacement</strong>: If each member of a population is replaced after it is picked, then that member has the possibility of being chosen more than once. When sampling is done with replacement, then events are considered to be independent, meaning the result of the first pick will not change the probabilities for the second pick.</li>
-<li><strong>Without replacement</strong>: When sampling is done without replacement, each member of a population may be chosen only once. In this case, the probabilities for the second pick are affected by the result of the first pick. The events are considered to be dependent or not independent.</li>
+<li><strong>Without replacement</strong>: When sampling is done without replacement, each member of a population may be chosen only once. In this case, the probabilities for the second pick are affected by the result of the first pick. The events are considered to be dependent.</li>
 </ul>
 
 </div>
@@ -13212,7 +13273,14 @@ So there is a 91.67% chance that Esmeralda will lose the game.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3 id="Example-2.4">Example 2.4<a class="anchor-link" href="#Example-2.4">&#182;</a></h3><p>You have a fair, well-shuffled deck of 52 cards. You draw two cards from the deck. Find the probability that the two cards you draw are both Queens if you draw the cards</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2.5">Example 2.5<a class="anchor-link" href="#Example-2.5">&#182;</a></h3><p>You have a fair, well-shuffled deck of 52 cards. You draw two cards from the deck. Find the probability that the two cards you draw are both Queens if you draw the cards</p>
 <ol>
 <li>with replacement.</li>
 <li>without replacement.</li>
@@ -13232,6 +13300,39 @@ So there is a 0.45% chance that the two cards you draw are both Queens if you dr
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2.6">Example 2.6<a class="anchor-link" href="#Example-2.6">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/rbiVhiIh5Pw?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Attribution">Attribution<a class="anchor-link" href="#Attribution">&#182;</a></h2><p>Significant portions of this textbook were written by Barbara Illowsky and Susan Dean in their textbook <em>Introductory Statistics</em>, published by OpenStax.</p>
 <p>Access for free at <a href="https://openstax.org/books/introductory-statistics/pages/1-introduction">https://openstax.org/books/introductory-statistics/pages/1-introduction</a></p>
 

@@ -13111,7 +13111,7 @@ div#notebook {
 <h2 id="Terminology-and-Basic-Probability">Terminology and Basic Probability<a class="anchor-link" href="#Terminology-and-Basic-Probability">&#182;</a></h2><p>Probability is a measure that is associated with how certain we are of outcomes of a particular experiment or activity. An <strong>experiment</strong> is a planned operation carried out under controlled conditions. If the result is not predetermined, then the experiment is said to be a <strong>chance</strong> experiment. Flipping one fair coin twice is an example of an experiment.</p>
 <p>A result of an experiment is called an <strong>outcome</strong>. The <strong>sample space</strong> of an experiment is the set of all possible outcomes. Three ways to represent a sample space are: to list the possible outcomes, to create a tree diagram, or to create a Venn diagram. The uppercase letter $S$ is used to denote the sample space. For example, if you flip one fair coin, $S = \{H, T\}$ where $H$ = heads and $T$ = tails are the outcomes.</p>
 <p>An <strong>event</strong> is any combination of outcomes. Upper case letters like $A$ and $B$ represent events. For example, if the experiment is to flip one fair coin, event $A$ might be getting at most one head. The probability of an event $A$ is written $P(A)$.</p>
-<p>The <strong>probability</strong> of any outcome is the <strong>long-term relative frequency</strong> of that outcome. <strong>Probabilities are between zero and one, inclusive</strong> (that is, zero and one and all numbers between these values). *$P(A) = 0$ means the event $A$ can never happen. $P(A) = 1$ means the event $A$ always happens. $P(A) = 0.5$ means the event $A$ is equally likely to occur or not to occur. For example, if you flip one fair coin repeatedly (from 20 to 2,000 to 20,000 times) the relative frequency of heads approaches 0.5 (the probability of heads).</p>
+<p>The <strong>probability</strong> of any outcome is the <strong>long-term relative frequency</strong> of that outcome. <strong>Probabilities are between zero and one, inclusive</strong> (that is, zero and one and all numbers between these values). $P(A) = 0$ means the event $A$ can never happen. $P(A) = 1$ means the event $A$ always happens. $P(A) = 0.5$ means the event $A$ is equally likely to occur or not to occur. For example, if you flip one fair coin repeatedly (from 20 to 2,000 to 20,000 times) the relative frequency of heads approaches 0.5 (the probability of heads).</p>
 <p><strong>Equally likely</strong> means that each outcome of an experiment occurs with equal probability. For example, if you toss a <strong>fair</strong>, six-sided die, each face (1, 2, 3, 4, 5, or 6) is as likely to occur as any other face. If you toss a fair coin, a Head ($H$) and a Tail ($T$) are equally likely to occur. If you randomly guess the answer to a true/false question on an exam, you are equally likely to select a correct answer or an incorrect answer.</p>
 <p><strong>To calculate the probability of an event $A$ when all outcomes in the sample space are equally likely</strong>, find $n(A)$, the number of outcomes for event $A$, and divide by $n(S)$, the total number of outcomes in the sample space $S$. Mathematically, we write
 $$ P(A) = \frac{n(A)}{n(S)}.$$
@@ -13142,6 +13142,13 @@ $$P(A|B) = \frac{P(A \text{ AND } B)}{P(B)} = \frac{\frac{n(A \text{ AND } B)}{n
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-1.1">Example 1.1<a class="anchor-link" href="#Example-1.1">&#182;</a></h3><p>The sample space $S$ is the set of whole numbers starting at 1 and less than 20. Assume the outcomes are equally likely. Let event $A$ = the even numbers and event $B$ = numbers greater than 13. Find the following (in mathematical notation).</p>
 <ol>
 <li>$S$, $A$, and $B$</li>
@@ -13175,32 +13182,39 @@ $$P(A|B) = \frac{P(A \text{ AND } B)}{P(B)} = \frac{\frac{n(A \text{ AND } B)}{n
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3 id="Example-1.2">Example 1.2<a class="anchor-link" href="#Example-1.2">&#182;</a></h3><p>You draw one card from a well-shuffled standard deck of 52 cards. Let $H$ = drawing a Heart and $K$ = drawing a King.</p>
-<p><img src="playingcards.svg" alt="A standard deck of playing cards."></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.2">Example 1.2<a class="anchor-link" href="#Example-1.2">&#182;</a></h3><p>You draw one card from a well-shuffled standard deck of 52 cards. Let $♥$ = drawing a Heart and $K$ = drawing a King.</p>
+<p><a href="playingcards.html" target="_blank"><img src="playingcards.svg" alt="A standard deck of playing cards."></a></p>
 <p>Find each of the following.</p>
 <ol>
-<li>$n(S)$, $n(H)$, and $n(K)$</li>
-<li>$P(H)$ and $P(K)$</li>
-<li>$n(H \text{ AND } K)$ and $n(H \text{ OR } K)$</li>
-<li>$P(H \text{ AND } K)$ and $P(H \text{ OR } K)$</li>
-<li>$P(H|K)$ and $P(K|H)$</li>
+<li>$n(S)$, $n(♥)$, and $n(K)$</li>
+<li>$P(♥)$ and $P(K)$</li>
+<li>$n(♥ \text{ AND } K)$ and $n(♥ \text{ OR } K)$</li>
+<li>$P(♥ \text{ AND } K)$ and $P(♥ \text{ OR } K)$</li>
+<li>$P(♥|K)$ and $P(K|♥)$</li>
 </ol>
 <h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5><p>$n(S) = 52$</p>
-<p>$n(H) = 13$</p>
+<p>$n(♥) = 13$</p>
 <p>$n(K) = 4$</p>
-<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>$P(H) = \dfrac{n(H)}{n(S)} = \dfrac{13}{52} = 0.25$<br>
+<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>$P(♥) = \dfrac{n(♥)}{n(S)} = \dfrac{13}{52} = 0.25$<br>
 So there is a 25% chance that the card you draw is a Heart.</p>
 <p>$P(K) = \dfrac{n(K)}{n(S)} = \dfrac{4}{52} = 0.0769$&lt;/br&gt;
 So there is a 7.69% chance that the card you draw is a King.</p>
-<h5 id="Part-3">Part 3<a class="anchor-link" href="#Part-3">&#182;</a></h5><p>$n(H \text{ AND } K) = 1$</p>
-<p>$n(H \text{ OR } K) = 16$</p>
-<h5 id="Part-4">Part 4<a class="anchor-link" href="#Part-4">&#182;</a></h5><p>$P(H \text{ AND } K) = \dfrac{n(H \text{ AND } K)}{n(S)} = \dfrac{1}{52} = 0.0192$<br>
+<h5 id="Part-3">Part 3<a class="anchor-link" href="#Part-3">&#182;</a></h5><p>$n(♥ \text{ AND } K) = 1$</p>
+<p>$n(♥ \text{ OR } K) = 16$</p>
+<h5 id="Part-4">Part 4<a class="anchor-link" href="#Part-4">&#182;</a></h5><p>$P(♥ \text{ AND } K) = \dfrac{n(♥ \text{ AND } K)}{n(S)} = \dfrac{1}{52} = 0.0192$<br>
 So there is a 1.92% chance that the card you draw is the King of Hearts.</p>
-<p>$n(H \text{ OR } K) = \dfrac{n(H \text{ OR } K)}{n(S)} = \dfrac{16}{52} = 0.3077$<br>
+<p>$n(♥ \text{ OR } K) = \dfrac{n(♥ \text{ OR } K)}{n(S)} = \dfrac{16}{52} = 0.3077$<br>
 So there is a 30.77% chance the the card you draw is either a Heart or a King (or both).</p>
-<h5 id="Part-5">Part 5<a class="anchor-link" href="#Part-5">&#182;</a></h5><p>$P(H|K) = \dfrac{n(H \text{ AND } K)}{n(K)} = \dfrac{1}{4} = 0.25$<br>
+<h5 id="Part-5">Part 5<a class="anchor-link" href="#Part-5">&#182;</a></h5><p>$P(♥|K) = \dfrac{n(♥ \text{ AND } K)}{n(K)} = \dfrac{1}{4} = 0.25$<br>
 So if you draw a card and you aleady know that it is a King, there is a 25% chance that it is also a Heart.</p>
-<p>$P(K|H) = \dfrac{n(K \text{ AND } H)}{n(H)} = \dfrac{1}{13} = 0.0769$<br>
+<p>$P(K|♥) = \dfrac{n(K \text{ AND } ♥)}{n(♥)} = \dfrac{1}{13} = 0.0769$<br>
 So if you draw a card and you already know that it is a Heart, there is a 7.69% chance that it is also a King.</p>
 
 </div>
@@ -13210,6 +13224,39 @@ So if you draw a card and you already know that it is a Heart, there is a 7.69% 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.3">Example 1.3<a class="anchor-link" href="#Example-1.3">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ZONr5za7_Vc?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Attribution">Attribution<a class="anchor-link" href="#Attribution">&#182;</a></h2><p>Significant portions of this textbook were written by Barbara Illowsky and Susan Dean in their textbook <em>Introductory Statistics</em>, published by OpenStax.</p>
 <p>Access for free at <a href="https://openstax.org/books/introductory-statistics/pages/1-introduction">https://openstax.org/books/introductory-statistics/pages/1-introduction</a></p>
 

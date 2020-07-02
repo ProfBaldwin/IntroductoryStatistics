@@ -13255,7 +13255,7 @@ $$ z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{3.0 - 
 $$ \mu_{\overline{X}} = \mu_X = 2.5 $$<p>and a standard deviation of</p>
 $$ \sigma_{\overline{X}} = \frac{\sigma_X}{\sqrt{n}} = \frac{0.85}{\sqrt{30}} = 0.1552; $$<p>that is, $\overline{X} \sim N(2.5, 0.1552)$.</p>
 <p>We want to find $P(2.3 &lt; \bar{x} &lt; 2.7)$. To do so, we first must find the $z$-scores associated with $\bar{x} = 2.3$ and $\bar{x} = 2.7$. We calculate</p>
-$$ z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{2 - 2.5}{0.323} = -1.2887, $$$$ z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{3 - 2.5}{0.323} = 1.2887. $$<p>Then $P(2.3 &lt; \bar{x} &lt; 2.7) = P(-1.2887 &lt; z &lt; 1.2887)$. We will use R to find the probability. We will first find <em>all</em> the area to the left of $z = 1.2887$, then subtract off the excess area to the left of $z = -1.2887$.</p>
+$$ z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{2.3 - 2.5}{0.1552} = -1.2887, $$$$ z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{2.7 - 2.5}{0.1552} = 1.2887. $$<p>Then $P(2.3 &lt; \bar{x} &lt; 2.7) = P(-1.2887 &lt; z &lt; 1.2887)$. We will use R to find the probability. We will first find <em>all</em> the area to the left of $z = 1.2887$, then subtract off the excess area to the left of $z = -1.2887$.</p>
 
 </div>
 </div>

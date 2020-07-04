@@ -13098,7 +13098,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
-<li>Compute probabilities using the Central Limit Theorem and demonstrate teh ability to interpret sampling distributions of both population proportions and means.</li>
+<li>Compute probabilities using the Central Limit Theorem and demonstrate the ability to interpret sampling distributions of both population proportions and means.</li>
 <li>Analyze a problem involving hypothesis testing, apply the correct techniques, and come to a conclusion for a claim about popultion proportion and mean, all this while using approprtiate levels of statistical significance, $p$-values, and determining what would constitute a type I and type II error.</li>
 <li>Analyze an application in the disciplines business, social sciences, psychology, life sciences, health science, and education, and utilize the correct statistical processes to arrive at a solution.</li>
 </ul>
@@ -13109,11 +13109,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hypothesis-Test-with-Two-Population-Means">Hypothesis Test with Two Population Means<a class="anchor-link" href="#Hypothesis-Test-with-Two-Population-Means">&#182;</a></h2><p>The comparison of two population means is very common. A difference between the two samples depends on both the means and the standard deviations. Very different means can occur by chance if there is great variation among the individual samples. In order to account for the variation, we take the difference of the sample means,  $D = \overline{X}_1 - \overline{X}_2$, and divide by the standard error in order to standardize the difference. The result is a $t$-score test statistic.</p>
-<p>Because we do not know the population standard deviations, we estimate them using the two sample standard deviations from our independent samples. For the hypothesis test, we calculate the estimated standard deviation, or <strong>standard error</strong>, of <strong>the difference in sample means</strong>,  $D = \overline{X}_1 - \overline{X}_2$.</p>
+<h2 id="Hypothesis-Test-with-Two-Population-Means">Hypothesis Test with Two Population Means<a class="anchor-link" href="#Hypothesis-Test-with-Two-Population-Means">&#182;</a></h2><p>The comparison of two population means is very common. A difference between the two samples depends on both the means and the standard deviations. Very different means can occur by chance if there is great variation among the individual samples. In order to account for the variation, we take the difference of the sample means,  $\overline{D} = \overline{X}_1 - \overline{X}_2$, and divide by the standard error in order to standardize the difference. The result is a $t$-score test statistic.</p>
+<p>Because we do not know the population standard deviations, we estimate them using the two sample standard deviations from our independent samples. For the hypothesis test, we calculate the estimated standard deviation, or <strong>standard error</strong>, of <strong>the difference in sample means</strong>,  $\overline{D} = \overline{X}_1 - \overline{X}_2$.</p>
 <p>The differences of sample means have a $t$-distribution with mean</p>
-$$ \mu_D = \mu_1 - \mu_2 $$<p>and standard error (that is, the distribution standard deviation) of</p>
-$$ \sigma_D = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}. $$<p>The degrees of freedom of the $t$-distribution is the smaller of the values $n_1 - 1$ and $n_2 - 1$.</p>
+$$ \mu_{\overline{D}} = \mu_1 - \mu_2 $$<p>and standard error (that is, the distribution standard deviation) of</p>
+$$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}. $$<p>The degrees of freedom of the $t$-distribution is the smaller of the values $n_1 - 1$ and $n_2 - 1$.</p>
 <p>The fundamental steps for conducting a hypothesis test remain the same:</p>
 <ol>
 <li>State the null and alternative hypotheses.</li>
@@ -13121,6 +13121,14 @@ $$ \sigma_D = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}. $$<p>The degrees of 
 <li>Find the $p$-value of the point estimate.</li>
 <li>Make a conclusion about the null hypothesis.</li>
 </ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
 
 </div>
 </div>
@@ -13161,10 +13169,10 @@ H_0:&amp;\ \mu_A - \mu_B \leq 0 \\
 H_a:&amp;\ \mu_A - \mu_B &gt; 0
 \end{align}$$<h5 id="Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-point-estimates.">Step 2: Assuming the null hypothesis is true, determine the features of the distribution of point estimates.<a class="anchor-link" href="#Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-point-estimates.">&#182;</a></h5><p>If the null hypothesis is true, then the point estimates have a $t$-distribution. The degrees of freedom of the distribution is the smaller of $n_A - 1$ and $n_B - 1$. Since $n_B &lt; n_A$ in this case, the degrees of freedom are</p>
 $$ df = n_B - 1 = 9 - 1 = 8. $$<p>The null hypothesis tells us the distribution mean. It's</p>
-$$ \mu_D = \mu_A - \mu_B = 0. $$<p>The distribution standard deviation (the standard error) is</p>
-$$ \sigma_D = \sqrt{\frac{s_A^2}{n_A} + \frac{s_B^2}{n_B}} = \sqrt{\frac{1.5^2}{11} + \frac{1^2}{9}} = 0.5618. $$<h5 id="Step-3:-Find-the--$p$-value-of-the-point-estimate.">Step 3: Find the  $p$-value of the point estimate.<a class="anchor-link" href="#Step-3:-Find-the--$p$-value-of-the-point-estimate.">&#182;</a></h5><p>The point estimate of $\mu_D = \mu_A - \mu_B$ is</p>
-$$d = \bar{x}_A - \bar{x}_B = 4 - 3.5 = 0.5. $$<p>The $t$-score for this value is</p>
-$$ t = \frac{d - \mu_D}{\sigma_D} = \frac{0.5 - 0}{0.5618} = 0.8900. $$<p>Since the alternative hypothesis $H_a$ uses a greather-than symbol, we will perform a right-tailed test. The $p$-value is $P(d \geq 0.5) = P(t \geq 0.8900)$.</p>
+$$ \mu_{\overline{D}} = \mu_A - \mu_B = 0. $$<p>The distribution standard deviation (the standard error) is</p>
+$$ \sigma_{\overline{D}} = \sqrt{\frac{s_A^2}{n_A} + \frac{s_B^2}{n_B}} = \sqrt{\frac{1.5^2}{11} + \frac{1^2}{9}} = 0.5618. $$<h5 id="Step-3:-Find-the--$p$-value-of-the-point-estimate.">Step 3: Find the  $p$-value of the point estimate.<a class="anchor-link" href="#Step-3:-Find-the--$p$-value-of-the-point-estimate.">&#182;</a></h5><p>The point estimate of $\mu_{\overline{D}} = \mu_A - \mu_B$ is</p>
+$$\overline{d} = \bar{x}_A - \bar{x}_B = 4 - 3.5 = 0.5. $$<p>The $t$-score for this value is</p>
+$$ t = \frac{\overline{d} - \mu_{\overline{D}}}{\sigma_{\overline{D}}} = \frac{0.5 - 0}{0.5618} = 0.8900. $$<p>Since the alternative hypothesis $H_a$ uses a greather-than symbol, we will perform a right-tailed test. The $p$-value is $P(\overline{d} \geq 0.5) = P(t \geq 0.8900)$.</p>
 
 </div>
 </div>
@@ -13204,7 +13212,7 @@ $$ t = \frac{d - \mu_D}{\sigma_D} = \frac{0.5 - 0}{0.5618} = 0.8900. $$<p>Since 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So the $p$-value is $P(d \geq 0.5) = P(t \geq 0.8900) = 0.1997$. In other words, if the null hypothesis <em>is</em> true, there is a 19.97% chance that the mean number of math classes taken by the students randomly sampled from college A is at least 0.5 classes more than the mean number of math classes taken by the students randomly sampled from college B.</p>
+<p>So the $p$-value is $P(\overline{d} \geq 0.5) = P(t \geq 0.8900) = 0.1997$. In other words, if the null hypothesis <em>is</em> true, there is a 19.97% chance that the mean number of math classes taken by the students randomly sampled from college A is at least 0.5 classes more than the mean number of math classes taken by the students randomly sampled from college B.</p>
 <h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>We are testing the hypothesis at the 1% significance level, meaning that $\alpha = 0.01$. Since</p>
 $$p\text{-value} = 0.1997 \geq 0.01 = \alpha,$$<p>we do not reject the null hypothesis.</p>
 <p>The evidence is insufficient to conclude that the average number of math classes taken by graduates from college A is greater than the average number of math classes taken by graduates from college B.</p>
@@ -13216,6 +13224,13 @@ $$p\text{-value} = 0.1997 \geq 0.01 = \alpha,$$<p>we do not reject the null hypo
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-5.2">Example 5.2<a class="anchor-link" href="#Example-5.2">&#182;</a></h3><p>A professor at a large community college wanted to determine whether there is a difference in the means of final exam scores between students who took his statistics course online and the students who took his face-to-face statistics class. The randomly selected final exam scores for the two courses are listed below. Test whether or not the exam scores are different at the 5% significance level.</p>
 <p><strong>Sample of 30 final exam scores from the online class:</strong></p>
 <p>67.6, 70.66, 94.1, 41.2, 38.22, 88.2, 85.3, 61.8, 64.7, 55.9, 88.2, 55.9, 82.4, 70.6, 88.2, 91.2, 58.8, 97.1, 73.5, 91.2, 85.3, 94.1, 73.5, 61.8, 64.7, 82.4, 79.4, 64.7, 35.5, 79.4</p>
@@ -13227,8 +13242,8 @@ H_0:&amp;\ \mu_1 - \mu_2 = 0 \\
 H_a:&amp;\ \mu_1 - \mu_2 \neq 0
 \end{align}$$<h5 id="Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-point-estimates.">Step 2: Assuming the null hypothesis is true, determine the features of the distribution of point estimates.<a class="anchor-link" href="#Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-point-estimates.">&#182;</a></h5><p>Assuming the null hypothesis is true, the point estimates have a $t$-distribution. The degrees of freedom of the distribution is the smaller of $n_1 - 1$ and $n_2 - 2$. But in this case, both samples have the same size: $n_1 = 30 = n_2$. So the degrees of freedom is</p>
 $$ df = n_1 - 1 = n_2 - 1 = 30 - 1 = 29. $$<p>From the null hypothesis, we see that the mean of the distribution is</p>
-$$ \mu_D = \mu_1 - \mu_2 = 0. $$<p>The standard deviation of the distribution is given by the formula</p>
-$$ \sigma_D = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>which means we need to first calculate $s_1$ and $s_2$.</p>
+$$ \mu_{\overline{D}} = \mu_1 - \mu_2 = 0. $$<p>The standard deviation of the distribution is given by the formula</p>
+$$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>which means we need to first calculate $s_1$ and $s_2$.</p>
 <p><strong>Finding $s_1$:</strong></p>
 <p>To find $s_1$, the sample standard deviation for the online class, we first must find $\bar{x}_1$.</p>
 
@@ -13400,9 +13415,9 @@ $$ \sigma_D = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>which means we 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The sample standard deviation for the face-to-face class is $s_2 = 11.7129$.</p>
 <p>Now we can find the distribution standard deviation:</p>
-$$ \sigma_D = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} = \sqrt{\frac{16.9171^2}{30} + \frac{11.7129^2}{30}} = 3.7567. $$<h5 id="Step-3:-Find-the--$p$-value-of-the-point-estimate.">Step 3: Find the  $p$-value of the point estimate.<a class="anchor-link" href="#Step-3:-Find-the--$p$-value-of-the-point-estimate.">&#182;</a></h5><p>The point estimate of $\mu_D = \mu_1 - \mu_2$ is</p>
-$$ d = \bar{x}_1 - \bar{x}_2 = 72.8527 - 84.9467 = -12.094. $$<p>The $t$-score for the point estimate is</p>
-$$ t = \frac{d - \mu_D}{\sigma_D} = \frac{-12.094 - 0}{3.7567} = -3.2193. $$<p>Since the alternative hypothesis $H_a$ uses a not-equal-to symbol, we will perform a two-tailed test. That means that <em>half</em> the $p$-value is $P(d \leq -12.094) = P(t \leq -3.1293)$. Let's calculate using R.</p>
+$$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} = \sqrt{\frac{16.9171^2}{30} + \frac{11.7129^2}{30}} = 3.7567. $$<h5 id="Step-3:-Find-the--$p$-value-of-the-point-estimate.">Step 3: Find the  $p$-value of the point estimate.<a class="anchor-link" href="#Step-3:-Find-the--$p$-value-of-the-point-estimate.">&#182;</a></h5><p>The point estimate of $\mu_{\overline{D}} = \mu_1 - \mu_2$ is</p>
+$$ \overline{d} = \bar{x}_1 - \bar{x}_2 = 72.8527 - 84.9467 = -12.094. $$<p>The $t$-score for the point estimate is</p>
+$$ t = \frac{\overline{d} - \mu_{\overline{D}}}{\sigma_{\overline{D}}} = \frac{-12.094 - 0}{3.7567} = -3.2193. $$<p>Since the alternative hypothesis $H_a$ uses a not-equal-to symbol, we will perform a two-tailed test. That means that <em>half</em> the $p$-value is $P(\overline{d} \leq -12.094) = P(t \leq -3.1293)$. Let's calculate using R.</p>
 
 </div>
 </div>
@@ -13446,6 +13461,32 @@ $$ t = \frac{d - \mu_D}{\sigma_D} = \frac{-12.094 - 0}{3.7567} = -3.2193. $$<p>S
 $$ p\text{-value} = 2(0.0016) = 0.0032. $$<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>The level of significance for this test is 5%, so $\alpha = 0.05$. Since</p>
 $$ p\text{-value} = 0.0032 &lt; 0.05 = \alpha, $$<p>we reject the null hypothesis. The chance of getting the point estimate we did if the null hypothesis were true is so small, we think it is more likely that the null hypothesis is not true.</p>
 <p>In other words, we conclude that the average final exam score for the online statistics class does not match the average final exam score for the face-to-face statistics class.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/gcp552jsMWs?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>

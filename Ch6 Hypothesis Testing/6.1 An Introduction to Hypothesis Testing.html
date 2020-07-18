@@ -13400,19 +13400,19 @@ $$ \mu_{\overline{X}} = \mu = 65. $$<p>The distribution mean is given by the for
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So the sample standard deviation is $s = 11.2472$. We can now calculate the standard deviation of the distribution of sample means:</p>
-$$ \sigma_{\overline{X}} = \frac{s}{\sqrt{n}} = \frac{11.2472}{9} =1.2497. $$<p></p>
+$$ \sigma_{\overline{X}} = \frac{s}{\sqrt{n}} = \frac{11.2472}{\sqrt{9}} = 3.7491. $$<p></p>
 <h5 id="Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">Step 3: Assuming the Claim is True, Find the Probability of Obtaining the Point Estimate<a class="anchor-link" href="#Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">&#182;</a></h5><p>We calculated the point estimate in step 2: the sample mean is $\bar{x} =  66.6667$. The $t$-score associated with $\bar{x} = 66.6667$ is</p>
-$$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{66.6667 - 65}{1.2497} = 1.3337. $$<p>We want to find $P(\bar{x} \geq 66.6667) = P(t \geq 1.3337)$. We calculate this using R.</p>
+$$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{66.6667 - 65}{3.7491} = 0.4446. $$<p>We want to find $P(\bar{x} \geq 66.6667) = P(t \geq 0.4446)$. We calculate this using R.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pt</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">1.3337</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pt</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">0.4446</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13430,7 +13430,7 @@ $$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{66.6667
 
 
 <div class="output_html rendered_html output_subarea ">
-0.109511719550643
+0.334195519428358
 </div>
 
 </div>
@@ -13442,8 +13442,8 @@ $$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{66.6667
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(\bar{x} \geq 66.6667) = P(t \geq 1.3337) = 0.1095$. That is, assuming the claim is true, there is a 10.95% chance that our sample would have a sample mean of $66.6667$ or greater.</p>
-<h5 id="Step-4:-Make-a-Conclusion-About-the-Claim">Step 4: Make a Conclusion About the Claim<a class="anchor-link" href="#Step-4:-Make-a-Conclusion-About-the-Claim">&#182;</a></h5><p>If the claim was true, there is almost an 11% chance that we get a sample with the sample mean that we did. So the probability is small, but it isn't exceptionally small; there is a reasonably large chance that we obtain the sample we do given that the claim is true. We usually don't reject a claim unless we obtain at least a probability less than 10%. So we cannot conclude that the mean exam score is not 65 points.</p>
+<p>So $P(\bar{x} \geq 66.6667) = P(t \geq 0.4446) = 0.3342$. That is, assuming the claim is true, there is a 33.42% chance that our sample would have a sample mean of $66.6667$ or greater.</p>
+<h5 id="Step-4:-Make-a-Conclusion-About-the-Claim">Step 4: Make a Conclusion About the Claim<a class="anchor-link" href="#Step-4:-Make-a-Conclusion-About-the-Claim">&#182;</a></h5><p>If the claim is true, there is a 33.42% chance that a random sample of the population has a sample mean as extreme as $\bar{x} = 66.6667$. This isn't a small probability; there is a fairly large chance that we obtain a sample with the sample mean we do given that the claim is true. We usually don't reject a claim unless we obtain at a probability of at least less than 10%. So we cannot conclude that the mean exam score is not 65 points.</p>
 
 </div>
 </div>

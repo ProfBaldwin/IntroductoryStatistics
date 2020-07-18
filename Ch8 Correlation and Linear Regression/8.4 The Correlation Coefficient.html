@@ -13135,6 +13135,13 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-4.1">Example 4.1<a class="anchor-link" href="#Example-4.1">&#182;</a></h3><p>SCUBA divers have maximum dive times they cannot exceed when going to different depths. The data in the table show different depths with the maximum dive times in minutes. Find and interpret the correlation coefficient $r$ for the data.</p>
 <table>
 <thead><tr>
@@ -13212,6 +13219,13 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So the correlation coefficient for the data is $r = -0.9629$. Since $r$ is very close to -1, the dive depth has a very strong negative linear relationship to the maximum dive time.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>
@@ -13254,12 +13268,12 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Performing-the-Hypothesis-Test">Performing the Hypothesis Test<a class="anchor-link" href="#Performing-the-Hypothesis-Test">&#182;</a></h2><ul>
 <li>Null Hypothesis: $H_0: \rho = 0$</li>
-<li>Alternate Hypothesis: $Ha: \rho \neq 0$</li>
+<li>Alternate Hypothesis: $H_a: \rho \neq 0$</li>
 </ul>
 <p><strong>What the hypotheses mean in words:</strong></p>
 <ul>
-<li>Null Hypothesis $H_0$: The population correlation coefficient IS NOT significantly different from zero. There IS NOT a significant linear relationship(correlation) between x and y in the population.</li>
-<li>Alternate Hypothesis $H_a$: The population correlation coefficient IS significantly DIFFERENT FROM zero. There IS A SIGNIFICANT LINEAR RELATIONSHIP (correlation) between x and y in the population.</li>
+<li>Null Hypothesis $H_0$: The population correlation coefficient <em>is not</em> significantly different from zero. There <em>is not</em> a significant linear relationship(correlation) between x and y in the population.</li>
+<li>Alternate Hypothesis $H_a$: The population correlation coefficient <em>is</em> significantly different from zero. There <em>is</em> a significant linear relationship (correlation) between x and y in the population.</li>
 </ul>
 <p><strong>Using a $p$-value to make a decision:</strong></p>
 <p>If the $p$-value is less than the significance level $\alpha$:</p>
@@ -13267,10 +13281,10 @@ div#notebook {
 <li>Decision: Reject the null hypothesis.</li>
 <li>Conclusion: "There is sufficient evidence to conclude that there is a significant linear relationship between $x$ and $y$ because the correlation coefficient is significantly different from zero."</li>
 </ul>
-<p>If the $p$-value is NOT less than the significance level $\alpha$:</p>
+<p>If the $p$-value is <em>not</em> less than the significance level $\alpha$:</p>
 <ul>
-<li>Decision: DO NOT REJECT the null hypothesis.</li>
-<li>Conclusion: "There is insufficient evidence to conclude that there is a significant linear relationship between $x$ and $y$ because the correlation coefficient is NOT significantly different from zero."</li>
+<li>Decision: Do not reject the null hypothesis.</li>
+<li>Conclusion: "There is insufficient evidence to conclude that there is a significant linear relationship between $x$ and $y$ because the correlation coefficient is <em>not</em> significantly different from zero."</li>
 </ul>
 <p>Calculation Notes:</p>
 <ul>
@@ -13295,7 +13309,14 @@ $$ t = \frac{r\sqrt{n - 2}}{\sqrt{1 - r^2}}. $$</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3 id="Example-4.1">Example 4.1<a class="anchor-link" href="#Example-4.1">&#182;</a></h3><p>A random sample of 11 statistics students produced the following data, where $x$ is the third exam score out of 80, and $y$ is the final exam score out of 200.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-4.2">Example 4.2<a class="anchor-link" href="#Example-4.2">&#182;</a></h3><p>A random sample of 11 statistics students produced the following data, where $x$ is the third exam score out of 80, and $y$ is the final exam score out of 200.</p>
 <table>
 <thead><tr>
 <th>x (third exam score)</th>
@@ -13442,10 +13463,43 @@ $$ t = \frac{r\sqrt{n - 2}}{\sqrt{1 - r^2}} = \frac{0.6631\sqrt{11 - 2}}{\sqrt{1
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So half the $p$-value is $P(t \geq 2.6576) = 0.0131$. This means that the whole $p$-value is</p>
-$$p\text{-value} = 2(0.0131) = 0.0262. $$<p>So assuming that the null hypothesis is true, there is no correlation in the population, there would still a 2.62% chance that a random sample of 11 data points would have a correlation coefficient at least as extreme as $r = 0.6631$.</p>
+$$p\text{-value} = 2(0.0131) = 0.0262. $$<p>So assuming that the null hypothesis is true, that there is no correlation in the population, there would still a 2.62% chance that a random sample of 11 data points would have a correlation coefficient at least as extreme as $r = 0.6631$.</p>
 <h5 id="Part-4:-Make-a-conclusion-about-the-null-hypothesis.">Part 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Part-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>We're performing the test at the 1% significance level, so $\alpha = 0.01$. Thus, since</p>
 $$p\text{-value} = 0.0262 \geq 0.01 = \alpha, $$<p>the evidence is not sufficient to reject the null hypothesis.</p>
 <p>We conclude that it is possible that there is no linear correlation in the population between a student's third exam score and their final exam score.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-4.3">Example 4.3<a class="anchor-link" href="#Example-4.3">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ieQKPsBpAVI?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>

@@ -29,12 +29,16 @@
 * [6.2 Hypotheses and Errors](Ch6 Hypothesis Testing/6.2 Hypotheses and Errors.html)
 * [6.3 Rare Events, the Sample, Decision, and Conclusion](Ch6 Hypothesis Testing/6.3 Rare Events, the Sample, Decision and Conclusion.html)
 * [6.4 Hypothesis Tests of One Sample](Ch6 Hypothesis Testing/6.4 Hypothesis Tests of One Sample.html)
-* [6.5 Hypothesis Testing Two Population Means](Ch6 Hypothesis Testing/6.5 Hypothesis Testing Two Population Means.html)
 # Chapter 7: The Chi-Square Distribution
 * [7.1 The Chi-Square Distribution](Ch7 The Chi-Square Distribution/7.1 The Chi-Square Distribution.html)
-* [7.2 Goodness-of-Fit Test](Ch7 The Chi-Square Distribution/7.2 Goodness-of-Fit Test.html)
+* [7.2 Hypothesis Testing for the Population Variance](Ch7 The Chi-Square Distribution/7.2 Hypothesis Testing for the Population Variance.html)
+* [7.3 Goodness-of-Fit Test](Ch7 The Chi-Square Distribution/7.3 Goodness-of-Fit Test.html)
 # Chapter 8: Correlation and Linear Regression
 * [8.1 Scatter Plots](Ch8 Correlation and Linear Regression/8.1 Scatter Plots.html)
 * [8.2 Linear Equations](Ch8 Correlation and Linear Regression/8.2 Linear Equations.html)
 * [8.3 The Regression Equation](Ch8 Correlation and Linear Regression/8.3 The Regression Equation.html)
 * [8.4 The Correlation Coefficient](Ch8 Correlation and Linear Regression/8.4 The Correlation Coefficient.html)
+# Chapter 9: Hypothesis Tests of Two or More Populations
+* [9.1 Hypothesis Testing Two Population Means](Ch9 Hypothesis Tests of Two or More Populations/9.1 Hypothesis Testing Two Population Means.html)
+* [9.2 Hypothesis Testing Two Population Variances](Ch9 Hypothesis Tests of Two or More Populations/9.2 Hypothesis Testing Two Population Variances.html)
+* [9.3 ANOVA](Ch9 Hypothesis Tests of Two or More Populations/9.3 ANOVA.html)

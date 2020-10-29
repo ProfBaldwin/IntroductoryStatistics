@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>7.1 The Chi-Square Distribution</title>
+<title>7.3 Goodness-of-Fit Test</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13090,7 +13090,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="7.1-The-$\chi^2$-Distribution">7.1 The $\chi^2$-Distribution<a class="anchor-link" href="#7.1-The-$\chi^2$-Distribution">&#182;</a></h1>
+<h1 id="7.3-Goodness-of-Fit-Test">7.3 Goodness of Fit Test<a class="anchor-link" href="#7.3-Goodness-of-Fit-Test">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13098,8 +13098,10 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
-<li>Analyze categorical data using $2\times 2$ tables and chi-square analysis.</li>
-<li>Analyze an application in the disciplins business, social sciences, psychology, life sciences, health science, and education, and utilize te correct statistical processes to arrive at a solution.</li>
+<li>Analyze a problem involving hypothesis testing, apply the correct techniques, and come to a conclusion for a claim about population proportion and mean, all this while using appropriate levels of statistical significance, $p$-values, and determining what would constitute a type I and type II error.</li>
+<li>Analyze categorical data using $2 \times 2$ tables and chi-square analysis.</li>
+<li>Conduct and interpret (a) tests involving non-parametric methods or (b) conduct and analyze process data using the techniques of Statistical Process Control.</li>
+<li>Analyze an application in the disciplines business, social sciences, psychology, life sciences, health science, and education, and utilize the correct statistical processes to arrive at a solution.</li>
 </ul>
 
 </div>
@@ -13108,191 +13110,28 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-$\chi^2$-Distribution">The $\chi^2$-Distribution<a class="anchor-link" href="#The-$\chi^2$-Distribution">&#182;</a></h2><p>For the $\chi^2$-distribution (that is, the chi-square distribution), the population mean is $\mu = df$, where $df$ is the degrees of freedom. The population standard deviation is $\sigma = \sqrt{2(df)}$.</p>
-<p>The random variable for a $\chi^2$-distribution with $k$ degrees of freedom is the sum of $k$ independent, squared standard normal variables:</p>
-$$ \chi^2 = Z_1^2 + Z_2^2 + \cdots + Z_k^2. $$<p>The curve of the $\chi^2$-distribution is nonsymmetrical. There is a different $\chi^2$ curve for each $df$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img alt="Graphs of chi-square distributions with df=2, df=8, and df=24." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAANlBMVEUAAAAAAP9NTU1oaGh8
-fHyMjIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD/AAD////xw1/KAAAACXBIWXMA
-ABJ0AAASdAHeZh94AAAezklEQVR4nO3d6WKiShhF0boI4gjt+7/sFRAFRcJwKOrDvX50J2m1
-iKndTErcDcBsbu0FALaAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECA
-kAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAA
-AUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJBGu+x3zkXJqfrMudZT+Pbp
-7XbeR87t0qt2GdxDnGZfxi3tP+71/bbv9/rrVmjhyRorqSdxdCk+/SOktL71QboQ7uXcOW7h
-ErmPe3277ee9CGkUnqyR4sYcLlYz/SEdXze+KJeisRCuq+euZRkYUv2vhDQKT9Y49/VRdMxv
-t6xIJLn9Nd/uG4Fpceu4urHMY9T8XGxl/nGjwV8f8q/4gidtlOt93j72Sq67Q/FRMe8u9072
-1Ze/rKDy+oNsf99jOr6vG+q/T8V2467a77l/lO1cWtw5jVxU7wy1H7dM9fz6Qn4o1pjl/ttj
-fdV8pMaox52L3ha5/Lt1r2qE832R3f78GvhcfLvVTl9jvB9HSKPcd3mO7a/c51G1HxTV07/5
-r/dpnjS36S7VPE27Q3puNl6qr93vHd/biz63DV/DnO+T+vmF+qbF3VpJ7OovPe4cd2wVfgmp
-Xqik/e2W27XN8X4cIY1yn1VZ+yuvfZX949Pmv5b7SNH+VN8pet28eevq7/uN47yMNXk+8Ol1
-n+Ym3GuY+7pu9/zCvrxDHhe5t5KoHuk1avMh+0N6HlupSmp/u83xfhwhjfLWSfWV4vBd+jYr
-a/U83JWbRqf7re4fnKLOkHaPSp8TucjqkVdezdmO5WhOe1c9Qiuu1yM1QiqW4hxVD9leiLdP
-7ys8d98nzA/uuQlZ3HffNd5PI6RROkMqJlj+Ng2fisMBpWJvJ3nUcOqctO1BHg9c3OdRQfJ+
-k/atb9XKq96baT166xh5/fm5fbikc5n29comfW5CNr7d9ng/jZBG6Qyp+XdzY+px0+y0L7fO
-jo27fwspO6Xxa9OqXo18btt9Cenw2Opqn1uqH+nj8HdrG657mZ73zbpu3B7vpxHSKLtqJ7vh
-75AKWVJu/fwR0qlee71NWffxeK9P2ptx9fnfKPt89Kkh3Xpu3BrvpxHSKJ1H7Zp/t0OK6v/P
-X7vy5SfvG4LV38UG325/vLanbPSxErw153frqN39kU/VUbb4c9Gay9hcQw1eI0Udj9kc76cR
-0iiX13++l9d5pNvtYxpW9o9jefWWUfLYOzm2p/TF1Qcbzq/HqB+pvk/La5i4dR6pdN53FtJc
-xnJP7bWP1FiIt3sln/tIbwvwGu+n/fwTMNLzlQ3F7kHPrnqlOOZVnvYsjpDtn0ftjvV2WlQe
-g7hErYn/tkY6VYcFT63/9et/vCSto4W7535VvfbIb50hFSUVy3T4WIi3e3Uctbt9G++nEdI4
-eeNMUNeOyNv/za+zMNWB4rfzSPvWp3E5o8/trBr3aZyRbTxscy12n/ZxVh4DSB93TG/dIT2+
-g/xjId7v9XptYes8Wdd4P42QRsqfM2vXeilDd0iveRiV8/1aVVG/siFzzU8v9U3LZp6PdH58
-uTlX3zt63/kvV157195Xaixj0rhveyE+7lV/B+03V3SN99MIabTqHUbNF581/n4Pqbq1Sw6P
-gw7Fa+3i8/Nm1+LT03Ojbl+8DOKalRuNr0fK0+KVRq0dpbqiOM3bi1Hur8SPAyJJe7+muYzH
-18sD3xbi417ld/Dl222P98sIaRUfvcE4fp6rIKSt4ee5CkLaGn6eqyCkreHnuQpC2hp+noAA
-IQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEB
-AoQECBASIEBIgMDMkI4fF9MFftHUkFq/quDnfxUBft6skFJXXMM9S/nl8Ph1s0KKql8zlfPL
-4fHrZoX0+nUhqsUBbJoV0r4O6ed/8SF+3fSQksPxXP5S3zzlaAN+3fSQnr919PGrSIEfNnnv
-5no9HpOkPOSQ0hF+HYcJAAFCAgQICRCQhMR5JPy6hUJygGErhbT6EIASIQEChAQIeA3pckjK
-zckkvSw1BLAKjyHlu8auWbzIEMBKPIaUuuh0LT/KzlH/i1YJCcZ4DCly1+fH1/63URASjPEY
-UutQe/9xd0KCMayRAAG/+0jnrPyIfSRsjc/D33HjqN2u9w1JhARj/J5HSsvzSFFy4DwStoVX
-NgAChAQIEBIgQEiAQKAhURJsISRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIE
-CAkQICRAgJAQKo+/k2WAvxZ2wvc36VkZNwQhIax3pRESrApqEhASrApqEhASrApqEhASrApq
-EhASrApqEhASrApqEhASrApqEhASrApqEhgNKawnEasIag4QEqwKag4QEqwKag4QEqwKag4Q
-EqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqxaZA6Urz7L986l7a8fdy5K
-8+kLQ0gI1XIhJc65Q+vLaXmBk+h7SYQEq5YLybms/dWr298bOrr95IUhJIRqyZDevpq41z9O
-WxhCQqjUcyCN7jtG91a+X6eOkLBB4jkQF/kkr5A+r/2Yu3jywhASQtUxB2ZcFvXkouvtGr02
-7T5vfXTnMQsz6t81dxk/BCFBOwcSd7n/ee7eRyplUTJ9YQgJodLOAdc4ntAZUh5937AjJNi1
-cEjvm3bxbs7CEBJC5TWkbBdnPfcmJJil3kcqjiRcvmzanXsO2A1aGEJCqLRz4Px+1K4p+6sj
-QoJZ4jlQvMDO7btD2v/568QICVap58Dh8cqGjpD+/r18VkOiJAQ1BQgJVgU1BQgJVgU1BQgJ
-VgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVi0yBb5cIDJPo21e
-IJKQsFxIHxeIzKLqApHf35JESLBquZA+LhC5L1dQ6QYvEElIWDKkrq92veFv8MIQEkKlngI9
-F4iMHiFFkxeGkBAq8RTou0Dk4bFpd/h6b0KCVR1T4N9AHY/Wf4HIY3G0ITqOWphR/665y4Qh
-COnnaadA/wUiD2VR31dIhASztFOg9wKRx2LTLt+776skQoJVC4fU3LTbueJcbO6+XyOSkGCV
-x5A4/I3tUu8j9Vwgsjr8nXP4GxuknQK9F4hMXfE6u/T9NzSPWBhCQqjEU6DvApHVSaa+y60S
-EqxST4GeC0SWL3uIvq+PDIdEST8vqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlA
-SLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLBqkRnw5Uqrt+OueaXVy8fYhASrlgvp
-40qrt7S60uqjpDwiJGzGciF9XGn16vZ5ceWGx5VWk8+XhxMSrFoypLevJu71j8WVuwgJ26Ge
-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
-IQlpvixK/A55TKJy693bkOU2jt+Q3D3dW16uef0NWRxs2BdPLSGtEFIexb6HLLbnPc6w2644
-JOw3pEpeHIH2F1Kxj5RNG3LZhYvWCsnnwPHO+5CPY0u+htyXx7CqYTz/SItxfA3ZqGf8kD6O
-2mW+Dp7dnt+6v4GzXZx5HrL0OlC4/JCvq7xv+ttsnMsYP+SyIR3K/8rO/b+tQuoRkreBz8/f
-++lryOo8UrkB4mvIZki+v83E35DVOFnxEx0/5LZe2fAMydfA2ev353p9ZUOeFPtIfp9ev69s
-SItJnJcnRv39MHd5cbDhFN4rG267Ab+sWareqvU08P71X7W37zV6jeP16X08tZ7GzKtvM/U4
-5H09NP2ZXTikvHwR7bJjtNQheRq4sc3j73u9j7OrTvt7fXofT62vMfMVvs1zXI8zekh/x9OA
-DSMkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAg
-JECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRA
-gJAAAUICBAgJECAkk2J3uf95cfu1FwQPhGRS5qL7n1GUr70geCAkm47ucDu409qLgRohGRW7
-o0vWXgg8EZJRmXMuW3sh8ERIVqUuXXsR8EJIRrFGCgshGZXc95HitRcCT4Rk0+m+YXdwx7UX
-AzVCMimPyvNIbNwFg5BM2j9e2cDGXSgICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAk
-QICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECA
-kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To find the probability to the left or right of a value when using the $\chi^2$-distribution, we will use the R function</p>
-<div class="highlight"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">lower.tail</span><span class="p">)</span>
-</pre></div>
-<p>where we want the probability to the left or right of <code>q</code>, the degrees of freedom is <code>df</code>, and <code>lower.tail</code> is set to either <code>TRUE</code> or <code>FALSE</code> depending on whether we want to calculate the probability to the left or right of the value.</p>
+<p>In this type of hypothesis test, you determine whether the data <strong>"fit"</strong> a particular distribution or not. For example, you may suspect your unknown data fit a binomial distribution. You use a chi-square test (meaning the distribution for the hypothesis test is chi-square) to determine if there is a fit or not. <strong>The null and the alternative hypotheses for this test may be written in sentences or may be stated as equations or inequalities.</strong></p>
+<p>The test statistic for a goodness-of-fit test is:</p>
+$$ \chi^2 = \sum \frac{(O - E)^2}{E}, $$<p>where</p>
+<ul>
+<li>$O$ = <strong>observed values</strong> (sample data)</li>
+<li>$E$ = <strong>expected values</strong> (from theory)</li>
+</ul>
+<p><strong>The observed values are the data values and the expected values are the values you would expect to get if the null hypothesis were true.</strong> Generally, the hypotheses of a goodness-of-fit test are</p>
+$$\begin{align}
+H_0:&amp;\ \text{The actual population fits the expected distribution.} \\
+H_a:&amp;\ \text{The actual population does not fit the expected distribution.}
+\end{align}$$<p>These hypotheses should be expressed in the context of the particular problem.</p>
+<p>The number of degrees of freedom is $df = \text{number of categories} - 1$.</p>
+<p><strong>The goodness-of-fit test is almost always right-tailed.</strong> If the observed values and the corresponding expected values are not close to each other, then the test statistic can get very large and will be way out in the right tail of the chi-square curve.</p>
+<p><strong>Note:</strong> The expected value for each cell needs to be at least five in order for you to use this test.</p>
+<p>The fundamental steps for performing a goodness-of-fit hypothesis test remain unchanged:</p>
+<ol>
+<li>State the null and alternative hypotheses.</li>
+<li>Assuming the null hypothesis is true, determine the features of the distribution used in the hypothesis test.</li>
+<li>Find the $p$-value.</li>
+<li>Make a conclusion about the null hypothesis.</li>
+</ol>
 
 </div>
 </div>
@@ -13308,23 +13147,121 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-1.1">Example 1.1<a class="anchor-link" href="#Example-1.1">&#182;</a></h3><p>Consider a $\chi^2$-distribution with 4 degrees of freedom.</p>
-<ol>
-<li>Find $P(\chi^2 &lt; 2)$.</li>
-<li>Find $P(\chi^2 &gt; 6)$.</li>
-<li>Find $P(3 &lt; \chi^2 &lt; 5)$.</li>
-</ol>
-<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5><p>We can calculate this simply using R:</p>
+<h3 id="Example-2.1">Example 2.1<a class="anchor-link" href="#Example-2.1">&#182;</a></h3><p>Absenteeism of college students from math classes is a major concern to math instructors because missing class appears to increase the drop rate. Suppose that a study was done to determine if the actual student absenteeism rate follows faculty perception. The faculty expected that a group of 100 students would miss class according to the table below</p>
+<table>
+<thead><tr>
+<th>Number of Absences per term</th>
+<th>Expected Number of Students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-2</td>
+<td>50</td>
+</tr>
+<tr>
+<td>3-5</td>
+<td>30</td>
+</tr>
+<tr>
+<td>6-8</td>
+<td>12</td>
+</tr>
+<tr>
+<td>9+</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>A random survey across all mathematics courses was then done to determine the actual number of absences in a course. The table below displays the results of the survey.</p>
+<table>
+<thead><tr>
+<th>Number of Absences per term</th>
+<th>Actual Number of Students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-2</td>
+<td>35</td>
+</tr>
+<tr>
+<td>3-5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>6-8</td>
+<td>20</td>
+</tr>
+<tr>
+<td>9+</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>Perform a goodness-of-fit test at a significance level of 1% to determine whether or not student absenteeism fits faculty perception.</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-null-and-alternative-hypotheses.">Step 1: State the null and alternative hypotheses.<a class="anchor-link" href="#Step-1:-State-the-null-and-alternative-hypotheses.">&#182;</a></h5><p>The null and alternative hypotheses are</p>
+$$\begin{align}
+H_0:&amp;\ \text{Student absenteeism fits faculty perception} \\
+H_a:&amp;\ \text{Student absenteeism does not fit faculty perception}
+\end{align}$$<h5 id="Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">Step 2: Assuming the null hypothesis is true, determine the features of the distribution used in the hypothesis test.<a class="anchor-link" href="#Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">&#182;</a></h5><p>This is a goodness-of-fit test. We are testing to see if student absenteeism is distributed in the same way that faculty expect it to be distributed; that is, we are testing whether or not faculty perception of student absenteeism is a <em>good fit</em> for actual student absenteeism. Since this is a goodness-of-fit test, we will use a chi-square distribution.</p>
+<p>The degrees of freedom of the distribution is</p>
+$$ df = \text{number of categories} - 1 = 4 - 1 = 3. $$<p>Note, to calculate the degrees of freedom for a goodness-of-fit test, we use the number of categories (in this case, the categories are 0-2, 3-5, 6-8, and 9+, for a total of 4 categories), <em>not</em> the sample size.</p>
+<h5 id="Step-3:-Find-the--$p$-value.">Step 3: Find the  $p$-value.<a class="anchor-link" href="#Step-3:-Find-the--$p$-value.">&#182;</a></h5><p>To find the $p$-value, we first must calculate the test statistic</p>
+$$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actual number of students in each category. The expected values $E$ are the numbers of students the faculty expect to be in each category. These value are found in the two tables above. We will use R to calculate the test statistic.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+
+<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span> <span class="o">/</span> <span class="n">E</span> <span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">chisq</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 14.29167
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The test statistic is $\chi^2 = 14.2917$. Since goodness-of-fit tests are almost always right-tailed tests, we will perform a right-tailed test to find the $p$-value. That means the $p$-value is $P(\chi^2 \geq 14.2917)$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">14.2917</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13342,7 +13279,7 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 
 
 <div class="output_html rendered_html output_subarea ">
-0.264241117657115
+0.00253382515522107
 </div>
 
 </div>
@@ -13354,18 +13291,144 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P( \chi^2 &lt; 2) = 0.2642$.</p>
-<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Again, this is simple using R:</p>
+<p>So $P(\chi^2 \geq 14.2917) = 0.0025$. That is, if student absenteeism actually does fit faculty perception, then there is only a 0.25% chance that the values we observe in our sample are as extreme as they are.</p>
+<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>We are conducting this hypothesis test at the 1% level of significance, so $\alpha = 0.01$. Since</p>
+$$ p\text{-value} = 0.0025 &lt; 0.01 = \alpha, $$<p>we reject the null hypothesis. We conclude that the actual student absenteeism does not fit faculty perception.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2.2">Example 2.2<a class="anchor-link" href="#Example-2.2">&#182;</a></h3><p>Suppose you roll a six-sided die 80 times, with the following results:</p>
+<table>
+<thead><tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of Rolls</td>
+<td>16</td>
+<td>21</td>
+<td>14</td>
+<td>9</td>
+<td>7</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p>Use a goodness-of-fit test with a 5% level of significance to determine whether or not the die is fair.</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1:-State-the-null-and-alternative-hypotheses.">Part 1: State the null and alternative hypotheses.<a class="anchor-link" href="#Part-1:-State-the-null-and-alternative-hypotheses.">&#182;</a></h5><p>The null hypothesis is that the true distribution of rolls of your die matches the distribution of rolls of a fair die. This could be said more succinctly as:
+$$\begin{align}
+H_0:&amp;\ \text{The die is fair.} \\
+H_a:&amp;\ \text{The die is not fair.}
+\end{align}$$</p>
+<h5 id="Part-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">Part 2: Assuming the null hypothesis is true, determine the features of the distribution used in the hypothesis test.<a class="anchor-link" href="#Part-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-used-in-the-hypothesis-test.">&#182;</a></h5><p>Since we want to see if the distribution of rolls of a fair die is a <em>good fit</em> for the distribution of rolls of your die, we will use a chi-square distribution to test the hypothesis. Since there are six categories, the degrees of freedom is</p>
+$$ df = \text{number of categories} - 1 = 6 - 1 = 5.$$<h4 id="Part-3:-Find-the-$p$-value.">Part 3: Find the $p$-value.<a class="anchor-link" href="#Part-3:-Find-the-$p$-value.">&#182;</a></h4><p>To find the $p$-value, we first must calculate the test statistic</p>
+$$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>Note that the table above are the observed values. But if we roll a fair die 80 times, we <em>expect</em> to roll each number $\frac{1}{6}80 = 13.3333$ times:</p>
+<table>
+<thead><tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observed Number of Rolls</td>
+<td>16</td>
+<td>21</td>
+<td>14</td>
+<td>9</td>
+<td>7</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Expected Number of Rolls</td>
+<td>13.3333</td>
+<td>13.3333</td>
+<td>13.3333</td>
+<td>13.3333</td>
+<td>13.3333</td>
+<td>13.3333</td>
+</tr>
+</tbody>
+</table>
+<p>Let's use R to calculate the test statistic $\chi^2$:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">21</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">13</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">)</span>
+
+<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span><span class="o">/</span><span class="n">E</span> <span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">chisq</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 9.400024
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The test statistic is $\chi^2 = 9.400$.</p>
+<p>Since a goodness-of-fit test is almost always right-tailed, the $p$-value we want to find is equal to $P(\chi^2 \geq 9.400)$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">9.400</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13383,7 +13446,7 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 
 
 <div class="output_html rendered_html output_subarea ">
-0.199148273471456
+0.0941343840306237
 </div>
 
 </div>
@@ -13395,48 +13458,10 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(\chi^2 &gt; 6) = 0.1991$.</p>
-<h5 id="Part-3">Part 3<a class="anchor-link" href="#Part-3">&#182;</a></h5><p>To find $P(3 &lt; \chi^2 &lt; 5)$, we will first calculate <em>all</em> the area to the left of $\chi^2 = 5$, then subtract the excess area to the left of $\chi^2 = 3$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0.270527905187429
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(3 &lt; \chi^2 &lt; 5) = 0.2705$.</p>
+<p>So the $p$-value is $P(\chi^2 \geq 9.400) = 0.0941$. That is, assuming the die is fair, there is a 9.41% chance of obtaining the sample we did.</p>
+<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>Since the level of significance for this hypothesis test is 5%, the value of $\alpha = 0.05$. Because</p>
+$$ p\text{-value} = 0.091 \geq 0.05 = \alpha, $$<p>we do not reject the null hypothesis.</p>
+<p>There is not enough evidence to conclude that your die is not fair.</p>
 
 </div>
 </div>
@@ -13455,7 +13480,7 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="videoWrapper">
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/DFXcInJfeKc?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/5lHTEfwyg5M?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>

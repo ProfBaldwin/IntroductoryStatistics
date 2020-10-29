@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>7.1 The Chi-Square Distribution</title>
+<title>7.2 Hypothesis Testing for the Population Variance</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13090,209 +13090,31 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="7.1-The-$\chi^2$-Distribution">7.1 The $\chi^2$-Distribution<a class="anchor-link" href="#7.1-The-$\chi^2$-Distribution">&#182;</a></h1>
+<h1 id="7.2-Hypothesis-Testing-for-the-Population-Variance">7.2 Hypothesis Testing for the Population Variance<a class="anchor-link" href="#7.2-Hypothesis-Testing-for-the-Population-Variance">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
-<li>Analyze categorical data using $2\times 2$ tables and chi-square analysis.</li>
-<li>Analyze an application in the disciplins business, social sciences, psychology, life sciences, health science, and education, and utilize te correct statistical processes to arrive at a solution.</li>
-</ul>
-
+<h2 id="Variance-and-the-Test-Statistic">Variance and the Test Statistic<a class="anchor-link" href="#Variance-and-the-Test-Statistic">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-$\chi^2$-Distribution">The $\chi^2$-Distribution<a class="anchor-link" href="#The-$\chi^2$-Distribution">&#182;</a></h2><p>For the $\chi^2$-distribution (that is, the chi-square distribution), the population mean is $\mu = df$, where $df$ is the degrees of freedom. The population standard deviation is $\sigma = \sqrt{2(df)}$.</p>
-<p>The random variable for a $\chi^2$-distribution with $k$ degrees of freedom is the sum of $k$ independent, squared standard normal variables:</p>
-$$ \chi^2 = Z_1^2 + Z_2^2 + \cdots + Z_k^2. $$<p>The curve of the $\chi^2$-distribution is nonsymmetrical. There is a different $\chi^2$ curve for each $df$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img alt="Graphs of chi-square distributions with df=2, df=8, and df=24." src="data:image/png;base64,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
-NgAChAQIEBIgQEiAQKAhURJsISRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIE
-CAkQICRAgJAQKo+/k2WAvxZ2wvc36VkZNwQhIax3pRESrApqEhASrApqEhASrApqEhASrApq
-EhASrApqEhASrApqEhASrApqEhASrApqEhgNKawnEasIag4QEqwKag4QEqwKag4QEqwKag4Q
-EqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqxaZA6Urz7L986l7a8fdy5K
-8+kLQ0gI1XIhJc65Q+vLaXmBk+h7SYQEq5YLybms/dWr298bOrr95IUhJIRqyZDevpq41z9O
-WxhCQqjUcyCN7jtG91a+X6eOkLBB4jkQF/kkr5A+r/2Yu3jywhASQtUxB2ZcFvXkouvtGr02
-7T5vfXTnMQsz6t81dxk/BCFBOwcSd7n/ee7eRyplUTJ9YQgJodLOAdc4ntAZUh5937AjJNi1
-cEjvm3bxbs7CEBJC5TWkbBdnPfcmJJil3kcqjiRcvmzanXsO2A1aGEJCqLRz4Px+1K4p+6sj
-QoJZ4jlQvMDO7btD2v/568QICVap58Dh8cqGjpD+/r18VkOiJAQ1BQgJVgU1BQgJVgU1BQgJ
-VgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVi0yBb5cIDJPo21e
-IJKQsFxIHxeIzKLqApHf35JESLBquZA+LhC5L1dQ6QYvEElIWDKkrq92veFv8MIQEkKlngI9
-F4iMHiFFkxeGkBAq8RTou0Dk4bFpd/h6b0KCVR1T4N9AHY/Wf4HIY3G0ITqOWphR/665y4Qh
-COnnaadA/wUiD2VR31dIhASztFOg9wKRx2LTLt+776skQoJVC4fU3LTbueJcbO6+XyOSkGCV
-x5A4/I3tUu8j9Vwgsjr8nXP4GxuknQK9F4hMXfE6u/T9NzSPWBhCQqjEU6DvApHVSaa+y60S
-EqxST4GeC0SWL3uIvq+PDIdEST8vqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlA
-SLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLBqkRnw5Uqrt+OueaXVy8fYhASrlgvp
-40qrt7S60uqjpDwiJGzGciF9XGn16vZ5ceWGx5VWk8+XhxMSrFoypLevJu71j8WVuwgJ26Ge
-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
-IQlpvixK/A55TKJy693bkOU2jt+Q3D3dW16uef0NWRxs2BdPLSGtEFIexb6HLLbnPc6w2644
-JOw3pEpeHIH2F1Kxj5RNG3LZhYvWCsnnwPHO+5CPY0u+htyXx7CqYTz/SItxfA3ZqGf8kD6O
-2mW+Dp7dnt+6v4GzXZx5HrL0OlC4/JCvq7xv+ttsnMsYP+SyIR3K/8rO/b+tQuoRkreBz8/f
-++lryOo8UrkB4mvIZki+v83E35DVOFnxEx0/5LZe2fAMydfA2ev353p9ZUOeFPtIfp9ev69s
-SItJnJcnRv39MHd5cbDhFN4rG267Ab+sWareqvU08P71X7W37zV6jeP16X08tZ7GzKtvM/U4
-5H09NP2ZXTikvHwR7bJjtNQheRq4sc3j73u9j7OrTvt7fXofT62vMfMVvs1zXI8zekh/x9OA
-DSMkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAg
-JECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRA
-gJAAAUICBAgJECAkk2J3uf95cfu1FwQPhGRS5qL7n1GUr70geCAkm47ucDu409qLgRohGRW7
-o0vWXgg8EZJRmXMuW3sh8ERIVqUuXXsR8EJIRrFGCgshGZXc95HitRcCT4Rk0+m+YXdwx7UX
-AzVCMimPyvNIbNwFg5BM2j9e2cDGXSgICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAk
-QICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECA
-kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To find the probability to the left or right of a value when using the $\chi^2$-distribution, we will use the R function</p>
-<div class="highlight"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">lower.tail</span><span class="p">)</span>
-</pre></div>
-<p>where we want the probability to the left or right of <code>q</code>, the degrees of freedom is <code>df</code>, and <code>lower.tail</code> is set to either <code>TRUE</code> or <code>FALSE</code> depending on whether we want to calculate the probability to the left or right of the value.</p>
+<p>In the previous chapter, we learned how we test a claim about the mean or the proportion of a population. The process for testing a claim about the variance of a population is very similar.</p>
+<p>(Recall that the <strong>variance</strong> is simply the square of the standard deviation; that is, if $\sigma$ is the population standard deviation, then $\sigma^2$ is the population variance. While the variance and the standard deviation are not quite the same, the two parameters both measure how far data is from the mean. Testing the population variance is the same as testing the population standard deviation.)</p>
+<p>Unlike our tests for the population mean or the population proportion, our test for the population variance uses a test statistic with a $\chi^2$-distribution. The test statistic is</p>
+$$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}, $$<p>where $n$ is the sample size, $s$ is the sample standard deviation, and $\sigma$ is the hypothesized population standard deviation. The degrees of freedom of the $\chi^2$-distribution of point estimates is one less than the sample size: $df = n - 1$. The population must be normally distributed for the test to be valid.</p>
+<p>The general steps for completing a hypothesis test have not changed:</p>
+<ol>
+<li>State the null and alternative hypotheses.</li>
+<li>Assuming the null hypothesis is true, determine the features of the distribution of test statistics.</li>
+<li>Find the $p$-value of the test statistic.</li>
+<li>Make a conclusion about the null hypothesis.</li>
+</ol>
 
 </div>
 </div>
@@ -13308,23 +13130,36 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-1.1">Example 1.1<a class="anchor-link" href="#Example-1.1">&#182;</a></h3><p>Consider a $\chi^2$-distribution with 4 degrees of freedom.</p>
-<ol>
-<li>Find $P(\chi^2 &lt; 2)$.</li>
-<li>Find $P(\chi^2 &gt; 6)$.</li>
-<li>Find $P(3 &lt; \chi^2 &lt; 5)$.</li>
-</ol>
-<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5><p>We can calculate this simply using R:</p>
+<h3 id="Example-2.1">Example 2.1<a class="anchor-link" href="#Example-2.1">&#182;</a></h3><p>A beverage company wants to make sure that the amount of soda in their two-liter bottles doesn't differ significantly bottle-to-bottle. Specifically, they want the population standard deviation to be no larger than 1.5 milliliters. The quality control division of the company carefully measures the amount of soda in 13 bottles and obtains the following results (in milliliters):
+<br/>
+<br/></p>
+<center>2002.08, 1999.25, 2002, 1996.51, 1998.99, 2000.06, 1999.73, 2001.16, 2001.19, 2002.14, 2000.21, 2002.15, 2000.06</center><p>Conduct a hypothesis test at the 10% significance level to determine is the beverage company's criterion is satisfied.</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-null-and-alternative-hypotheses.">Step 1: State the null and alternative hypotheses.<a class="anchor-link" href="#Step-1:-State-the-null-and-alternative-hypotheses.">&#182;</a></h5><p>The beverage company doesn't want the population standard deviation to be larger than 1.5 milliliters; that is, the company wants $\sigma \leq 1.5$. Since the symbol has an 'equal' in it, this is the null hypothesis. The alternative hypothesis is the opposite of the null hypothesis.</p>
+$$\begin{align}
+H_0:&amp;\ \sigma \leq 1.5 \\
+H_a:&amp;\ \sigma &gt; 1.5
+\end{align}$$<p>Note, we have chosen to write our hypotheses in terms of the population standard deviation $\sigma$. But we could also have written the hypotheses in terms of the population variance $\sigma^2$. Since $1.5^2 = 2.25$, the same hypotheses written in terms of the population variance are</p>
+$$\begin{align}
+H_0:&amp;\ \sigma^2 \leq 2.25 \\
+H_a:&amp;\ \sigma^2 &gt; 2.25
+\end{align}$$<p>These two ways of writing the hypotheses are equivalent and mean the same thing.</p>
+<p>Also, recall that since the alternative hypothesis uses a greater-than symbol, we will be performing a right-tailed test.</p>
+<h5 id="Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-test-statistics.">Step 2: Assuming the null hypothesis is true, determine the features of the distribution of test statistics.<a class="anchor-link" href="#Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-test-statistics.">&#182;</a></h5><p>Because we are testing the population standard deviation, we will use a $\chi^2$ distribution with degrees of freedom</p>
+$$ df = n - 1 = 13 - 1 = 12. $$<h5 id="Step-3:-Find-the-$p$-value-of-the-test-statistic.">Step 3: Find the $p$-value of the test statistic.<a class="anchor-link" href="#Step-3:-Find-the-$p$-value-of-the-test-statistic.">&#182;</a></h5><p>To calculate the test-statistic, we first need to find the sample standard deviation. To begin, we calculate the sample mean:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2002.08</span><span class="p">,</span> <span class="m">1999.25</span><span class="p">,</span> <span class="m">2002</span><span class="p">,</span> <span class="m">1996.51</span><span class="p">,</span> <span class="m">1998.99</span><span class="p">,</span> <span class="m">2000.06</span><span class="p">,</span> <span class="m">1999.73</span><span class="p">,</span> <span class="m">2001.16</span><span class="p">,</span> <span class="m">2001.19</span><span class="p">,</span> <span class="m">2002.14</span><span class="p">,</span> <span class="m">2000.21</span><span class="p">,</span> <span class="m">2002.15</span><span class="p">,</span> <span class="m">2000.06</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13342,7 +13177,7 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 
 
 <div class="output_html rendered_html output_subarea ">
-0.264241117657115
+2000.42538461538
 </div>
 
 </div>
@@ -13354,8 +13189,49 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P( \chi^2 &lt; 2) = 0.2642$.</p>
-<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Again, this is simple using R:</p>
+<p>The sample mean is about $\bar{x} = 2000.4254$. Next, we calculate the sample standard deviation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
+<span class="n">s</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+1.62851473938995
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The sample standard deviation is $s = 1.6285$. Assuming the null hypothesis is true (so that $\sigma = 1.5$), we calculate the test statistic
+$$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}. $$</p>
 
 </div>
 </div>
@@ -13365,7 +13241,9 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">sigma</span> <span class="o">&lt;-</span> <span class="m">1.5</span>
+<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="n">s^2</span> <span class="o">/</span> <span class="n">sigma^2</span>
+<span class="n">chisq</span>
 </pre></div>
 
     </div>
@@ -13383,7 +13261,7 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 
 
 <div class="output_html rendered_html output_subarea ">
-0.199148273471456
+14.1443213675217
 </div>
 
 </div>
@@ -13395,8 +13273,7 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(\chi^2 &gt; 6) = 0.1991$.</p>
-<h5 id="Part-3">Part 3<a class="anchor-link" href="#Part-3">&#182;</a></h5><p>To find $P(3 &lt; \chi^2 &lt; 5)$, we will first calculate <em>all</em> the area to the left of $\chi^2 = 5$, then subtract the excess area to the left of $\chi^2 = 3$.</p>
+<p>Our test statistic is $\chi^2 = 14.1443$. Then since we are performing a right-tailed test, the $p$-value is equal to $P(\chi^2 &gt; 14.1443)$. We use R to calculate this probability.</p>
 
 </div>
 </div>
@@ -13406,7 +13283,8 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">14.1443</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">12</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">pvalue</span>
 </pre></div>
 
     </div>
@@ -13424,7 +13302,7 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 
 
 <div class="output_html rendered_html output_subarea ">
-0.270527905187429
+0.291588646205538
 </div>
 
 </div>
@@ -13436,7 +13314,10 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(3 &lt; \chi^2 &lt; 5) = 0.2705$.</p>
+<p>So the $p$-value is $P(\chi^2 &gt; 14.1443) = 0.2916$. That means that, assuming the null hypothesis is true, there is a 29.16% chance that a random sample of 13 bottles would have a sample standard deviation as extreme as ours.</p>
+<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>The level of significance is 10%, so $\alpha = 0.10$. But since</p>
+$$p\text{-value} = 0.2916 \geq 0.10 = \alpha, $$<p>we do not reject the null hypothesis.</p>
+<p>There is not enough evidence to conclude that the population standard deviation of the bottles of soda is greater than 1.5 milliliters.</p>
 
 </div>
 </div>
@@ -13449,14 +13330,235 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 </div>
 </div>
 </div>
-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="videoWrapper">
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/DFXcInJfeKc?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3 id="Example-2.2">Example 2.2<a class="anchor-link" href="#Example-2.2">&#182;</a></h3><p>A medical testing company has created an IQ test and claims that the population scores an average of 100 points on the test with a standard deviation of 15 points. A psychologist suspects that the standard deviation might be wrong. He administers the IQ test to 18 randomly chosen individuals and obtains the following scores.
+<br>
+<br></p>
+<center>
+    108, 95, 98, 101, 118, 105, 102, 80, 112, 113, 88, 101, 93, 98, 104, 99, 87, 90
+</center><p>Perform a hypothesis test with a 5% level of significance to test the medical testing company's claim.</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-null-and-alternative-hypotheses.">Step 1: State the null and alternative hypotheses.<a class="anchor-link" href="#Step-1:-State-the-null-and-alternative-hypotheses.">&#182;</a></h5><p>The medical testing company claims that the population standard deviation score on the test is 15 points, or $\sigma = 15$. Since the symbol is an equal sign, this is our null hypothesis. The alternative hypothesis is the opposite of this.</p>
+$$\begin{align}
+H_0:&amp;\ \sigma = 15 \\
+H_a:&amp;\ \sigma \neq 15
+\end{align}$$<p>Since the alternative hypothesis uses a not-equal-to symbol, we will be performing a two-tailed test.</p>
+<h5 id="Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-test-statistics.">Step 2: Assuming the null hypothesis is true, determine the features of the distribution of test statistics.<a class="anchor-link" href="#Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-test-statistics.">&#182;</a></h5><p>Since we are testing the population standard deviation, we will be using a $chi^2$-distribution with $n - 1 = 18 - 1 = 17$ degrees of freedom.</p>
+<h5 id="Step-3:-Find-the-$p$-value-of-the-test-statistic.">Step 3: Find the $p$-value of the test statistic.<a class="anchor-link" href="#Step-3:-Find-the-$p$-value-of-the-test-statistic.">&#182;</a></h5><p>To calculate the point estimate, we first must find the sample standard deviation. And to find the sample standard deviation, we need the sample mean.</p>
+
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">108</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="m">98</span><span class="p">,</span> <span class="m">101</span><span class="p">,</span> <span class="m">118</span><span class="p">,</span> <span class="m">105</span><span class="p">,</span> <span class="m">102</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">112</span><span class="p">,</span> <span class="m">113</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">101</span><span class="p">,</span> <span class="m">93</span><span class="p">,</span> <span class="m">98</span><span class="p">,</span> <span class="m">104</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">87</span><span class="p">,</span> <span class="m">90</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+99.5555555555556
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the sample mean is $\bar{x} = 99.5556$. Next, we use our calculation of the sample mean to find the sample standard deviation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">s</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+9.82327501529626
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The sample standard deviation is $s = 9.8233$. Using this with the hypothesized population standard deviation of $\sigma = 15$, we calculate the test statistic using the formula</p>
+$$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}. $$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">sigma</span> <span class="o">&lt;-</span> <span class="m">15</span>
+<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="n">s^2</span> <span class="o">/</span> <span class="n">sigma^2</span>
+<span class="n">chisq</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+7.29086419753086
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the sample statistic is $\chi^2 = 7.2909$. Since we are performing a two-tailed test, and because our sample standard deviation $s = 9.8233$ is smaller than our hypothesized population standard deviation of $\sigma = 15$, we will find the half of the $p$-value in the lower tail by calculating $P(\chi^2 &lt; 7.2909)$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">half_pvalue</span> <span class="o">&lt;-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="m">7.2909</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">17</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">half_pvalue</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+0.0205403083373764
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To find the full $p$-value, we double this quantity.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="m">2</span><span class="o">*</span><span class="n">half_pvalue</span>
+<span class="n">pvalue</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+0.0410806166747528
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the probability of testing 18 randomly sampled individuals from the population and obtaining a sample standard deviation as extreme as the one we got is only about 4.11%.</p>
+<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>Our level of significance for this problem is 5%, so $\alpha = 0.05$. Since</p>
+$$ p\text{-value} = 0.0411 &lt; 0.05 = \alpha, $$<p>we reject the null hypothesis.</p>
+<p>We conclude that the population standard deviation score on the IQ test is not 15 points.</p>
+
 </div>
 </div>
 </div>

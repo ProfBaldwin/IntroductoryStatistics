@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>7.1 The Chi-Square Distribution</title>
+<title>6.1 An Introduction to Hypothesis Testing</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13090,7 +13090,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="7.1-The-$\chi^2$-Distribution">7.1 The $\chi^2$-Distribution<a class="anchor-link" href="#7.1-The-$\chi^2$-Distribution">&#182;</a></h1>
+<h1 id="6.1-An-Introduction-to-Hypothesis-Testing">6.1 An Introduction to Hypothesis Testing<a class="anchor-link" href="#6.1-An-Introduction-to-Hypothesis-Testing">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13098,8 +13098,9 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
-<li>Analyze categorical data using $2\times 2$ tables and chi-square analysis.</li>
-<li>Analyze an application in the disciplins business, social sciences, psychology, life sciences, health science, and education, and utilize te correct statistical processes to arrive at a solution.</li>
+<li>Compute probabilities using the Central Limit Theorem and demonstrate the ability to interpret sampling distributions of both population proportions and means.</li>
+<li>Analyze a problem involving hypothesis testing, apply the correct techniques, and come to a conclusion for a claim about population proportion and mean, all this while using appropriate levels of statistical significance, $p$-values, and determining what would constitute a type I and type II error.</li>
+<li>Analyze an application in the disciplines business, social sciences, psychology, life sciences, health science, and education, and utilize the correct statistical processes to arrive at a solution.</li>
 </ul>
 
 </div>
@@ -13108,335 +13109,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-$\chi^2$-Distribution">The $\chi^2$-Distribution<a class="anchor-link" href="#The-$\chi^2$-Distribution">&#182;</a></h2><p>For the $\chi^2$-distribution (that is, the chi-square distribution), the population mean is $\mu = df$, where $df$ is the degrees of freedom. The population standard deviation is $\sigma = \sqrt{2(df)}$.</p>
-<p>The random variable for a $\chi^2$-distribution with $k$ degrees of freedom is the sum of $k$ independent, squared standard normal variables:</p>
-$$ \chi^2 = Z_1^2 + Z_2^2 + \cdots + Z_k^2. $$<p>The curve of the $\chi^2$-distribution is nonsymmetrical. There is a different $\chi^2$ curve for each $df$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img alt="Graphs of chi-square distributions with df=2, df=8, and df=24." src="data:image/png;base64,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
-NgAChAQIEBIgQEiAQKAhURJsISRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIE
-CAkQICRAgJAQKo+/k2WAvxZ2wvc36VkZNwQhIax3pRESrApqEhASrApqEhASrApqEhASrApq
-EhASrApqEhASrApqEhASrApqEhASrApqEhgNKawnEasIag4QEqwKag4QEqwKag4QEqwKag4Q
-EqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqxaZA6Urz7L986l7a8fdy5K
-8+kLQ0gI1XIhJc65Q+vLaXmBk+h7SYQEq5YLybms/dWr298bOrr95IUhJIRqyZDevpq41z9O
-WxhCQqjUcyCN7jtG91a+X6eOkLBB4jkQF/kkr5A+r/2Yu3jywhASQtUxB2ZcFvXkouvtGr02
-7T5vfXTnMQsz6t81dxk/BCFBOwcSd7n/ee7eRyplUTJ9YQgJodLOAdc4ntAZUh5937AjJNi1
-cEjvm3bxbs7CEBJC5TWkbBdnPfcmJJil3kcqjiRcvmzanXsO2A1aGEJCqLRz4Px+1K4p+6sj
-QoJZ4jlQvMDO7btD2v/568QICVap58Dh8cqGjpD+/r18VkOiJAQ1BQgJVgU1BQgJVgU1BQgJ
-VgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVi0yBb5cIDJPo21e
-IJKQsFxIHxeIzKLqApHf35JESLBquZA+LhC5L1dQ6QYvEElIWDKkrq92veFv8MIQEkKlngI9
-F4iMHiFFkxeGkBAq8RTou0Dk4bFpd/h6b0KCVR1T4N9AHY/Wf4HIY3G0ITqOWphR/665y4Qh
-COnnaadA/wUiD2VR31dIhASztFOg9wKRx2LTLt+776skQoJVC4fU3LTbueJcbO6+XyOSkGCV
-x5A4/I3tUu8j9Vwgsjr8nXP4GxuknQK9F4hMXfE6u/T9NzSPWBhCQqjEU6DvApHVSaa+y60S
-EqxST4GeC0SWL3uIvq+PDIdEST8vqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlA
-SLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLBqkRnw5Uqrt+OueaXVy8fYhASrlgvp
-40qrt7S60uqjpDwiJGzGciF9XGn16vZ5ceWGx5VWk8+XhxMSrFoypLevJu71j8WVuwgJ26Ge
-AT1XWq1HLL+auZiQsB3iGdB3pdVKXr1FNnYZIWE7OmbAfwN1PFr/lVZLx/L6KAd36ngLLSHB
-Ku0M6L/SaiGLkltx3CHpugEhwSrtDOi90mohj8oNu11xDNxISD3X4XsNQUi/buGQ3jft4vIy
-q/ty825LIVHSr/MaUraLs9vHV4cvjMeQXNufQxDSj1PvI/VcafW+7/S4pp2BkC4RIWEE7QTo
-vdJq9nZtyLA37fLE1avPIUMQ0o8TT4C+K63u3/57Dzuk8rUXpxshYRD1BOi50ur7dlLoId2y
-2CU5IWGIoCZAYCEV542jMyFhgKAmQHAh3a67P4403AgJhaAmQHghlXt2Q4YI6nmEf0FNgBBD
-GjhEUM8j/AtqAhASrApqAoQaEidk8ZegJoCdkD5e9hDU8wj/gpoAoYY0YIignkf4F9QEICRY
-FdQEICRYFdQECCqky6F84aBL0suAIYJ6HuFfUBMgoJDyXeNoQtx7U0JCYBMgoJBSF52u5UfZ
-OXq/9HLHEEE9j/AvqAkQUEiRuz4/vrrozyGCeh7hX1ATIKCQWqeOOCGLvwQ1AQIKiTUSRnFB
-+WthJ3x/k56Vch/pXP0SgGH7SJQEO3we/o4bfe/yvlsSEozxex4pLc8jRclhyHkkQoIdAb+y
-gZBgByEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBI
-gAAhAQIhh0RJMIOQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFC
-AgQICRAgJECAkAABQgIEgg6JkmAFIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQ
-EiBASIAAIQEChAQIEBIgQEiAACEBAoQECIQdEiXBCEICBAgJECAkQICQAAFCAgQICRAgJECA
-kAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAIPCRKgg2EBAgQEiBASIAAIQEC
-hAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIhB4SJcEEQgIECAkQ
-ICRAgJAAgRVCOkZudxw8BCHBAp8hXRMXHW8HV4iHDkFIsMBjSNeyoNTt81uWuN51EiHBGI8h
-7V16u6UuKj7O3W7gEIQECzyG5Mo7uqTxyYAhCAkWeA/pVG3TVSumAUMQEizwuml33zuq5OVm
-3qAhCAkWeAwpj57bc65/hURIsMbreaS0zifqXR8REszhlQ2AQPAhURIsICRAYK2QBp9HIiRY
-EE5Irkk9HLAsNu0AAUICBAgJEPAa0uWQlHtASXoZPgQhwQCfLxHaNY4mDH5jHyHBAo8hpS46
-XcuPsnM0+EWrhAQLPIYUuevz4+vgt1EQEizw/n6krk96hyAkGMAaCRDwu490zsqP2EfC1vg8
-/B03jtrt8r5bEhKM8XseKS3PI0XJgfNI2BZe2QAIhB8SJcEAQgIECAkQICRAgJAAAUICBAgJ
-ECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAwEBIlITwERIgQEiAACEBAoQECBASIEBI
-gAAhAQKEBAgQEiBASIAAIQEChAQIWAiJkhA8QgIECAkQICRAgJAAAUICBAgJECAkQICQAAFC
-AgQICRAgJECAkACBmSHtDplsUb4M8fkpEJyZITnnlmjpfakoCYGbGVJ+2i/REiHBGME+0uWw
-U7dESDBGc7DhGt3XS8f5S/NtCEJC4CQhnWNXiAXL0z0EISFw80PKD/fV0e6c32tKNMtESDBn
-bkiX4mBDeq3+QTbfCQnGzD2PdF8ZHfP6HyLFEr0P0fU5EJi555GSs2xRvgzR9TkQmLnnkWQL
-8nWIrs+BwJh4rR0hIXSEBAgQEiBASICAjZAoCYEjJECAkAABQgIECAkQICRAgJAAAUICBAgJ
-ECAkQICQAAFCAgSMhERJCBshAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBI
-gICVkCgJQSMkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBMyEREkIGSEBAj5D
-yvfOxefHg/Q+CiHBGI8h5ZErJNWDEBK2xGNIqTveazpGcfkghIQt8RhSVN0xi3YZIWFjPIZU
-t5PHMSFhYzyGtHN5/VFMSNgWjyEd3f7xUeZiQsKm+Dz8nT7rOTtCwqZ4PSF7TeqPsv3okCgJ
-AbPzygZCQsAICRAgJEBgrZDGH2wgJAQsnJBc02LjAotg0w4QICRAgJAAAa8hXQ5J9Zak9DJh
-CEJCuHy+sW/XOJoQjx+CkBAur2/si07X8qPsHLl0/BCUhGB5fWPf9fnx1UXjhyAkBGuFN/Z9
-fjJwCEJCsFgjAQJ+95HOWfkR+0jYGp+Hv+PGUbtd3ndLQoIxfs8jpeV5pCg5TDmPREgIl6FX
-NhASwkVIgAAhAQKEBAhYComSECxCAgQICRAgJECAkAABQgIECAkQICRAgJAAAVMhURJCRUiA
-ACEBAoQECBASIEBIgAAhAQKEBAgQEiBASICArZAoCYEiJECAkAABQgIECAkQICRAgJAAAUIC
-BAgJEDAWEiUhTIQECBASIEBIgAAhAQKEBAgQEiBASICAtZAoCUEiJECAkAABQgIECAkQICRA
-gJAAAUICBAgJEDAXEiUhRIQECBASIEBIgAAhAQKEBAgQEiBASICAvZAoCQEiJECAkAABQgIE
-CAkQICRAgJAAAYMhURLCQ0iAACEBAoQECBASIEBIgAAhAQImQ6IkhMZiSKySEBxCAgQICRAg
-JECAkAABQgIECAkQMBkSJSE0hAQIEBIgQEiAACEBAoQECNgMiZIQGEICBAgJECAkQICQAAFC
-AgSshkRJCIrRkFglISyEBAgQEiBASIDAZkP6V5AsDPC3bYb0iIiW4IvVkPpu0syHlODFBkN6
-S4eU4MH2QvrshpKwOI8hubaZQ3y7SVc1rJSwNI8hHX2E9CUZSsKyfG7aXaNYN0T3Tb4GQ0lY
-lNd9pKtLdUN03aYnF0rCkvwebDi6q2yIjtv0xkJJWJDZo3adIfXegZKwnC2F9FcplITFbCik
-vzshJCzFbkgfNxqQCSVhIWuFNPs80seNhmy4sXGHhYQT0uCztV+WY1AjlIRlbGbTbmAilIRF
-bCekgQ9NSFiC5ZCatxreByVhAV5DuhyScg8oSS+KISaGREnQ8xhSvmscTeh/+erokMbEQUnQ
-8xhS6qJT9VK77Bz1v3x10ZDYuIOex5CixitWry6aP8TrViNXMpQENa/vkP32ycQhGiGNWxI2
-7qBmeY30vNnoMCgJYn73kc5Z+ZFoH+kV0uhlISRo+Tz8HTeO2u1ywRCPm01Yv7BKgpbf80hp
-eR4pSg6S80jPkCYsCiVByvArG55HLCY1QUhQMh1SdbuJSVAShH44JEqCjv2QJgdBSNDZQEiT
-R6EkyBgPyc0KiZKgYjuk+w3n1EBIULEf0pxxKAkiPx4SJUHDekgzSyAkaBgPaXYJlAQJ4yHN
-3jZj4w4S1kOavTCEBAVCoiQI2A7pXgElIQTGQ1IsDSFhPkJilQQB0yH9k4RESZjPdki3v67r
-NfxxgDnMh8QqCSGwHNI/VUiUhLlMhzTitoMeCphqAyGxSsL67IckWiVREuYwHFI99TXLQ0iY
-g5DqR6MkzLCBkCgJ67Mb0j9xSGzcYQbDIY269ZAHpCRMtomQKAlrMxtSc9arloiQMJXdkMbd
-fBBWSZiKkFoPSkmYxmpIrSmv2kli4w5TmQ1p5O0HYpWEaQjp7XEpCVNsJCRhSbJHwi8xGtL7
-ikO4TOuV9F/basuBCayGNPYOw62wcdedDkFZspWQzJb0ZyvUZILNkD7nunKhvIU0vBBiCp3R
-kEbfYww/q6TRaRBTyDYTkq2SpjZBS6HaSkjapVo2pHk10FKQTIbUNc+1S7VgSYIOaCk82wlJ
-u0paqiRVArQUmM2EpF4lLVKSdPaTUkgshtQ9ycWLtUBI8pnPaikcJkPqvk/gJS0z6UkpENsJ
-Sb5Kkpa03IQnpSAQ0vdhdCUtO9nZwguAwZC+TXD1tp2sJA/znJTWZjGkSfeaQhOSnzlOSuva
-VEghrpL8TXBSWpO9kHpmt36VNLskr5OblNZjMKRpd5tmZkneJzYprWVTIYVW0iqzmpZWQUh/
-mF7SahOalFZgLqTeeS0/3PDXgD3WnM2k5N22QgpnlbT2TCYlzwjpT1NKCmAak5JX1kL6a1YH
-UVIgU5iUPDIX0uR7zjCypHDmLyl5s7WQ1i8prMkb1tJsGCENMryk4CYuKXlhLKQB83nVkoKc
-tUEu1NYQ0kCDSgp1xpLS4rYX0oolBTxdSWlhtkIatFpY4uUNQwYPfK4GvnjWGQtp1r3n6i8p
-/HlKSgvaZEhrlGRikpLSYrYY0nJL+LUkOzPUzIIaYyqkoSdzFlslfSvJ1Oy0E70lmwxpwUXs
-LMnazCQlvW2G5LUki9PS4jKHzVJII17wttzG3UdJRqckKWltNKQlF7Jdkt35SEpKmw3JT0nG
-5yItyRgKady7gpYs6bko9uchKYlYCknwGCplSduYhNv4Lla33ZAWL2kzE5DfZiFgJ6TRV05Y
-dOPu9m9Tk4+U5jIU0vhHWXBJ7xNvsV/YvApWS/NsOaQFSyon3bZKYrU0i5mQJs3ahRb1OeM2
-mBItTWMnpEmPs8iyNibb1kpitTTVtkNaoqT2TPu3vZRoaQorIU2dr/KSPibZBktiE288MyFN
-fijp4nZOsC2mREsjbT4kaUlf5tYWt+9utDSKkZDmzFRZST3zaqMp0dJgVkKa9WiSJf5jSm20
-JFoayEZIc2epIKW/Z9NmU6KlAYyENPsBZy70oJm01e27wn/E1O9HQppX0vA5tOWWWDH1MRGS
-Yna6ySmNmz6bTokV01c2QtI86LQFHz1xtp0SMXWzEJJqYk5YKU2bMv+23hIxffAa0uWQuEKS
-XsYMoZuUI1OaMVm23xIxtXgMKd+5l3j4ENIZOaKkudNk+yndqOnJY0ipi07X8qPsHLl08BDi
-6ThwrSSZHz+wXro9Yvr1mjyGFLnr8+Ori4YOoZ+KA1LSTYzfaKmu6Xdz8hhSa/r2z+VWSBOH
-61+UvuHV8+Hfr8T0yyun4NdIS03Bby0tNBF+KKbfXDv53Uc6Z+VHY/aRlpt95UGP9peW/fH/
-+6ma6px+pCefh7/jxlG7XT5siIUnXrMlPz/0H6vp1dPGi/J7HiktzyNFyWHoeSQPU67s2vMP
-+t+/n+tp60WF/coGL1Ot/Nl2bOct799PBtUoakNRBR7SssO8/yzr7c5lR/3079+PJvUWleWu
-Qg5puWnV/2Nr7Mr5burfO8/jr+49LDN5rRXS3+eR1LNo0k/GfSFdsh4fYf1mZt15BZVcOCE1
-5+nwJ26Eb1HY9Udmv2iRmTPISiGtPgRDbnhMG0MSEkMGPqaNIQmJIQMf08aQ3t/Y5wVDbmhM
-G0P6fmOfHwy5oTFtDOn7jX1+MOSGxrQxpOc39nnCkBsa08aQnt/Y5wlDbmhMG0OyRmLIwMe0
-MaTfN/b5wpAbGtPGkF7f2OcNQ25oTBtD+nxjnz8MuaExbQy5xg8D2BxCAgQICRAgJECAkAAB
-QgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJEBg6ZDSyEVp7xtotY71N+Rr4OPu
-OY6nIfO9c/vHFTN8Pr0X53XMx7uvfQ55uxZPbTZpyIVDqt6Qvlt2kIZrfUEjXwOn5ThR7nHI
-qBynLMnn05tH1VPracxrIyRf3+Z5xg9z2ZAuLrrerpH7483oMvehnNeBr26fF6vBvb8h02Kw
-1CU3z09vUj21/p7ZpP7Q27cZ3cfJk+JSPuOHXDak1J3vf57cYdFRno4urrcFPA2cVMMVo/oa
-MnL5Y0SvT+/psXbwNebxNYKvIU/l1bDy4uJy44dcNqTEFRucjf9clnV/Ih4h+R7Y+R6yvJSg
-xyGz+v8oX2Me3bH+0NeQ+9e1GscPuWxIzjX/Wtz1fURPA+fFrxHwOmRaTjOPQ8Yuq4bxNWbi
-zvv77r7PIXfudojKbfUJQ24qpI8RPQ18LDYEPA5538zyOsNut4M73XyH9PxFJ76GdK66wNyk
-IQlpvixK/A55TKJy693bkOU2jt+Q3D3dW16uef0NWRxs2BdPLSGtEFIexb6HLLbnPc6w2644
-JOw3pEpeHIH2F1Kxj5RNG3LZhYvWCsnnwPHO+5CPY0u+htyXx7CqYTz/SItxfA3ZqGf8kD6O
-2mW+Dp7dnt+6v4GzXZx5HrL0OlC4/JCvq7xv+ttsnMsYP+SyIR3K/8rO/b+tQuoRkreBz8/f
-++lryOo8UrkB4mvIZki+v83E35DVOFnxEx0/5LZe2fAMydfA2ev353p9ZUOeFPtIfp9ev69s
-SItJnJcnRv39MHd5cbDhFN4rG267Ab+sWareqvU08P71X7W37zV6jeP16X08tZ7GzKtvM/U4
-5H09NP2ZXTikvHwR7bJjtNQheRq4sc3j73u9j7OrTvt7fXofT62vMfMVvs1zXI8zekh/x9OA
-DSMkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAg
-JECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRA
-gJAAAUICBAgJECAkk2J3uf95cfu1FwQPhGRS5qL7n1GUr70geCAkm47ucDu409qLgRohGRW7
-o0vWXgg8EZJRmXMuW3sh8ERIVqUuXXsR8EJIRrFGCgshGZXc95HitRcCT4Rk0+m+YXdwx7UX
-AzVCMimPyvNIbNwFg5BM2j9e2cDGXSgICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAk
-QICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECA
-kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To find the probability to the left or right of a value when using the $\chi^2$-distribution, we will use the R function</p>
-<div class="highlight"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">lower.tail</span><span class="p">)</span>
-</pre></div>
-<p>where we want the probability to the left or right of <code>q</code>, the degrees of freedom is <code>df</code>, and <code>lower.tail</code> is set to either <code>TRUE</code> or <code>FALSE</code> depending on whether we want to calculate the probability to the left or right of the value.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-1.1">Example 1.1<a class="anchor-link" href="#Example-1.1">&#182;</a></h3><p>Consider a $\chi^2$-distribution with 4 degrees of freedom.</p>
+<h2 id="Introduction-to-Hypothesis-Testing">Introduction to Hypothesis Testing<a class="anchor-link" href="#Introduction-to-Hypothesis-Testing">&#182;</a></h2><p>Sometimes we want to test whether a claim made about a population parameter is true or not. For instance, a car dealer advertises that its new small truck gets 35 miles per gallon, on average. A tutoring service claims that its method of tutoring helps 90% of its students get an A or a B. A company says that women managers in their company earn an average of \$53,000 per year.</p>
+<p>It's often impractical to survey every member of a population to confirm the claim or <strong>hypothesis</strong>. Instead, statisticians sample a few members of the population and calculate the point estimate of the parameter in question. Then they use the Central Limit Theorem to determine how likely it is to randomly select a sample with that particular point estimate <strong>assuming the hypothesis is true</strong>. If it is exceptionally unlikely that the sample would have the point estimate given that the hypothesis were true, we can conclude with some confidence that the claim is probably not true.</p>
+<p>In summary, the fundamental components to a <strong>hypothesis test</strong> are as follows:</p>
 <ol>
-<li>Find $P(\chi^2 &lt; 2)$.</li>
-<li>Find $P(\chi^2 &gt; 6)$.</li>
-<li>Find $P(3 &lt; \chi^2 &lt; 5)$.</li>
+<li>We want to test if a claim about a population parameter is true.</li>
+<li>We randomly sample members of the population to find a point estimate of the population parameter.</li>
+<li>Assuming the claim about the population parameter <em>is</em> true, we use the Central Limit Theorem to determine the probability that we obtain the point estimate of our random sample.</li>
+<li>If the probability of obtaining the point estimate is exceptionally small, we reject the claim.</li>
 </ol>
-<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5><p>We can calculate this simply using R:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0.264241117657115
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P( \chi^2 &lt; 2) = 0.2642$.</p>
-<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Again, this is simple using R:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0.199148273471456
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(\chi^2 &gt; 6) = 0.1991$.</p>
-<h5 id="Part-3">Part 3<a class="anchor-link" href="#Part-3">&#182;</a></h5><p>To find $P(3 &lt; \chi^2 &lt; 5)$, we will first calculate <em>all</em> the area to the left of $\chi^2 = 5$, then subtract the excess area to the left of $\chi^2 = 3$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0.270527905187429
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(3 &lt; \chi^2 &lt; 5) = 0.2705$.</p>
+<p>We will formalize these ideas in the coming chapter and return to them throughout the rest of the course. For now, let's go over a few examples focusing on the big idea and the fundamental components.</p>
 
 </div>
 </div>
@@ -13446,6 +13128,338 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.1">Example 1.1<a class="anchor-link" href="#Example-1.1">&#182;</a></h3><p>A company says that women managers in their company earn an average of \$53,000 per year with a standard deviation of \\$5,000. Janice wants to test the claim. She surveys 25 women managers and obtains the following data on income per year:</p>
+<p>48230, 53491, 52926, 54832, 48080, 47101, 50126, 47433, 57753, 55107, 57205, 46297, 61249, 66936, 5463, 44429, 52696, 51243, 49008, 51522, 46658, 51788, 60244, 46164, 51103</p>
+<p>Do you think Janice should conclude that the claim is not true?</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-Hypothesis">Step 1: State the Hypothesis<a class="anchor-link" href="#Step-1:-State-the-Hypothesis">&#182;</a></h5><p>The claim or hypothesis is that the average annual income of women managers at the company is \$53,000. Written mathematically, the hypothesis is</p>
+$$ \mu = 53,000. $$<h5 id="Step-2:-Determine-the-Features-of-the-Distribution-of-Point-Estimates-Using-the-Central-Limit-Theorem">Step 2: Determine the Features of the Distribution of Point Estimates Using the Central Limit Theorem<a class="anchor-link" href="#Step-2:-Determine-the-Features-of-the-Distribution-of-Point-Estimates-Using-the-Central-Limit-Theorem">&#182;</a></h5><p>We are testing the mean $\mu$ and we are told the population standard deviation $\sigma$. Then by the Central Limit Theorem, sample means are normally distributed with distribution mean</p>
+$$\mu_{\overline{X}} = \mu = 53,000 $$<p>and distribution standard deviation</p>
+$$ \sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}} = \frac{5000}{\sqrt{25}} = 1000. $$<h5 id="Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">Step 3: Assuming the Claim is True, Find the Probability of Obtaining the Point Estimate<a class="anchor-link" href="#Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">&#182;</a></h5><p>First, we calculate the sample mean $\bar{x}$, which is the point estimate of the population mean $\mu$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">48230</span><span class="p">,</span> <span class="m">53491</span><span class="p">,</span> <span class="m">52926</span><span class="p">,</span> <span class="m">54832</span><span class="p">,</span> <span class="m">48080</span><span class="p">,</span> <span class="m">47101</span><span class="p">,</span> <span class="m">50126</span><span class="p">,</span> <span class="m">47433</span><span class="p">,</span> <span class="m">57753</span><span class="p">,</span> <span class="m">55107</span><span class="p">,</span> <span class="m">57205</span><span class="p">,</span> <span class="m">46297</span><span class="p">,</span> <span class="m">61249</span><span class="p">,</span> <span class="m">66936</span><span class="p">,</span> <span class="m">5463</span><span class="p">,</span> <span class="m">44429</span><span class="p">,</span> <span class="m">52696</span><span class="p">,</span> <span class="m">51243</span><span class="p">,</span> <span class="m">49008</span><span class="p">,</span> <span class="m">51522</span><span class="p">,</span> <span class="m">46658</span><span class="p">,</span> <span class="m">51788</span><span class="p">,</span> <span class="m">60244</span><span class="p">,</span> <span class="m">46164</span><span class="p">,</span> <span class="m">51103</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 50283.36
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The sample mean is $\bar{x} = 50283.36$.</p>
+<p>The $z$-score associated with the sample mean $\bar{x}$ is</p>
+$$z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{50283.36 - 53000}{1000} = -2.7166. $$<p>We want to find $P(\bar{x} \leq 50283.36) = P(z \leq -2.7166)$$. Let's use R to find this.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">-2.7166</span><span class="p">,</span> <span class="n">lower.tail</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+0.00329781334352045
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So $P(\bar{x} \leq 50283.36) = P(z \leq -2.7166) = 0.0033$. That is, if the claim were true, there is only a 0.33% chance that a random sample of women managers would yield a sample mean salary of \$50,283.36 or less</p>
+<h5 id="Step-4:-Make-a-Conclusion-About-the-Claim">Step 4: Make a Conclusion About the Claim<a class="anchor-link" href="#Step-4:-Make-a-Conclusion-About-the-Claim">&#182;</a></h5><p>In this case, it is very unlikely that we would obtain the point estimate we did if the claim were true. In fact, it is so unlikely (less than a 1% chance) that we feel confident in concluding that the claim is not true.</p>
+<p>We conclude that the average salary of women managers at the company is not \$53,000.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.2">Example 1.2<a class="anchor-link" href="#Example-1.2">&#182;</a></h3><p>A tutoring service claims that 90% of its students get an A or a B. Mike wants to test the claim. He surveys 45 students who utilized the tutoring service and found that 37 students got an A or a B. Do you think Mike should reject the claim?</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-Hypothesis">Step 1: State the Hypothesis<a class="anchor-link" href="#Step-1:-State-the-Hypothesis">&#182;</a></h5><p>The claim we are testing is the proportion of students of the tutoring service who get an A or a B is 90%. Mathematically, the hypothesis is</p>
+$$p = 0.90. $$<h5 id="Step-2:-Determine-the-Features-of-the-Distribution-of-Point-Estimates-Using-the-Central-Limit-Theorem">Step 2: Determine the Features of the Distribution of Point Estimates Using the Central Limit Theorem<a class="anchor-link" href="#Step-2:-Determine-the-Features-of-the-Distribution-of-Point-Estimates-Using-the-Central-Limit-Theorem">&#182;</a></h5><p>By the Central Limit Theorem, we know that sample proportions are normally distributed with distribution mean</p>
+$$ \mu_{P'} = p = 0.90 $$<p>and distribution standard deviation</p>
+$$ \sigma_{P'} = \sqrt{\frac{p(1 - p)}{n}} = \sqrt{\frac{0.90(1 - 0.90)}{45}} = 0.0447. $$<h5 id="Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">Step 3: Assuming the Claim is True, Find the Probability of Obtaining the Point Estimate<a class="anchor-link" href="#Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">&#182;</a></h5><p>First note that the sample proportion, the point estimate of the population proportion, is</p>
+$$ p' = \frac{x}{n} = \frac{37}{45} = 0.8222. $$<p>The $z$-score associated with the sample proportion $p'$ is</p>
+$$z = \frac{p' - \mu_{P'}}{\sigma_{P'}} = \frac{0.8222 - 0.90}{0.0447} = -1.7405.$$<p>We want to find $P(p' \leq 0.8222) = P(z \leq -1.7405)$. We calculate this using R.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">-1.7405</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+0.0408856300354386
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then $P(p' \leq 0.8222) = P(z \leq -1.7405) = 0.0409$. So if the population proportion is actually $p = 0.90$, there is a 4.09% chance that a random sample gives a sample proportion of $p' \leq 0.8222$.</p>
+<h5 id="Step-4:-Make-a-Conclusion-About-the-Claim">Step 4: Make a Conclusion About the Claim<a class="anchor-link" href="#Step-4:-Make-a-Conclusion-About-the-Claim">&#182;</a></h5><p>There is about a 4% chance of obtaining a sample proportion of $p' \leq 0.8222$ if the claim were true. This is somewhat unlikely, but it wouldn't be outlandish.</p>
+<p>Ultimately, whether we reject a hypothesis or not is a choice. Would you reject the hypothesis if there is only a 1% chance that we get the point estimate we do? What if it was a 4% chance? An 8% chance? The choice ultimately must be made by the statistician where to draw the line. In a later section, we will cover some guidelines on making this choice.</p>
+<p>So what do you think? In this particular case, would you reject the claim that 90% of students of the tutoring service get an A or a B? Or do you think the evidence isn't strong enough to reject the claim?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.3">Example 1.3<a class="anchor-link" href="#Example-1.3">&#182;</a></h3><p>A statistics instructor claims that the class average on an exam is 65 points. Richard thinks the class average is higher. He collects the following scores from 9 students in the class:</p>
+<p>84, 67, 60, 55, 51, 64, 66, 70, 83</p>
+<p>Should Richard reject his instructor's claim?</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-Hypothesis">Step 1: State the Hypothesis<a class="anchor-link" href="#Step-1:-State-the-Hypothesis">&#182;</a></h5><p>The hypothesis is that the class average is 65 points. Mathematically, we write</p>
+$$\mu = 65. $$<h5 id="Step-2:-Determine-the-Features-of-the-Distribution-of-Point-Estimates-Using-the-Central-Limit-Theorem">Step 2: Determine the Features of the Distribution of Point Estimates Using the Central Limit Theorem<a class="anchor-link" href="#Step-2:-Determine-the-Features-of-the-Distribution-of-Point-Estimates-Using-the-Central-Limit-Theorem">&#182;</a></h5><p>We want to test the population mean $\mu$, but we are <em>not</em> given the population standard deviation $\sigma$. We will need to use the sample standard deviation $s$ and a $t$-distribution with degrees of freedom</p>
+$$ df = n-1 = 9-1 = 8. $$<p>To find the $t$-score, we will need the distribution mean</p>
+$$ \mu_{\overline{X}} = \mu = 65. $$<p>The distribution mean is given by the formula $\sigma_{\overline{X}} = \frac{s}{\sqrt{n}}$, so we will need to find the sample standard deviation $s$ first.</p>
+<p>To find the sample standard deviation $s$, first find the sample mean $\bar{x}$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">84</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">51</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">83</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 66.66667
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The sample mean is $\bar{x} = 66.6667$.</p>
+<p>Next, we find the sample standard deviation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 11.24722
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the sample standard deviation is $s = 11.2472$. We can now calculate the standard deviation of the distribution of sample means:</p>
+$$ \sigma_{\overline{X}} = \frac{s}{\sqrt{n}} = \frac{11.2472}{\sqrt{9}} = 3.7491. $$<p></p>
+<h5 id="Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">Step 3: Assuming the Claim is True, Find the Probability of Obtaining the Point Estimate<a class="anchor-link" href="#Step-3:-Assuming-the-Claim-is-True,-Find-the-Probability-of-Obtaining-the-Point-Estimate">&#182;</a></h5><p>We calculated the point estimate in step 2: the sample mean is $\bar{x} =  66.6667$. The $t$-score associated with $\bar{x} = 66.6667$ is</p>
+$$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{66.6667 - 65}{3.7491} = 0.4446. $$<p>We want to find $P(\bar{x} \geq 66.6667) = P(t \geq 0.4446)$. We calculate this using R.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pt</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">0.4446</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+0.334195519428358
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So $P(\bar{x} \geq 66.6667) = P(t \geq 0.4446) = 0.3342$. That is, assuming the claim is true, there is a 33.42% chance that our sample would have a sample mean of $66.6667$ or greater.</p>
+<h5 id="Step-4:-Make-a-Conclusion-About-the-Claim">Step 4: Make a Conclusion About the Claim<a class="anchor-link" href="#Step-4:-Make-a-Conclusion-About-the-Claim">&#182;</a></h5><p>If the claim is true, there is a 33.42% chance that a random sample of the population has a sample mean as extreme as $\bar{x} = 66.6667$. This isn't a small probability; there is a fairly large chance that we obtain a sample with the sample mean we do given that the claim is true. We usually don't reject a claim unless we obtain at a probability of at least less than 10%. So we cannot conclude that the mean exam score is not 65 points.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.4">Example 1.4<a class="anchor-link" href="#Example-1.4">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13455,7 +13469,59 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="videoWrapper">
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/DFXcInJfeKc?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/yJWkbN-91xc?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.5">Example 1.5<a class="anchor-link" href="#Example-1.5">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/0Vj0LibwID8?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1.6">Example 1.6<a class="anchor-link" href="#Example-1.6">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/z2rIPx5p7lI?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>

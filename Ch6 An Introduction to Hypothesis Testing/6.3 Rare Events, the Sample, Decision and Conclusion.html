@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>7.1 The Chi-Square Distribution</title>
+<title>6.3 Rare Events, the Sample, Decision and Conclusion</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13090,7 +13090,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="7.1-The-$\chi^2$-Distribution">7.1 The $\chi^2$-Distribution<a class="anchor-link" href="#7.1-The-$\chi^2$-Distribution">&#182;</a></h1>
+<h1 id="6.3-Rare-Events,-the-Sample,-Decision,-and-Conclusion">6.3 Rare Events, the Sample, Decision, and Conclusion<a class="anchor-link" href="#6.3-Rare-Events,-the-Sample,-Decision,-and-Conclusion">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13098,8 +13098,8 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><ul>
-<li>Analyze categorical data using $2\times 2$ tables and chi-square analysis.</li>
-<li>Analyze an application in the disciplins business, social sciences, psychology, life sciences, health science, and education, and utilize te correct statistical processes to arrive at a solution.</li>
+<li>Analyze a problem involving hypothesis testing, apply the correct techniques, and come to a conclusion for a claim about population proportion and mean, all this while using appropriate levels of statistical significance, $p$-values, and determining what would constitute a type I and type II error.</li>
+<li>Analyze an application in the disciplines business, social sciences, psychology, life sciences, health science, and education, and utilize the correct statistical processes to arrive at a solution.</li>
 </ul>
 
 </div>
@@ -13108,191 +13108,32 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-$\chi^2$-Distribution">The $\chi^2$-Distribution<a class="anchor-link" href="#The-$\chi^2$-Distribution">&#182;</a></h2><p>For the $\chi^2$-distribution (that is, the chi-square distribution), the population mean is $\mu = df$, where $df$ is the degrees of freedom. The population standard deviation is $\sigma = \sqrt{2(df)}$.</p>
-<p>The random variable for a $\chi^2$-distribution with $k$ degrees of freedom is the sum of $k$ independent, squared standard normal variables:</p>
-$$ \chi^2 = Z_1^2 + Z_2^2 + \cdots + Z_k^2. $$<p>The curve of the $\chi^2$-distribution is nonsymmetrical. There is a different $\chi^2$ curve for each $df$.</p>
+<h2 id="Rare-Events">Rare Events<a class="anchor-link" href="#Rare-Events">&#182;</a></h2><p>Suppose you make an assumption about a property of the population (this assumption is the <strong>null hypothesis</strong>). Then you gather sample data randomly. If the sample has properties that would be <strong>very unlikely</strong> to occur if the assumption is true, then you would conclude that your assumption about the population is probably incorrect. (Remember that your assumption is just an <strong>assumption</strong>—it is not a fact and it may or may not be true. But your sample data are real and the data are showing you a fact that seems to contradict your assumption.)</p>
+<p>For example, Didi and Ali are at a birthday party of a very wealthy friend. They hurry to be first in line to grab a prize from a tall basket that they cannot see inside because they will be blindfolded. There are 200 plastic bubbles in the basket and Didi and Ali have been told that there is only one with a \$100 bill. Didi is the first person to reach into the basket and pull out a bubble. Her bubble contains a \\$100 bill. The probability of this happening is $\frac{1}{200} = 0.005$. Because this is so unlikely, Ali is hoping that what the two of them were told is wrong and there are more \$100 bills in the basket. A "rare event" has occurred (Didi getting the \\$100 bill) so Ali doubts the assumption about only one \$100 bill being in the basket.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img alt="Graphs of chi-square distributions with df=2, df=8, and df=24." src="data:image/png;base64,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
-NgAChAQIEBIgQEiAQKAhURJsISRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIE
-CAkQICRAgJAQKo+/k2WAvxZ2wvc36VkZNwQhIax3pRESrApqEhASrApqEhASrApqEhASrApq
-EhASrApqEhASrApqEhASrApqEhASrApqEhgNKawnEasIag4QEqwKag4QEqwKag4QEqwKag4Q
-EqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqwKag4QEqxaZA6Urz7L986l7a8fdy5K
-8+kLQ0gI1XIhJc65Q+vLaXmBk+h7SYQEq5YLybms/dWr298bOrr95IUhJIRqyZDevpq41z9O
-WxhCQqjUcyCN7jtG91a+X6eOkLBB4jkQF/kkr5A+r/2Yu3jywhASQtUxB2ZcFvXkouvtGr02
-7T5vfXTnMQsz6t81dxk/BCFBOwcSd7n/ee7eRyplUTJ9YQgJodLOAdc4ntAZUh5937AjJNi1
-cEjvm3bxbs7CEBJC5TWkbBdnPfcmJJil3kcqjiRcvmzanXsO2A1aGEJCqLRz4Px+1K4p+6sj
-QoJZ4jlQvMDO7btD2v/568QICVap58Dh8cqGjpD+/r18VkOiJAQ1BQgJVgU1BQgJVgU1BQgJ
-VgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVgU1BQgJVi0yBb5cIDJPo21e
-IJKQsFxIHxeIzKLqApHf35JESLBquZA+LhC5L1dQ6QYvEElIWDKkrq92veFv8MIQEkKlngI9
-F4iMHiFFkxeGkBAq8RTou0Dk4bFpd/h6b0KCVR1T4N9AHY/Wf4HIY3G0ITqOWphR/665y4Qh
-COnnaadA/wUiD2VR31dIhASztFOg9wKRx2LTLt+776skQoJVC4fU3LTbueJcbO6+XyOSkGCV
-x5A4/I3tUu8j9Vwgsjr8nXP4GxuknQK9F4hMXfE6u/T9NzSPWBhCQqjEU6DvApHVSaa+y60S
-EqxST4GeC0SWL3uIvq+PDIdEST8vqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlA
-SLAqqBlASLAqqBlASLAqqBlASLAqqBlASLAqqBlASLBqkRnw5Uqrt+OueaXVy8fYhASrlgvp
-40qrt7S60uqjpDwiJGzGciF9XGn16vZ5ceWGx5VWk8+XhxMSrFoypLevJu71j8WVuwgJ26Ge
-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
-IQlpvixK/A55TKJy693bkOU2jt+Q3D3dW16uef0NWRxs2BdPLSGtEFIexb6HLLbnPc6w2644
-JOw3pEpeHIH2F1Kxj5RNG3LZhYvWCsnnwPHO+5CPY0u+htyXx7CqYTz/SItxfA3ZqGf8kD6O
-2mW+Dp7dnt+6v4GzXZx5HrL0OlC4/JCvq7xv+ttsnMsYP+SyIR3K/8rO/b+tQuoRkreBz8/f
-++lryOo8UrkB4mvIZki+v83E35DVOFnxEx0/5LZe2fAMydfA2ev353p9ZUOeFPtIfp9ev69s
-SItJnJcnRv39MHd5cbDhFN4rG267Ab+sWareqvU08P71X7W37zV6jeP16X08tZ7GzKtvM/U4
-5H09NP2ZXTikvHwR7bJjtNQheRq4sc3j73u9j7OrTvt7fXofT62vMfMVvs1zXI8zekh/x9OA
-DSMkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAg
-JECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECAkAABQgIECAkQICRA
-gJAAAUICBAgJECAkk2J3uf95cfu1FwQPhGRS5qL7n1GUr70geCAkm47ucDu409qLgRohGRW7
-o0vWXgg8EZJRmXMuW3sh8ERIVqUuXXsR8EJIRrFGCgshGZXc95HitRcCT4Rk0+m+YXdwx7UX
-AzVCMimPyvNIbNwFg5BM2j9e2cDGXSgICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAk
-QICQAAFCAgQICRAgJECAkAABQgIECAkQICRAgJAAAUICBAgJECAkQICQAAFCAgQICRAgJECA
-kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
->
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To find the probability to the left or right of a value when using the $\chi^2$-distribution, we will use the R function</p>
-<div class="highlight"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">lower.tail</span><span class="p">)</span>
-</pre></div>
-<p>where we want the probability to the left or right of <code>q</code>, the degrees of freedom is <code>df</code>, and <code>lower.tail</code> is set to either <code>TRUE</code> or <code>FALSE</code> depending on whether we want to calculate the probability to the left or right of the value.</p>
+<h2 id="Using-the-Sample-to-Test-the-Null-Hypothesis">Using the Sample to Test the Null Hypothesis<a class="anchor-link" href="#Using-the-Sample-to-Test-the-Null-Hypothesis">&#182;</a></h2><p>Use the sample data to calculate the actual probability of getting the test result, called the <strong>$p$-value</strong>. The $p$-value is the <strong>probability that, if the null hypothesis is true, the results from another randomly selected sample will be as extreme or more extreme as the results obtained from the given sample</strong>.</p>
+<p>A large $p$-value calculated from the data indicates that we should not reject the <strong>null hypothesis</strong>. The smaller the $p$-value, the more unlikely the outcome, and the stronger the evidence is against the null hypothesis. We would reject the null hypothesis if the evidence is strongly against it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Decision-and-Conclusion">Decision and Conclusion<a class="anchor-link" href="#Decision-and-Conclusion">&#182;</a></h2><p>A systematic way to make a decision of whether to reject or not reject the <strong>null hypothesis</strong> is to compare the $p$-value and a <strong>preset or preconceived $\alpha$ (also called a "significance level")</strong>. A preset $\alpha$ is the probability of a Type I error (rejecting the null hypothesis when the null hypothesis is true). In this class, $\alpha$ will always be given you at the beginning of a problem. Real statisticians must themselves choose a value for $\alpha$ that fits the problem.</p>
+<p>When you make a decision to reject or not reject $H_0$, do as follows:</p>
+<ul>
+<li>If $p$-value $&lt; \alpha$, reject $H_0$. The results of the sample data are significant. There is sufficient evidence to conclude that $H_0$ is an incorrect belief and that the alternative hypothesis, Ha, may be correct.</li>
+<li>If $p$-value $\geq \alpha$, do not reject $H_0$. The results of the sample data are not significant.There is not sufficient evidence to conclude that the alternative hypothesis, $H_a$, may be correct.</li>
+<li>When you "do not reject $H_0$", it does not mean that you should believe that $H_0$ is true. It simply means that the sample data have failed to provide sufficient evidence to cast serious doubt about the truthfulness of Ho.</li>
+</ul>
+<p><strong>Conclusion:</strong> After you make your decision, write a thoughtful <strong>conclusion</strong> about the hypotheses in terms of the given problem.</p>
 
 </div>
 </div>
@@ -13308,135 +13149,18 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-1.1">Example 1.1<a class="anchor-link" href="#Example-1.1">&#182;</a></h3><p>Consider a $\chi^2$-distribution with 4 degrees of freedom.</p>
+<h3 id="Example-3.1">Example 3.1<a class="anchor-link" href="#Example-3.1">&#182;</a></h3><p>Boy Genetics Labs claim that their procedures improve the chances of a pregnancy resulting in a boy.</p>
 <ol>
-<li>Find $P(\chi^2 &lt; 2)$.</li>
-<li>Find $P(\chi^2 &gt; 6)$.</li>
-<li>Find $P(3 &lt; \chi^2 &lt; 5)$.</li>
+<li>What are the null and alternative hypotheses?</li>
+<li>A hypothesis test is conducted at the 1% level of significance. If the $p$-value is 0.025, what conclusion should be made?</li>
 </ol>
-<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5><p>We can calculate this simply using R:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0.264241117657115
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P( \chi^2 &lt; 2) = 0.2642$.</p>
-<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Again, this is simple using R:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0.199148273471456
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(\chi^2 &gt; 6) = 0.1991$.</p>
-<h5 id="Part-3">Part 3<a class="anchor-link" href="#Part-3">&#182;</a></h5><p>To find $P(3 &lt; \chi^2 &lt; 5)$, we will first calculate <em>all</em> the area to the left of $\chi^2 = 5$, then subtract the excess area to the left of $\chi^2 = 3$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0.270527905187429
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(3 &lt; \chi^2 &lt; 5) = 0.2705$.</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5><p>A normal pregnancy has a 50% chance in being a boy and a 50% chance of being a girl. So the claim that the procedures improve the chances of a boy can be written mathematically as $p &gt; 0.50$. Since the symbol has no equal in it, this is the alternative hypothesis. Then the null hypothesis is $p \leq 0.50$.</p>
+$$\begin{align}
+H_0:&amp;\ p \leq 0.50 \\
+H_a:&amp;\ p &gt; 0.50
+\end{align}$$<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>The level of significance $\alpha = 0.01$. So we are only comfortable with rejecting the null hypothesis if the $p$-value is smaller than $\alpha = 0.01$. Since</p>
+$$p\text{-value} = 0.025 \geq 0.01 = \alpha, $$<p>we are not comfortable rejecting the null hypothesis.</p>
+<p>We cannot conclude that that Boy Genetics Labs procedures improve the chances of a pregnancy resulting in a boy.</p>
 
 </div>
 </div>
@@ -13446,6 +13170,39 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3.2">Example 3.2<a class="anchor-link" href="#Example-3.2">&#182;</a></h3><p>Your friend claims that his mean golf score is 63. You want to show it is higher than that.</p>
+<ol>
+<li>What are the null and alternative hypotheses?</li>
+<li>A hypothesis test is conducted at the 5% level of significance. If the $p$-value is 0.045, what conclusion should be made?</li>
+</ol>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h5>$$\begin{align}
+H_0:&amp;\ \mu = 63 \\
+H_a:&amp;\ \mu &gt; 63
+\end{align}$$<h5 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h5><p>Since</p>
+$$p\text{-value} = 0.045 &lt; 0.05 = \alpha, $$<p>we should reject the null hypothesis.</p>
+<p>We conclude that your friend's mean golf score is higher than $\mu = 63$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3.3">Example 3.3<a class="anchor-link" href="#Example-3.3">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13455,7 +13212,33 @@ kAABQgIECAkQICRAgJAAgf8BPKnbIvSFLGsAAAAASUVORK5CYII="
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="videoWrapper">
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/DFXcInJfeKc?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/pQf7dGifV-g?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3.4">Example 3.4<a class="anchor-link" href="#Example-3.4">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/EV2y0lHr_NA?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>

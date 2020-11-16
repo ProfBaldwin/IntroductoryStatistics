@@ -13117,9 +13117,9 @@ div#notebook {
 <p><strong>What the VALUE of $r$ tells us:</strong></p>
 <ul>
 <li>The value of $r$ is always between -1 and +1: $-1 \leq r \leq 1$.</li>
-<li>The size of the correlation coefficient $r$ indeicates the strength of the linear relationship between $x$ and $y$. Values of $r$ close o -1 or to +1 indicate a stronger linear relationship between $x$ and $y$.</li>
+<li>The size of the correlation coefficient $r$ indicates the strength of the linear relationship between $x$ and $y$. Values of $r$ close to -1 or to +1 indicate a stronger linear relationship between $x$ and $y$.</li>
 <li>If $r = 0$ there is likely no linear correlation. It is important to view the scatterplot, however, because data that exhibit a curved or horizontal pattern may have a correlation of 0.</li>
-<li>If $r = 1$, there is perfect positive correlation. If $r = –1$, there is perfect negative correlation. In both these cases, all of the original data points lie on a straight line. Of course,in the real world, this will not generally happen.</li>
+<li>If $r = 1$, there is perfect positive correlation. If $r = –1$, there is perfect negative correlation. In both these cases, all of the original data points lie on a straight line. Of course, in the real world, this will not generally happen.</li>
 </ul>
 <p><strong>What the SIGN of $r$ tells us:</strong></p>
 <ul>
@@ -13236,7 +13236,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Testing-the-Significance-of-the-Correlation-Coefficient">Testing the Significance of the Correlation Coefficient<a class="anchor-link" href="#Testing-the-Significance-of-the-Correlation-Coefficient">&#182;</a></h2><p>The correlation coefficient, $r$, tells us about the strength and direction of the linear relationship between $x$ and $y$. However, the reliability of the linear model also depends on how many observed data points are in the sample. We need to look at both the value of the correlation coefficient $r$ and the sample size $n$, together.</p>
 <p>We perform a hypothesis test of the <strong>"significance of the correlation coefficient"</strong> to decide whether the linear relationship in the sample data is strong enough to use to model the relationship in the population.</p>
-<p>The sample data are used to compute $r$, the correlation coefficient for the sample. If we had data for the entire population, we could find the population correlation coefficient. But because we have only have sample data, we cannot calculate the population correlation coefficient. The sample correlation coefficient, $r$, is our estimate of the unknown population correlation coefficient.</p>
+<p>The sample data are used to compute $r$, the correlation coefficient for the sample. If we had data for the entire population, we could find the population correlation coefficient. But because we only have sample data, we cannot calculate the population correlation coefficient. The sample correlation coefficient, $r$, is our estimate of the unknown population correlation coefficient.</p>
 <ul>
 <li>The symbol for the population correlation coefficient is $ρ$, the Greek letter "rho."</li>
 <li>$ρ$ = population correlation coefficient (unknown)</li>
@@ -13463,7 +13463,7 @@ $$ t = \frac{r\sqrt{n - 2}}{\sqrt{1 - r^2}} = \frac{0.6631\sqrt{11 - 2}}{\sqrt{1
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So half the $p$-value is $P(t \geq 2.6576) = 0.0131$. This means that the whole $p$-value is</p>
-$$p\text{-value} = 2(0.0131) = 0.0262. $$<p>So assuming that the null hypothesis is true, that there is no correlation in the population, there would still a 2.62% chance that a random sample of 11 data points would have a correlation coefficient at least as extreme as $r = 0.6631$.</p>
+$$p\text{-value} = 2(0.0131) = 0.0262. $$<p>So assuming that the null hypothesis is true—that there is no correlation in the population—there would still be a 2.62% chance that a random sample of 11 data points would have a correlation coefficient at least as extreme as $r = 0.6631$.</p>
 <h5 id="Part-4:-Make-a-conclusion-about-the-null-hypothesis.">Part 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Part-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>We're performing the test at the 1% significance level, so $\alpha = 0.01$. Thus, since</p>
 $$p\text{-value} = 0.0262 \geq 0.01 = \alpha, $$<p>the evidence is not sufficient to reject the null hypothesis.</p>
 <p>We conclude that it is possible that there is no linear correlation in the population between a student's third exam score and their final exam score.</p>

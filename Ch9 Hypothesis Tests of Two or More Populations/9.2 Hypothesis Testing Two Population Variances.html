@@ -13371,8 +13371,7 @@ RAIQAJEABEAkAAEQCUAARAIQ4H+P7haD5UTrsgAAAABJRU5ErkJggg=="
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You may recall that we use a $\chi^2$-distribution when performing a hypothesis test on the variance of a population. When comparing two population variances, we have one $\chi^2$-distribution for each of the two population, so we compare the population variances using an $F$-distribution. When the populations are independent from each other and normally distributed, the test statistic for the hypothesis test is given by</p>
-$$ F = \frac{s_1^2}{s_2^2}, $$<p>where $s_1$ is the sample standard deviation of the sample from the first population, and $s_2$ is the sample standard deviation of the sample from the second population. If the size of the first sample is $n_1$ and the size of the second sample is $n_2$, then the numerator degrees of freedom is $df_1 = n_1 - 1$ and the denominator degrees of freedom is $df_2 = n_2 - 1$.</p>
-<p>It doesn't matter which population you call the first population and which you call the second population. We say that the sample from whichever population you call population 1 has sample size $n_1$ and sample standard deviation $s_1$. We say that the sample from whichever population you call population 2 has sample size $n_2$ and sample standard deviation $s_2$.</p>
+$$ F = \frac{s_1^2}{s_2^2}, $$<p>where $s_1$ is the sample standard deviation of the sample from population 1, and $s_2$ is the sample standard deviation of the sample from population 2. If the size of sample 1 is $n_1$ and the size of sample 2 is $n_2$, then the numerator degrees of freedom is $df_1 = n_1 - 1$ and the denominator degrees of freedom is $df_2 = n_2 - 1$.</p>
 <p>The general steps for completing a hypothesis test have not changed:</p>
 <ol>
 <li>State the null and alternative hypotheses.</li>
@@ -13393,11 +13392,243 @@ $$ F = \frac{s_1^2}{s_2^2}, $$<p>where $s_1$ is the sample standard deviation of
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2.1">Example 2.1<a class="anchor-link" href="#Example-2.1">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A researcher believes that there is less variance in the heights of 10 year-old males compared to adult males. She measures the heights of 22 10-year-old males and 27 adult males with the following results (in centimeters):</p>
+<p>15 Year-Old Males (Sample A):</p>
+
+<pre><code>148.8, 141.4, 144.9, 140.2, 140.7, 139.6, 148.5, 136.9, 147.5, 148.5, 131.8, 127.9, 132.2, 138.6, 148.5, 141.1, 130.9, 139.2, 137.5, 151.9, 135, 142.6
+
+</code></pre>
+<p>Adult Males (Sample B):</p>
+
+<pre><code>168.8, 186.4, 172.1, 180.1, 163.7, 185.2, 173.2, 174, 165.9, 169.2, 175.7, 181.3, 172.7, 172.1, 168.3, 171.8, 195, 186.4, 179, 168.3, 171.3, 182.9, 164.4, 169, 186.8, 178.3, 191.1
+
+</code></pre>
+<p>Conduct a hypothesis test with a 7% level of significance to test her claim.</p>
+<h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><h5 id="Step-1:-State-the-null-and-alternative-hypotheses.">Step 1: State the null and alternative hypotheses.<a class="anchor-link" href="#Step-1:-State-the-null-and-alternative-hypotheses.">&#182;</a></h5><p>We are given that one of the hypotheses is that the heights of 10 year-old males has a smaller variance than the heights of adult males. Written mathematically, this means that one of our hypotheses is that $\sigma_A^2 &lt; \sigma_B^2$. We can rewrite this in a form that is easier to test by dividing both sides by $\sigma_B^2$ to get
+$$\frac{\sigma_A^2}{\sigma_B^2} &lt; 1.$$ 
+Since this inequality uses the less-than symbol, this is the alternative hypothesis. Using the opposite symbol for the null hypothesis, we obtain our hypotheses:
+$$\begin{align}
+H_0:&amp; \frac{\sigma_A^2}{\sigma_B^2} \geq 1, \\
+H_a:&amp; \frac{\sigma_A^2}{\sigma_B^2} &lt; 1.
+\end{align}$$
+Note that because $H_a$ uses a less-than symbol, we will be performing a left-tailed test.</p>
+<h5 id="Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-test-statistics.">Step 2: Assuming the null hypothesis is true, determine the features of the distribution of test statistics.<a class="anchor-link" href="#Step-2:-Assuming-the-null-hypothesis-is-true,-determine-the-features-of-the-distribution-of-test-statistics.">&#182;</a></h5><p>Since we are testing two population variances, we will use an $F$-distribution. The numerator degrees of freedom is $df_A = 22 - 1 = 21$ and the denominator degrees of freedom is $df_B = 26$.</p>
+<h5 id="Step-3:-Find-the-$p$-value-of-the-test-statistic.">Step 3: Find the $p$-value of the test statistic.<a class="anchor-link" href="#Step-3:-Find-the-$p$-value-of-the-test-statistic.">&#182;</a></h5><p>Our test statistic is $F = \frac{s_A^2}{s_B^2}$, which means we first need to find the standard deviation $s_A$ of sample A and the standard deviation $s_B$ of sample B. Let's start by finding $s_A$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">xA</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">148.8</span><span class="p">,</span> <span class="m">141.4</span><span class="p">,</span> <span class="m">144.9</span><span class="p">,</span> <span class="m">140.2</span><span class="p">,</span> <span class="m">140.7</span><span class="p">,</span> <span class="m">139.6</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">136.9</span><span class="p">,</span> <span class="m">147.5</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">131.8</span><span class="p">,</span> <span class="m">127.9</span><span class="p">,</span> <span class="m">132.2</span><span class="p">,</span> <span class="m">138.6</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">141.1</span><span class="p">,</span> <span class="m">130.9</span><span class="p">,</span> <span class="m">139.2</span><span class="p">,</span> <span class="m">137.5</span><span class="p">,</span> <span class="m">151.9</span><span class="p">,</span> <span class="m">135</span><span class="p">,</span> <span class="m">142.6</span><span class="p">)</span>
+<span class="n">nA</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">xA</span><span class="p">)</span>
+
+<span class="n">xbarA</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xA</span><span class="p">)</span><span class="o">/</span><span class="n">nA</span>
+
+<span class="n">sA</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">xA</span> <span class="o">-</span> <span class="n">xbarA</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nA</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sA</span>
+</pre></div>
+
     </div>
-  </div>
-</body>
+</div>
+</div>
 
- 
+<div class="output_wrapper">
+<div class="output">
 
 
-</html>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+6.61266658068886
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the standard deviation of sample A is $s_A = 6.613$. The process is the same to find $s_B$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">xB</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">168.8</span><span class="p">,</span> <span class="m">186.4</span><span class="p">,</span> <span class="m">172.1</span><span class="p">,</span> <span class="m">180.1</span><span class="p">,</span> <span class="m">163.7</span><span class="p">,</span> <span class="m">185.2</span><span class="p">,</span> <span class="m">173.2</span><span class="p">,</span> <span class="m">174</span><span class="p">,</span> <span class="m">165.9</span><span class="p">,</span> <span class="m">169.2</span><span class="p">,</span> <span class="m">175.7</span><span class="p">,</span> <span class="m">181.3</span><span class="p">,</span> <span class="m">172.7</span><span class="p">,</span> <span class="m">172.1</span><span class="p">,</span> <span class="m">168.3</span><span class="p">,</span> <span class="m">171.8</span><span class="p">,</span> <span class="m">195</span><span class="p">,</span> <span class="m">186.4</span><span class="p">,</span> <span class="m">179</span><span class="p">,</span> <span class="m">168.3</span><span class="p">,</span> <span class="m">171.3</span><span class="p">,</span> <span class="m">182.9</span><span class="p">,</span> <span class="m">164.4</span><span class="p">,</span> <span class="m">169</span><span class="p">,</span> <span class="m">186.8</span><span class="p">,</span> <span class="m">178.3</span><span class="p">,</span> <span class="m">191.1</span><span class="p">)</span>
+<span class="n">nB</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">xB</span><span class="p">)</span>
+
+<span class="n">xbarB</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xB</span><span class="p">)</span><span class="o">/</span><span class="n">nB</span>
+
+<span class="n">sB</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">xB</span> <span class="o">-</span> <span class="n">xbarB</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nB</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sB</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+8.45772965299736
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The standard deviation of sample B is $s_B = 8.458$.</p>
+<p>We can now calculate our test statistic.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="bp">F</span> <span class="o">&lt;-</span> <span class="n">sA^2</span><span class="o">/</span><span class="n">sB^2</span>
+<span class="bp">F</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+0.611287694110602
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our test statistic is
+$$ F = \frac{s_A^2}{s_B^2} = \frac{6.613^2}{8.458^2} = 0.611. $$</p>
+<p>We are now prepared to calculate the $p$-value using the numerator degrees of freedom and denominator degrees of freedom we calculated in step 2.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pf</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">df1</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span> <span class="n">df2</span> <span class="o">=</span> <span class="m">26</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+0.12648514626268
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the $p$-value is $P(F &lt; 0.611) = 0.126$. In other words, assuming the null hypothesis is true, there is a 12.6% chance of the variance from a sample from population A being at least as small as the variance we actually obtained relative to the variance from a sample from population B.</p>
+<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>Since $p$-value $= 0.126 \geq 0.07 = \alpha$, we do <em>not</em> reject the null hypothesis. There is not enough evidence to conclude that the variance of heights of 10 year-old males is lower than the variance of heights of adult males.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2.2">Example 2.2<a class="anchor-link" href="#Example-2.2">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="videoWrapper">
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/5Us1OtgWjEA?vq=hd1080" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+

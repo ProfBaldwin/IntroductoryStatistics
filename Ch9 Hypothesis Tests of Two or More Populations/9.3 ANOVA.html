@@ -13635,7 +13635,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">xbar1</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span>
@@ -13737,10 +13737,10 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">SS_between</span> <span class="o">&lt;-</span> <span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">xbar1</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span><span class="n">^2</span> <span class="o">+</span> <span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">xbar2</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span><span class="n">^2</span> <span class="o">+</span> <span class="n">n3</span><span class="o">*</span><span class="p">(</span><span class="n">xbar3</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span><span class="n">^2</span> <span class="o">+</span> <span class="n">n4</span><span class="o">*</span><span class="p">(</span><span class="n">xbar4</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">SS_between</span> <span class="o">&lt;-</span> <span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">xbar1</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span><span class="n">^2</span> <span class="o">+</span> <span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">xbar2</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span><span class="n">^2</span> <span class="o">+</span> <span class="n">n3</span><span class="o">*</span><span class="p">(</span><span class="n">xbar3</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span><span class="n">^2</span> <span class="o">+</span> <span class="n">n4</span><span class="o">*</span><span class="p">(</span><span class="n">xbar4</span> <span class="o">-</span> <span class="n">grandx</span><span class="p">)</span><span class="n">^2</span>
 <span class="n">SS_between</span>
 
 <span class="n">df_between</span> <span class="o">&lt;-</span> <span class="m">3</span>
@@ -13764,7 +13764,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 
 
 <div class="output_html rendered_html output_subarea ">
-2089.89778368366
+2288.98630610853
 </div>
 
 </div>
@@ -13776,7 +13776,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 
 
 <div class="output_html rendered_html output_subarea ">
-696.632594561219
+762.995435369511
 </div>
 
 </div>
@@ -13788,7 +13788,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $SS_{\text{between}} = 2089.898$ and $MS_{\text{between}} = 696.633$.</p>
+<p>So $SS_{\text{between}} = 2288.986$ and $MS_{\text{between}} = 762.995$.</p>
 <p>Next, we calculate $SS_{\text{within}} = \sum (x_1 - \bar{x}_1)^2 + \sum (x_2 - \bar{x}_2)^2 + \sum (x_3 - \bar{x}_3)^2 + \sum(x_4 - \bar{x}_4)^2$ and $MS_{\text{within}} = \frac{SS_\text{within}}{df_\text{within}}$.</p>
 
 </div>
@@ -13796,7 +13796,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">SS_within</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">xbar1</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">+</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">xbar2</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">+</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x3</span> <span class="o">-</span> <span class="n">xbar3</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">+</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x4</span> <span class="o">-</span> <span class="n">xbar4</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span>
@@ -13855,7 +13855,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="bp">F</span> <span class="o">&lt;-</span> <span class="n">MS_between</span><span class="o">/</span><span class="n">MS_within</span>
@@ -13877,7 +13877,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 
 
 <div class="output_html rendered_html output_subarea ">
-2.29278728707346
+2.51120353536166
 </div>
 
 </div>
@@ -13923,7 +13923,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pf</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">df1</span> <span class="o">=</span> <span class="n">df_between</span><span class="p">,</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df_within</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
@@ -13944,7 +13944,7 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 
 
 <div class="output_html rendered_html output_subarea ">
-0.0812088564250833
+0.0616171055195667
 </div>
 
 </div>
@@ -13956,8 +13956,8 @@ $$ df_{\text{within}} = (n_1 - 1) + (n_2 - 1) + (n_3 - 1) + (n_4 - 1) = (40 - 1)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So $P(F &gt; 2.293) = 0.081$. That is, there is about an 8.1% chance that we would randomly sample data with this much variation between samples if the population means were all actually equal.</p>
-<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>Since our $p$-value $= 0.081 \geq 0.06 = \alpha$, we do <em>not</em> reject the null hypothesis. There is not enough evidence to conclude that the average daily high temperature for at least one year is different than the others.</p>
+<p>So $P(F &gt; 2.511) = 0.062$. That is, there is about an 6.2% chance that we would randomly sample data with this much variation between samples if the population means were all actually equal.</p>
+<h5 id="Step-4:-Make-a-conclusion-about-the-null-hypothesis.">Step 4: Make a conclusion about the null hypothesis.<a class="anchor-link" href="#Step-4:-Make-a-conclusion-about-the-null-hypothesis.">&#182;</a></h5><p>Since our $p$-value $= 0.062 \geq 0.06 = \alpha$, we do <em>not</em> reject the null hypothesis. There is not enough evidence to conclude that the average daily high temperature for at least one year is different than the others.</p>
 
 </div>
 </div>

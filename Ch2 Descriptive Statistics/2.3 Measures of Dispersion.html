@@ -13185,13 +13185,13 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">beats</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">70</span><span class="p">,</span> <span class="m">73</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">81</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">beats</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">70</span><span class="p">,</span> <span class="m">73</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">81</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Sample Mean</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">beats</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">beats</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">beats</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">beats</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13207,10 +13207,11 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 76
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+76
 </div>
+
 </div>
 
 </div>
@@ -13232,8 +13233,8 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Sample Standard Deviation</span>
-<span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">s</span>
 </pre></div>
 
     </div>
@@ -13249,10 +13250,11 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 12.14496
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+12.1449578014911
 </div>
+
 </div>
 
 </div>
@@ -13262,7 +13264,7 @@ Here, $x$ is a data value in our population, $\mu$ is the population mean, and $
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The sample standard deviation is $s = 12.14496$.</p>
+<p>The sample standard deviation is $s = 12.145$.</p>
 <p><br><br>
 Now let's explain what we did. Remember, we want to calculate the sample standard deviation $s$ using the formula
 $$ s = \sqrt{\frac{\sum(x - \bar{x})^2}{n - 1}}.$$</p>
@@ -13477,8 +13479,8 @@ To do so, we use the <code>sqrt</code> function:</p>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">beats</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">s</span>
 </pre></div>
 
     </div>
@@ -13494,10 +13496,11 @@ To do so, we use the <code>sqrt</code> function:</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 12.14496
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+12.1449578014911
 </div>
+
 </div>
 
 </div>
@@ -13515,7 +13518,7 @@ To do so, we use the <code>sqrt</code> function:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-3.2">Example 3.2<a class="anchor-link" href="#Example-3.2">&#182;</a></h3><p>Use the following data (first exam scores) from Susan Dean's spring pre-calculus class:</p>
+<h3 id="Example-2.3.2">Example 2.3.2<a class="anchor-link" href="#Example-2.3.2">&#182;</a></h3><p>Use the following data (first exam scores) from Susan Dean's spring pre-calculus class:</p>
 <p>33, 42, 49, 49, 53, 55, 55, 61, 63, 67, 68, 68, 69, 69, 72, 73, 74, 78, 80, 83, 88, 88, 88, 90, 92, 94, 94, 94, 94, 96, 100</p>
 <ol>
 <li>Calculate the sample mean.</li>
@@ -13528,16 +13531,16 @@ To do so, we use the <code>sqrt</code> function:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">scores</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">33</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="m">49</span><span class="p">,</span> <span class="m">49</span><span class="p">,</span> <span class="m">53</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">63</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">72</span><span class="p">,</span> <span class="m">73</span><span class="p">,</span> <span class="m">74</span><span class="p">,</span> <span class="m">78</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">83</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">92</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">96</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">33</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="m">49</span><span class="p">,</span> <span class="m">49</span><span class="p">,</span> <span class="m">53</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">63</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">68</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">72</span><span class="p">,</span> <span class="m">73</span><span class="p">,</span> <span class="m">74</span><span class="p">,</span> <span class="m">78</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">83</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">92</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">96</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Sample Mean</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13553,10 +13556,11 @@ To do so, we use the <code>sqrt</code> function:</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 73.51613
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+73.5161290322581
 </div>
+
 </div>
 
 </div>
@@ -13573,12 +13577,12 @@ To do so, we use the <code>sqrt</code> function:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Sample Standard Deviation</span>
-<span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">scores</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">scores</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">s</span>
 </pre></div>
 
     </div>
@@ -13594,10 +13598,11 @@ To do so, we use the <code>sqrt</code> function:</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 17.92367
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+17.923673298633
 </div>
+
 </div>
 
 </div>
@@ -13607,7 +13612,7 @@ To do so, we use the <code>sqrt</code> function:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So the standard deviation of the scores is $s = 17.92367$.</p>
+<p>So the standard deviation of the scores is $s = 17.924$.</p>
 
 </div>
 </div>
@@ -13636,7 +13641,7 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-3.3">Example 3.3<a class="anchor-link" href="#Example-3.3">&#182;</a></h3><p>In a fifth grade class, the teacher was interested in the average age and the population standard deviation of the ages of her students. The following data are the ages for all N = 20 fifth grade students in her class. The ages are rounded to the nearest half year:</p>
+<h3 id="Example-2.3.3">Example 2.3.3<a class="anchor-link" href="#Example-2.3.3">&#182;</a></h3><p>In a fifth grade class, the teacher was interested in the average age and the population standard deviation of the ages of her students. The following data are the ages for all N = 20 fifth grade students in her class. The ages are rounded to the nearest half year:</p>
 <p>9, 9.5, 9.5, 10, 10, 10, 10, 10.5, 10.5, 10.5, 10.5, 11, 11, 11, 11, 11, 11, 11.5, 11.5, 11.5</p>
 <ol>
 <li>Find the population mean.</li>
@@ -13651,16 +13656,16 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">ages</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">9.5</span><span class="p">,</span> <span class="m">9.5</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11.5</span><span class="p">,</span> <span class="m">11.5</span><span class="p">,</span> <span class="m">11.5</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">ages</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">9.5</span><span class="p">,</span> <span class="m">9.5</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">11.5</span><span class="p">,</span> <span class="m">11.5</span><span class="p">,</span> <span class="m">11.5</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Population Mean</span>
-<span class="n">N</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
 
-<span class="n">mu</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">mu</span>
 </pre></div>
 
     </div>
@@ -13676,10 +13681,11 @@ The maximum value in our data is 100, which is not as far away from the mean as 
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 10.525
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+10.525
 </div>
+
 </div>
 
 </div>
@@ -13697,12 +13703,12 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Population Standard Deviation</span>
-<span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">ages</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">ages</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">sigma</span>
 </pre></div>
 
     </div>
@@ -13718,10 +13724,11 @@ The maximum value in our data is 100, which is not as far away from the mean as 
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 0.6977643
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+0.697764286847643
 </div>
+
 </div>
 
 </div>
@@ -13738,7 +13745,7 @@ The maximum value in our data is 100, which is not as far away from the mean as 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">boxplot</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
@@ -13917,9 +13924,9 @@ ggL/B/gVNbe59GgqAAAAAElFTkSuQmCC"
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

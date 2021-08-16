@@ -13128,7 +13128,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4.1">Example 4.1<a class="anchor-link" href="#Example-4.1">&#182;</a></h3><p>A child psychologist is interested in the number of times a newborn baby's crying wakes its mother after midnight. For a random sample of 50 mothers, the following information was obtained. Let $X$ = the number of times per week a newborn baby's crying wakes its mother after midnight. For this example, $x = 0, 1, 2, 3, 4, 5$.</p>
+<h3 id="Example-3.4.1">Example 3.4.1<a class="anchor-link" href="#Example-3.4.1">&#182;</a></h3><p>A child psychologist is interested in the number of times a newborn baby's crying wakes its mother after midnight. For a random sample of 50 mothers, the following information was obtained. Let $X$ = the number of times per week a newborn baby's crying wakes its mother after midnight. For this example, $x = 0, 1, 2, 3, 4, 5$.</p>
 <p>$P(x)$ = probability that $X$ takes on a value $x$.</p>
 <table>
 <thead><tr>
@@ -13184,7 +13184,7 @@ $$ \frac{2}{50} + \frac{11}{50} + \frac{23}{50} + \frac{9}{50} + \frac{4}{50} + 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4.2">Example 4.2<a class="anchor-link" href="#Example-4.2">&#182;</a></h3><p>Suppose Nancy has classes <strong>three days</strong> a week. She attends classes <strong>three days a week 80%</strong> of the time, <strong>two days 15%</strong> of the time, <strong>one day 4%</strong> of the time, and <strong>no days 1%</strong> of the time. Suppose one week is randomly selected.</p>
+<h3 id="Example-3.4.2">Example 3.4.2<a class="anchor-link" href="#Example-3.4.2">&#182;</a></h3><p>Suppose Nancy has classes <strong>three days</strong> a week. She attends classes <strong>three days a week 80%</strong> of the time, <strong>two days 15%</strong> of the time, <strong>one day 4%</strong> of the time, and <strong>no days 1%</strong> of the time. Suppose one week is randomly selected.</p>
 <ol>
 <li>What is $X$?</li>
 <li>$X$ takes on what values?</li>
@@ -13255,7 +13255,7 @@ In words, we multiply each value $x$ by the probability $P(x)$ that the value wi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4.3">Example 4.3<a class="anchor-link" href="#Example-4.3">&#182;</a></h3><p>A men's soccer team plays soccer zero, one, or two days a week. The probability that they play zero days is 0.2, the probability that they play one day is 0.5, and the probability that they play two days is 0.3. Find the long-term average or expected value, $\mu$, of the number of days per week the men's soccer team plays soccer.</p>
+<h3 id="Example-3.4.3">Example 3.4.3<a class="anchor-link" href="#Example-3.4.3">&#182;</a></h3><p>A men's soccer team plays soccer zero, one, or two days a week. The probability that they play zero days is 0.2, the probability that they play one day is 0.5, and the probability that they play two days is 0.3. Find the long-term average or expected value, $\mu$, of the number of days per week the men's soccer team plays soccer.</p>
 <h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><p>$X$ = the number of days the men's soccer team plays soccer per week. $X$ takes on the values 0, 1, 2 and has the probability distribution table below.</p>
 <table>
 <thead><tr>
@@ -13288,12 +13288,11 @@ In words, we multiply each value $x$ by the probability $P(x)$ that the value wi
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">Px</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">0.3</span><span class="p">)</span>
-<span class="n">xPx</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">*</span> <span class="n">Px</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+<span class="n">Px</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">0.3</span><span class="p">)</span>
 
-<span class="n">mu</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xPx</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">Px</span><span class="p">)</span>
+<span class="n">mu</span>
 </pre></div>
 
     </div>
@@ -13309,10 +13308,11 @@ In words, we multiply each value $x$ by the probability $P(x)$ that the value wi
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 1.1
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+1.1
 </div>
+
 </div>
 
 </div>
@@ -13342,7 +13342,7 @@ In words, we multiply each value $x$ by the probability $P(x)$ that the value wi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4.4">Example 4.4<a class="anchor-link" href="#Example-4.4">&#182;</a></h3><p>Suppose you play a game of chance in which five numbers are chosen from 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. A computer randomly selects five numbers from zero to nine with replacement. You pay \$2 to play and could profit \$100,000 if you match all five numbers in order (you get your \$2 back plus \$100,000). Over the long term, what is your <strong>expected</strong> profit of playing the game?</p>
+<h3 id="Example-3.4.4">Example 3.4.4<a class="anchor-link" href="#Example-3.4.4">&#182;</a></h3><p>Suppose you play a game of chance in which five numbers are chosen from 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. A computer randomly selects five numbers from zero to nine with replacement. You pay \$2 to play and could profit \$100,000 if you match all five numbers in order (you get your \$2 back plus \$100,000). Over the long term, what is your <strong>expected</strong> profit of playing the game?</p>
 <h4 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h4><p>Let's first construct a probability distribution table. $X$ = the amount of money you profit from playing the game. The values that $X$ can take on are $x = -2$ and $x = 100,000$. (Note, since we are ultimately interested in the profit, the values are not 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.)</p>
 <p>Now let's look at the probability of winning the game. Let</p>
 <ul>
@@ -13389,15 +13389,14 @@ $$ P(x = -2) = 1.00 - 0.00001 = 0.99999. $$<p>The probability distribution table
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">-2</span><span class="p">,</span> <span class="m">100000</span><span class="p">)</span>
-<span class="n">Px</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.99999</span><span class="p">,</span> <span class="m">0.00001</span><span class="p">)</span>
-<span class="n">xPx</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">*</span> <span class="n">Px</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-2</span><span class="p">,</span> <span class="m">100000</span><span class="p">)</span>
+<span class="n">Px</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.99999</span><span class="p">,</span> <span class="m">0.00001</span><span class="p">)</span>
 
-<span class="n">mu</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xPx</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">Px</span><span class="p">)</span>
+<span class="n">mu</span>
 </pre></div>
 
     </div>
@@ -13413,10 +13412,11 @@ $$ P(x = -2) = 1.00 - 0.00001 = 0.99999. $$<p>The probability distribution table
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] -0.99998
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+-0.99998
 </div>
+
 </div>
 
 </div>
@@ -13460,7 +13460,7 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4.5">Example 4.5<a class="anchor-link" href="#Example-4.5">&#182;</a></h3><p>Patients who have had an appendectomy must stay in the hospital for 1, 2, or 3 days. Patients stay in the hospital for 1 day 40% of the time, for 2 days 55% of the time, and for 3 days 5% of the time.</p>
+<h3 id="Example-3.4.5">Example 3.4.5<a class="anchor-link" href="#Example-3.4.5">&#182;</a></h3><p>Patients who have had an appendectomy must stay in the hospital for 1, 2, or 3 days. Patients stay in the hospital for 1 day 40% of the time, for 2 days 55% of the time, and for 3 days 5% of the time.</p>
 <ol>
 <li>How long should a patient <strong>expect</strong> to stay in the hospital? </li>
 <li>What is the standard deviation?</li>
@@ -13493,16 +13493,15 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">Px</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.40</span><span class="p">,</span> <span class="m">0.55</span><span class="p">,</span> <span class="m">0.05</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="n">Px</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.40</span><span class="p">,</span> <span class="m">0.55</span><span class="p">,</span> <span class="m">0.05</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Mean</span>
-<span class="n">xPx</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">*</span> <span class="n">Px</span>
-<span class="n">mu</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xPx</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">Px</span><span class="p">)</span>
+<span class="n">mu</span>
 </pre></div>
 
     </div>
@@ -13518,10 +13517,11 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 1.65
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+1.65
 </div>
+
 </div>
 
 </div>
@@ -13545,14 +13545,13 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Standard Deviation</span>
-<span class="n">D</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="n">^2</span> <span class="o">*</span> <span class="n">Px</span>
-<span class="n">variance</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
-<span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">variance</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="n">^2</span> <span class="o">*</span> <span class="n">Px</span> <span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
+<span class="n">sigma</span>
 </pre></div>
 
     </div>
@@ -13568,10 +13567,11 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 0.5722762
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+0.57227615711298
 </div>
+
 </div>
 
 </div>
@@ -13581,8 +13581,7 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So the standard deviation is $\sigma = 0.5722762$.</p>
-<p>(Note that we use <code>D</code> to store the list we get from <code>(x - mu)^2 * Px</code> above just because we don't have a better name for it. We could also use <code>Q</code> or <code>K</code> or <code>Steve</code>.)</p>
+<p>So the standard deviation is $\sigma = 0.572$.</p>
 
 </div>
 </div>
@@ -13598,7 +13597,7 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4.6">Example 4.6<a class="anchor-link" href="#Example-4.6">&#182;</a></h3><p>A hospital researcher is interested in the number of times the average post-op patient will ring the nurse during a 12-hour shift. For a random sample of 50 patients, the following information was obtained.</p>
+<h3 id="Example-3.4.6">Example 3.4.6<a class="anchor-link" href="#Example-3.4.6">&#182;</a></h3><p>A hospital researcher is interested in the number of times the average post-op patient will ring the nurse during a 12-hour shift. For a random sample of 50 patients, the following information was obtained.</p>
 <table>
 <thead><tr>
 <th>x</th>
@@ -13643,16 +13642,15 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
-<span class="n">Px</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">8</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">16</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">14</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">6</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">2</span><span class="o">/</span><span class="m">50</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<span class="n">Px</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">8</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">16</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">14</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">6</span><span class="o">/</span><span class="m">50</span><span class="p">,</span> <span class="m">2</span><span class="o">/</span><span class="m">50</span><span class="p">)</span>
 
 <span class="c1"># Calculate the Mean</span>
-<span class="n">xPx</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">*</span> <span class="n">Px</span>
-<span class="n">mu</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xPx</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">Px</span><span class="p">)</span>
+<span class="n">mu</span>
 </pre></div>
 
     </div>
@@ -13668,10 +13666,11 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 2.32
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+2.32
 </div>
+
 </div>
 
 </div>
@@ -13688,14 +13687,13 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate the Standard Deviation</span>
-<span class="n">D</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="n">^2</span> <span class="o">*</span> <span class="n">Px</span>
-<span class="n">variance</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+<span class="n">variance</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="n">^2</span> <span class="o">*</span> <span class="n">Px</span> <span class="p">)</span>
 <span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">sigma</span>
 </pre></div>
 
     </div>
@@ -13711,10 +13709,11 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 1.223765
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+1.22376468326227
 </div>
+
 </div>
 
 </div>
@@ -13724,7 +13723,7 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The standard deviation is $\sigma = 1.223765$.</p>
+<p>The standard deviation is $\sigma = 1.224$.</p>
 
 </div>
 </div>
@@ -13740,7 +13739,7 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4.7">Example 4.7<a class="anchor-link" href="#Example-4.7">&#182;</a></h3>
+<h3 id="Example-3.4.7">Example 3.4.7<a class="anchor-link" href="#Example-3.4.7">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13766,9 +13765,9 @@ $$ \sigma = \sqrt{\sum\left[(x - \mu)^2 P(x)\right]}, $$<p>where $\mu$ is the ex
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

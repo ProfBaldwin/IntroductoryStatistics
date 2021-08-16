@@ -13131,7 +13131,7 @@ The outcomes of a binomial experiment fit a <strong>binomial probability distrib
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.1">Example 5.1<a class="anchor-link" href="#Example-5.1">&#182;</a></h3><p>At ABC College, the withdrawal rate from an elementary physics course is 30% for any given term. This implies that, for any given term, 70% of the students stay in the class for the entire term. A "success" could be defined as an individual who withdrew. The random variable $X$ = the number of students who withdraw from the randomly selected elementary physics class. The probability of success is $p = 0.30$ and the probability of failure is $q = 0.70$. If we track 20 students to see whether or not they withdraw, then this is a binomial experiment with $n = 20$.</p>
+<h3 id="Example-3.5.1">Example 3.5.1<a class="anchor-link" href="#Example-3.5.1">&#182;</a></h3><p>At ABC College, the withdrawal rate from an elementary physics course is 30% for any given term. This implies that, for any given term, 70% of the students stay in the class for the entire term. A "success" could be defined as an individual who withdrew. The random variable $X$ = the number of students who withdraw from the randomly selected elementary physics class. The probability of success is $p = 0.30$ and the probability of failure is $q = 0.70$. If we track 20 students to see whether or not they withdraw, then this is a binomial experiment with $n = 20$.</p>
 
 </div>
 </div>
@@ -13147,7 +13147,7 @@ The outcomes of a binomial experiment fit a <strong>binomial probability distrib
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.2">Example 5.2<a class="anchor-link" href="#Example-5.2">&#182;</a></h3><p>Suppose you play a game that you can only either win or lose. The probability that you win any game is 55%, and the probability that you lose is 45%. Each game you play is independent. You play the game 20 times.</p>
+<h3 id="Example-3.5.2">Example 3.5.2<a class="anchor-link" href="#Example-3.5.2">&#182;</a></h3><p>Suppose you play a game that you can only either win or lose. The probability that you win any game is 55%, and the probability that you lose is 45%. Each game you play is independent. You play the game 20 times.</p>
 <ol>
 <li>Write the function that describes the probability that you win 15 of the 20 times. </li>
 <li>Find the expected value of the distribution.</li>
@@ -13174,7 +13174,7 @@ $$ \sigma = \sqrt{npq} = \sqrt{20(0.55)(0.45)} = 2.2249. $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.3">Example 5.3<a class="anchor-link" href="#Example-5.3">&#182;</a></h3><p>Approximately 70% of statistics students do their homework in time for it to be collected and graded. Each student does homework independently. In a statistics class of 50 students, what is the probability that at least 40 will do their homework on time? Students are selected randomly.</p>
+<h3 id="Example-3.5.3">Example 3.5.3<a class="anchor-link" href="#Example-3.5.3">&#182;</a></h3><p>Approximately 70% of statistics students do their homework in time for it to be collected and graded. Each student does homework independently. In a statistics class of 50 students, what is the probability that at least 40 will do their homework on time? Students are selected randomly.</p>
 <ol>
 <li>Is this a binomial problem? Why or why not?</li>
 <li>How do we define $X$?</li>
@@ -13234,7 +13234,7 @@ where $n$ is the number of trials and $p$ is the probability of success of any o
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.4">Example 5.4<a class="anchor-link" href="#Example-5.4">&#182;</a></h3><p>It has been stated that about 41% of adult workers have a high school diploma but do not pursue any further education. 20 adult workers are randomly selected.</p>
+<h3 id="Example-3.5.4">Example 3.5.4<a class="anchor-link" href="#Example-3.5.4">&#182;</a></h3><p>It has been stated that about 41% of adult workers have a high school diploma but do not pursue any further education. 20 adult workers are randomly selected.</p>
 <ol>
 <li>Find the probability that exactly 7 of the 20 workers have a high school diploma but do not pursue further education.</li>
 <li>Find the probability that at most 4 workers have a high school diploma but do not pursue further education.</li>
@@ -13291,10 +13291,10 @@ $$ X \sim B(20, 0.41) $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
 <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.41</span><span class="p">)</span>
 </pre></div>
 
@@ -13341,11 +13341,11 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
-<span class="n">probs</span> <span class="o">&lt;-</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.41</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.41</span><span class="p">)</span>
 <span class="nf">sum</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 </pre></div>
 
@@ -13384,11 +13384,11 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">17</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">19</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span>
-<span class="n">probs</span> <span class="o">&lt;-</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.41</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">17</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">19</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.41</span><span class="p">)</span>
 <span class="nf">sum</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 </pre></div>
 
@@ -13427,11 +13427,11 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">13</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">17</span><span class="p">)</span>
-<span class="n">probs</span> <span class="o">&lt;-</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.41</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">13</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">17</span><span class="p">)</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.41</span><span class="p">)</span>
 <span class="nf">sum</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 </pre></div>
 
@@ -13478,7 +13478,7 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.5">Example 5.5<a class="anchor-link" href="#Example-5.5">&#182;</a></h3><p>The lifetime risk of developing pancreatic cancer is about one in 78 (1.28%). Suppose we randomly sample 200 people. Let $X$ = the number of people who will develop pancreatic cancer.</p>
+<h3 id="Example-3.5.5">Example 3.5.5<a class="anchor-link" href="#Example-3.5.5">&#182;</a></h3><p>The lifetime risk of developing pancreatic cancer is about one in 78 (1.28%). Suppose we randomly sample 200 people. Let $X$ = the number of people who will develop pancreatic cancer.</p>
 <ol>
 <li>Is it more likely that five or six people will develop pancreatic cancer? Justify your answer numerically.</li>
 <li>Find the probability that less than eight people develop pancreatic cancer.</li>
@@ -13491,10 +13491,10 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
 <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.0128</span><span class="p">)</span>
 </pre></div>
 
@@ -13537,11 +13537,11 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">)</span>
-<span class="n">probs</span> <span class="o">&lt;-</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.0128</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">)</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="m">0.0128</span><span class="p">)</span>
 <span class="nf">sum</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 </pre></div>
 
@@ -13588,7 +13588,7 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.6">Example 5.6<a class="anchor-link" href="#Example-5.6">&#182;</a></h3>
+<h3 id="Example-3.5.6">Example 3.5.6<a class="anchor-link" href="#Example-3.5.6">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13614,9 +13614,9 @@ $$ P(x \leq 4) = P(x = 0) + P(x = 1) + P(x = 2) + P(x = 3) + P(x = 4); $$<p>that
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

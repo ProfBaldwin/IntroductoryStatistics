@@ -13218,11 +13218,11 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
-<span class="n">E</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
 
-<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span> <span class="o">/</span> <span class="n">E</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">chisq</span><span class="p">)</span>
+<span class="n">chisq</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span> <span class="o">/</span> <span class="n">E</span> <span class="p">)</span>
+<span class="n">chisq</span>
 </pre></div>
 
     </div>
@@ -13238,10 +13238,11 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>The observed values $O$ are the actua
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 14.29167
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+14.2916666666667
 </div>
+
 </div>
 
 </div>
@@ -13384,11 +13385,11 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>Note that the table above are the obs
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">21</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">13</span><span class="p">)</span>
-<span class="n">E</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">O</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">21</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">13</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">,</span> <span class="m">13.3333</span><span class="p">)</span>
 
-<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span><span class="o">/</span><span class="n">E</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">chisq</span><span class="p">)</span>
+<span class="n">chisq</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">O</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span><span class="n">^2</span><span class="o">/</span><span class="n">E</span> <span class="p">)</span>
+<span class="n">chisq</span>
 </pre></div>
 
     </div>
@@ -13404,10 +13405,11 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>Note that the table above are the obs
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 9.400024
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+9.40002350055875
 </div>
+
 </div>
 
 </div>
@@ -13425,7 +13427,7 @@ $$ \chi^2 = \sum \frac{(O - E)^2}{E}. $$<p>Note that the table above are the obs
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">9.400</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
@@ -13496,9 +13498,9 @@ $$ p\text{-value} = 0.091 \geq 0.05 = \alpha, $$<p>we do not reject the null hyp
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

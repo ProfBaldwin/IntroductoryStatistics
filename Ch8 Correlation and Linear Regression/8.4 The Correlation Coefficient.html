@@ -13185,8 +13185,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">80</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">80</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
 
 <span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -13388,8 +13388,8 @@ $$ t = \frac{r\sqrt{n-2}}{\sqrt{1 - r^2}} $$<p>to find the $p$-value. To calcula
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">65</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">75</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">175</span><span class="p">,</span> <span class="m">133</span><span class="p">,</span> <span class="m">185</span><span class="p">,</span> <span class="m">163</span><span class="p">,</span> <span class="m">126</span><span class="p">,</span> <span class="m">198</span><span class="p">,</span> <span class="m">153</span><span class="p">,</span> <span class="m">163</span><span class="p">,</span> <span class="m">159</span><span class="p">,</span> <span class="m">151</span><span class="p">,</span> <span class="m">159</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">65</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">75</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">71</span><span class="p">,</span> <span class="m">69</span><span class="p">,</span> <span class="m">69</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">175</span><span class="p">,</span> <span class="m">133</span><span class="p">,</span> <span class="m">185</span><span class="p">,</span> <span class="m">163</span><span class="p">,</span> <span class="m">126</span><span class="p">,</span> <span class="m">198</span><span class="p">,</span> <span class="m">153</span><span class="p">,</span> <span class="m">163</span><span class="p">,</span> <span class="m">159</span><span class="p">,</span> <span class="m">151</span><span class="p">,</span> <span class="m">159</span><span class="p">)</span>
 
 <span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -13429,7 +13429,7 @@ $$ t = \frac{r\sqrt{n - 2}}{\sqrt{1 - r^2}} = \frac{0.6631\sqrt{11 - 2}}{\sqrt{1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pt</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">2.6576</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">9</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
@@ -13508,9 +13508,9 @@ $$p\text{-value} = 0.0262 \geq 0.01 = \alpha, $$<p>the evidence is not sufficien
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

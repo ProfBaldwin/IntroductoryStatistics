@@ -13252,14 +13252,14 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">online</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">67.6</span><span class="p">,</span> <span class="m">70.66</span><span class="p">,</span> <span class="m">94.1</span><span class="p">,</span> <span class="m">41.2</span><span class="p">,</span> <span class="m">38.22</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">85.3</span><span class="p">,</span> <span class="m">61.8</span><span class="p">,</span> <span class="m">64.7</span><span class="p">,</span> <span class="m">55.9</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">55.9</span><span class="p">,</span> <span class="m">82.4</span><span class="p">,</span> <span class="m">70.6</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">91.2</span><span class="p">,</span> <span class="m">58.8</span><span class="p">,</span> <span class="m">97.1</span><span class="p">,</span> <span class="m">73.5</span><span class="p">,</span> <span class="m">91.2</span><span class="p">,</span> <span class="m">85.3</span><span class="p">,</span> <span class="m">94.1</span><span class="p">,</span> <span class="m">73.5</span><span class="p">,</span> <span class="m">61.8</span><span class="p">,</span> <span class="m">64.7</span><span class="p">,</span> <span class="m">82.4</span><span class="p">,</span> <span class="m">79.4</span><span class="p">,</span> <span class="m">64.7</span><span class="p">,</span> <span class="m">35.5</span><span class="p">,</span> <span class="m">79.4</span><span class="p">)</span>
-<span class="n">n1</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">online</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">online</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">67.6</span><span class="p">,</span> <span class="m">70.66</span><span class="p">,</span> <span class="m">94.1</span><span class="p">,</span> <span class="m">41.2</span><span class="p">,</span> <span class="m">38.22</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">85.3</span><span class="p">,</span> <span class="m">61.8</span><span class="p">,</span> <span class="m">64.7</span><span class="p">,</span> <span class="m">55.9</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">55.9</span><span class="p">,</span> <span class="m">82.4</span><span class="p">,</span> <span class="m">70.6</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">91.2</span><span class="p">,</span> <span class="m">58.8</span><span class="p">,</span> <span class="m">97.1</span><span class="p">,</span> <span class="m">73.5</span><span class="p">,</span> <span class="m">91.2</span><span class="p">,</span> <span class="m">85.3</span><span class="p">,</span> <span class="m">94.1</span><span class="p">,</span> <span class="m">73.5</span><span class="p">,</span> <span class="m">61.8</span><span class="p">,</span> <span class="m">64.7</span><span class="p">,</span> <span class="m">82.4</span><span class="p">,</span> <span class="m">79.4</span><span class="p">,</span> <span class="m">64.7</span><span class="p">,</span> <span class="m">35.5</span><span class="p">,</span> <span class="m">79.4</span><span class="p">)</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">online</span><span class="p">)</span>
 
-<span class="n">xbar1</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">online</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar1</span><span class="p">)</span>
+<span class="n">xbar1</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">online</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span>
+<span class="n">xbar1</span>
 </pre></div>
 
     </div>
@@ -13275,10 +13275,11 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 72.85267
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+72.8526666666667
 </div>
+
 </div>
 
 </div>
@@ -13295,11 +13296,11 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s1</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">online</span> <span class="o">-</span> <span class="n">xbar1</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n1</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">online</span> <span class="o">-</span> <span class="n">xbar1</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n1</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
+<span class="n">s1</span>
 </pre></div>
 
     </div>
@@ -13315,10 +13316,11 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 16.91708
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+16.9170825587289
 </div>
+
 </div>
 
 </div>
@@ -13337,14 +13339,14 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">face2face</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">77.9</span><span class="p">,</span> <span class="m">95.3</span><span class="p">,</span> <span class="m">81.2</span><span class="p">,</span> <span class="m">74.1</span><span class="p">,</span> <span class="m">98.8</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">84.9</span><span class="p">,</span> <span class="m">92.9</span><span class="p">,</span> <span class="m">87.1</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">69.4</span><span class="p">,</span> <span class="m">57.6</span><span class="p">,</span> <span class="m">69.4</span><span class="p">,</span> <span class="m">67.1</span><span class="p">,</span> <span class="m">97.6</span><span class="p">,</span> <span class="m">85.9</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">91.8</span><span class="p">,</span> <span class="m">78.8</span><span class="p">,</span> <span class="m">71.8</span><span class="p">,</span> <span class="m">98.8</span><span class="p">,</span> <span class="m">61.2</span><span class="p">,</span> <span class="m">92.9</span><span class="p">,</span> <span class="m">90.6</span><span class="p">,</span> <span class="m">97.6</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">95.3</span><span class="p">,</span> <span class="m">83.5</span><span class="p">,</span> <span class="m">92.9</span><span class="p">,</span> <span class="m">89.4</span><span class="p">)</span>
-<span class="n">n2</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">face2face</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">face2face</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">77.9</span><span class="p">,</span> <span class="m">95.3</span><span class="p">,</span> <span class="m">81.2</span><span class="p">,</span> <span class="m">74.1</span><span class="p">,</span> <span class="m">98.8</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">84.9</span><span class="p">,</span> <span class="m">92.9</span><span class="p">,</span> <span class="m">87.1</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">69.4</span><span class="p">,</span> <span class="m">57.6</span><span class="p">,</span> <span class="m">69.4</span><span class="p">,</span> <span class="m">67.1</span><span class="p">,</span> <span class="m">97.6</span><span class="p">,</span> <span class="m">85.9</span><span class="p">,</span> <span class="m">88.2</span><span class="p">,</span> <span class="m">91.8</span><span class="p">,</span> <span class="m">78.8</span><span class="p">,</span> <span class="m">71.8</span><span class="p">,</span> <span class="m">98.8</span><span class="p">,</span> <span class="m">61.2</span><span class="p">,</span> <span class="m">92.9</span><span class="p">,</span> <span class="m">90.6</span><span class="p">,</span> <span class="m">97.6</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">95.3</span><span class="p">,</span> <span class="m">83.5</span><span class="p">,</span> <span class="m">92.9</span><span class="p">,</span> <span class="m">89.4</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">face2face</span><span class="p">)</span>
 
-<span class="n">xbar2</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">face2face</span><span class="p">)</span><span class="o">/</span><span class="n">n2</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar2</span><span class="p">)</span>
+<span class="n">xbar2</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">face2face</span><span class="p">)</span><span class="o">/</span><span class="n">n2</span>
+<span class="n">xbar2</span>
 </pre></div>
 
     </div>
@@ -13360,10 +13362,11 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 84.94667
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+84.9466666666667
 </div>
+
 </div>
 
 </div>
@@ -13380,11 +13383,11 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s2</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">face2face</span> <span class="o">-</span> <span class="n">xbar2</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n2</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">face2face</span> <span class="o">-</span> <span class="n">xbar2</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n2</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
+<span class="n">s2</span>
 </pre></div>
 
     </div>
@@ -13400,10 +13403,11 @@ $$ \sigma_{\overline{D}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, $$<p>wh
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 11.71288
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+11.7128792459363
 </div>
+
 </div>
 
 </div>
@@ -13424,7 +13428,7 @@ $$ t = \frac{\overline{d} - \mu_{\overline{D}}}{\sigma_{\overline{D}}} = \frac{-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pt</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">-3.2193</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">29</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>

@@ -13152,13 +13152,13 @@ $$ df = n - 1 = 13 - 1 = 12. $$<h5 id="Step-3:-Find-the-$p$-value-of-the-test-st
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2002.08</span><span class="p">,</span> <span class="m">1999.25</span><span class="p">,</span> <span class="m">2002</span><span class="p">,</span> <span class="m">1996.51</span><span class="p">,</span> <span class="m">1998.99</span><span class="p">,</span> <span class="m">2000.06</span><span class="p">,</span> <span class="m">1999.73</span><span class="p">,</span> <span class="m">2001.16</span><span class="p">,</span> <span class="m">2001.19</span><span class="p">,</span> <span class="m">2002.14</span><span class="p">,</span> <span class="m">2000.21</span><span class="p">,</span> <span class="m">2002.15</span><span class="p">,</span> <span class="m">2000.06</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2002.08</span><span class="p">,</span> <span class="m">1999.25</span><span class="p">,</span> <span class="m">2002</span><span class="p">,</span> <span class="m">1996.51</span><span class="p">,</span> <span class="m">1998.99</span><span class="p">,</span> <span class="m">2000.06</span><span class="p">,</span> <span class="m">1999.73</span><span class="p">,</span> <span class="m">2001.16</span><span class="p">,</span> <span class="m">2001.19</span><span class="p">,</span> <span class="m">2002.14</span><span class="p">,</span> <span class="m">2000.21</span><span class="p">,</span> <span class="m">2002.15</span><span class="p">,</span> <span class="m">2000.06</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
 <span class="n">xbar</span>
 </pre></div>
 
@@ -13196,10 +13196,10 @@ $$ df = n - 1 = 13 - 1 = 12. $$<h5 id="Step-3:-Find-the-$p$-value-of-the-test-st
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
 <span class="n">s</span>
 </pre></div>
 
@@ -13238,11 +13238,11 @@ $$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}. $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">sigma</span> <span class="o">&lt;-</span> <span class="m">1.5</span>
-<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="n">s^2</span> <span class="o">/</span> <span class="n">sigma^2</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="m">1.5</span>
+<span class="n">chisq</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="n">s^2</span> <span class="o">/</span> <span class="n">sigma^2</span>
 <span class="n">chisq</span>
 </pre></div>
 
@@ -13280,10 +13280,10 @@ $$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}. $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">14.1443</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">12</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">pvalue</span> <span class="o">=</span> <span class="nf">pchisq</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">14.1443</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">12</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 <span class="n">pvalue</span>
 </pre></div>
 
@@ -13352,13 +13352,13 @@ H_a:&amp;\ \sigma \neq 15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">108</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="m">98</span><span class="p">,</span> <span class="m">101</span><span class="p">,</span> <span class="m">118</span><span class="p">,</span> <span class="m">105</span><span class="p">,</span> <span class="m">102</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">112</span><span class="p">,</span> <span class="m">113</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">101</span><span class="p">,</span> <span class="m">93</span><span class="p">,</span> <span class="m">98</span><span class="p">,</span> <span class="m">104</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">87</span><span class="p">,</span> <span class="m">90</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">108</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="m">98</span><span class="p">,</span> <span class="m">101</span><span class="p">,</span> <span class="m">118</span><span class="p">,</span> <span class="m">105</span><span class="p">,</span> <span class="m">102</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">112</span><span class="p">,</span> <span class="m">113</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">101</span><span class="p">,</span> <span class="m">93</span><span class="p">,</span> <span class="m">98</span><span class="p">,</span> <span class="m">104</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">87</span><span class="p">,</span> <span class="m">90</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
 <span class="n">xbar</span>
 </pre></div>
 
@@ -13396,10 +13396,10 @@ H_a:&amp;\ \sigma \neq 15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">s</span>
 </pre></div>
 
@@ -13437,11 +13437,11 @@ $$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}. $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">sigma</span> <span class="o">&lt;-</span> <span class="m">15</span>
-<span class="n">chisq</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="n">s^2</span> <span class="o">/</span> <span class="n">sigma^2</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="m">15</span>
+<span class="n">chisq</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="n">s^2</span> <span class="o">/</span> <span class="n">sigma^2</span>
 <span class="n">chisq</span>
 </pre></div>
 
@@ -13479,10 +13479,10 @@ $$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}. $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">half_pvalue</span> <span class="o">&lt;-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="m">7.2909</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">17</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">half_pvalue</span> <span class="o">=</span> <span class="nf">pchisq</span><span class="p">(</span><span class="m">7.2909</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">17</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">half_pvalue</span>
 </pre></div>
 
@@ -13520,10 +13520,10 @@ $$ \chi^2 = \frac{(n - 1)s^2}{\sigma^2}. $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="m">2</span><span class="o">*</span><span class="n">half_pvalue</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">pvalue</span> <span class="o">=</span> <span class="m">2</span><span class="o">*</span><span class="n">half_pvalue</span>
 <span class="n">pvalue</span>
 </pre></div>
 
@@ -13592,9 +13592,9 @@ $$ p\text{-value} = 0.0411 &lt; 0.05 = \alpha, $$<p>we reject the null hypothesi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

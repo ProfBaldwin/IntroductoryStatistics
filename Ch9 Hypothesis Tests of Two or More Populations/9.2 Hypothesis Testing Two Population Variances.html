@@ -13430,15 +13430,15 @@ Note that because $H_a$ uses a less-than symbol, we will be performing a left-ta
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">xA</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">148.8</span><span class="p">,</span> <span class="m">141.4</span><span class="p">,</span> <span class="m">144.9</span><span class="p">,</span> <span class="m">140.2</span><span class="p">,</span> <span class="m">140.7</span><span class="p">,</span> <span class="m">139.6</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">136.9</span><span class="p">,</span> <span class="m">147.5</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">131.8</span><span class="p">,</span> <span class="m">127.9</span><span class="p">,</span> <span class="m">132.2</span><span class="p">,</span> <span class="m">138.6</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">141.1</span><span class="p">,</span> <span class="m">130.9</span><span class="p">,</span> <span class="m">139.2</span><span class="p">,</span> <span class="m">137.5</span><span class="p">,</span> <span class="m">151.9</span><span class="p">,</span> <span class="m">135</span><span class="p">,</span> <span class="m">142.6</span><span class="p">)</span>
-<span class="n">nA</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">xA</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">xA</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">148.8</span><span class="p">,</span> <span class="m">141.4</span><span class="p">,</span> <span class="m">144.9</span><span class="p">,</span> <span class="m">140.2</span><span class="p">,</span> <span class="m">140.7</span><span class="p">,</span> <span class="m">139.6</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">136.9</span><span class="p">,</span> <span class="m">147.5</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">131.8</span><span class="p">,</span> <span class="m">127.9</span><span class="p">,</span> <span class="m">132.2</span><span class="p">,</span> <span class="m">138.6</span><span class="p">,</span> <span class="m">148.5</span><span class="p">,</span> <span class="m">141.1</span><span class="p">,</span> <span class="m">130.9</span><span class="p">,</span> <span class="m">139.2</span><span class="p">,</span> <span class="m">137.5</span><span class="p">,</span> <span class="m">151.9</span><span class="p">,</span> <span class="m">135</span><span class="p">,</span> <span class="m">142.6</span><span class="p">)</span>
+<span class="n">nA</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">xA</span><span class="p">)</span>
 
-<span class="n">xbarA</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xA</span><span class="p">)</span><span class="o">/</span><span class="n">nA</span>
+<span class="n">xbarA</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xA</span><span class="p">)</span><span class="o">/</span><span class="n">nA</span>
 
-<span class="n">sA</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">xA</span> <span class="o">-</span> <span class="n">xbarA</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nA</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sA</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">xA</span> <span class="o">-</span> <span class="n">xbarA</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nA</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">sA</span>
 </pre></div>
 
@@ -13476,15 +13476,15 @@ Note that because $H_a$ uses a less-than symbol, we will be performing a left-ta
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">xB</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">168.8</span><span class="p">,</span> <span class="m">186.4</span><span class="p">,</span> <span class="m">172.1</span><span class="p">,</span> <span class="m">180.1</span><span class="p">,</span> <span class="m">163.7</span><span class="p">,</span> <span class="m">185.2</span><span class="p">,</span> <span class="m">173.2</span><span class="p">,</span> <span class="m">174</span><span class="p">,</span> <span class="m">165.9</span><span class="p">,</span> <span class="m">169.2</span><span class="p">,</span> <span class="m">175.7</span><span class="p">,</span> <span class="m">181.3</span><span class="p">,</span> <span class="m">172.7</span><span class="p">,</span> <span class="m">172.1</span><span class="p">,</span> <span class="m">168.3</span><span class="p">,</span> <span class="m">171.8</span><span class="p">,</span> <span class="m">195</span><span class="p">,</span> <span class="m">186.4</span><span class="p">,</span> <span class="m">179</span><span class="p">,</span> <span class="m">168.3</span><span class="p">,</span> <span class="m">171.3</span><span class="p">,</span> <span class="m">182.9</span><span class="p">,</span> <span class="m">164.4</span><span class="p">,</span> <span class="m">169</span><span class="p">,</span> <span class="m">186.8</span><span class="p">,</span> <span class="m">178.3</span><span class="p">,</span> <span class="m">191.1</span><span class="p">)</span>
-<span class="n">nB</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">xB</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">xB</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">168.8</span><span class="p">,</span> <span class="m">186.4</span><span class="p">,</span> <span class="m">172.1</span><span class="p">,</span> <span class="m">180.1</span><span class="p">,</span> <span class="m">163.7</span><span class="p">,</span> <span class="m">185.2</span><span class="p">,</span> <span class="m">173.2</span><span class="p">,</span> <span class="m">174</span><span class="p">,</span> <span class="m">165.9</span><span class="p">,</span> <span class="m">169.2</span><span class="p">,</span> <span class="m">175.7</span><span class="p">,</span> <span class="m">181.3</span><span class="p">,</span> <span class="m">172.7</span><span class="p">,</span> <span class="m">172.1</span><span class="p">,</span> <span class="m">168.3</span><span class="p">,</span> <span class="m">171.8</span><span class="p">,</span> <span class="m">195</span><span class="p">,</span> <span class="m">186.4</span><span class="p">,</span> <span class="m">179</span><span class="p">,</span> <span class="m">168.3</span><span class="p">,</span> <span class="m">171.3</span><span class="p">,</span> <span class="m">182.9</span><span class="p">,</span> <span class="m">164.4</span><span class="p">,</span> <span class="m">169</span><span class="p">,</span> <span class="m">186.8</span><span class="p">,</span> <span class="m">178.3</span><span class="p">,</span> <span class="m">191.1</span><span class="p">)</span>
+<span class="n">nB</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">xB</span><span class="p">)</span>
 
-<span class="n">xbarB</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xB</span><span class="p">)</span><span class="o">/</span><span class="n">nB</span>
+<span class="n">xbarB</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">xB</span><span class="p">)</span><span class="o">/</span><span class="n">nB</span>
 
-<span class="n">sB</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">xB</span> <span class="o">-</span> <span class="n">xbarB</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nB</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sB</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">xB</span> <span class="o">-</span> <span class="n">xbarB</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">nB</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">sB</span>
 </pre></div>
 
@@ -13523,11 +13523,11 @@ Note that because $H_a$ uses a less-than symbol, we will be performing a left-ta
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="bp">F</span> <span class="o">&lt;-</span> <span class="n">sA^2</span><span class="o">/</span><span class="n">sB^2</span>
-<span class="bp">F</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">Fscore</span> <span class="o">=</span> <span class="n">sA^2</span><span class="o">/</span><span class="n">sB^2</span>
+<span class="n">Fscore</span>
 </pre></div>
 
     </div>
@@ -13566,10 +13566,10 @@ $$ F = \frac{s_A^2}{s_B^2} = \frac{6.613^2}{8.458^2} = 0.611. $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pf</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">df1</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span> <span class="n">df2</span> <span class="o">=</span> <span class="m">26</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pf</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="n">Fscore</span><span class="p">,</span> <span class="n">df1</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span> <span class="n">df2</span> <span class="o">=</span> <span class="m">26</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13642,9 +13642,9 @@ $$ F = \frac{s_A^2}{s_B^2} = \frac{6.613^2}{8.458^2} = 0.611. $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

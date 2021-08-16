@@ -13253,14 +13253,14 @@ $$ \sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}} = \frac{0.8}{\sqrt{15}} = 0.2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">14.96</span><span class="p">,</span> <span class="m">15.51</span><span class="p">,</span> <span class="m">15.54</span><span class="p">,</span> <span class="m">16.14</span><span class="p">,</span> <span class="m">15.55</span><span class="p">,</span> <span class="m">16.73</span><span class="p">,</span> <span class="m">16.4</span><span class="p">,</span> <span class="m">16.59</span><span class="p">,</span> <span class="m">14.76</span><span class="p">,</span> <span class="m">17.6</span><span class="p">,</span> <span class="m">17.68</span><span class="p">,</span> <span class="m">16.71</span><span class="p">,</span> <span class="m">14.87</span><span class="p">,</span> <span class="m">15.73</span><span class="p">,</span> <span class="m">16.42</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">14.96</span><span class="p">,</span> <span class="m">15.51</span><span class="p">,</span> <span class="m">15.54</span><span class="p">,</span> <span class="m">16.14</span><span class="p">,</span> <span class="m">15.55</span><span class="p">,</span> <span class="m">16.73</span><span class="p">,</span> <span class="m">16.4</span><span class="p">,</span> <span class="m">16.59</span><span class="p">,</span> <span class="m">14.76</span><span class="p">,</span> <span class="m">17.6</span><span class="p">,</span> <span class="m">17.68</span><span class="p">,</span> <span class="m">16.71</span><span class="p">,</span> <span class="m">14.87</span><span class="p">,</span> <span class="m">15.73</span><span class="p">,</span> <span class="m">16.42</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13276,10 +13276,11 @@ $$ \sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}} = \frac{0.8}{\sqrt{15}} = 0.2
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 16.07933
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+16.0793333333333
 </div>
+
 </div>
 
 </div>
@@ -13297,7 +13298,7 @@ $$ z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{ 16.07
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">-1.6975</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
@@ -13365,14 +13366,14 @@ $$ \mu_{\overline{X}} = \mu = 275. $$<p>To find the standard deviation $\sigma_{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">205</span><span class="p">,</span> <span class="m">205</span><span class="p">,</span> <span class="m">205</span><span class="p">,</span> <span class="m">215</span><span class="p">,</span> <span class="m">215</span><span class="p">,</span> <span class="m">215</span><span class="p">,</span> <span class="m">225</span><span class="p">,</span> <span class="m">241</span><span class="p">,</span> <span class="m">241</span><span class="p">,</span> <span class="m">252</span><span class="p">,</span> <span class="m">252</span><span class="p">,</span> <span class="m">265</span><span class="p">,</span> <span class="m">265</span><span class="p">,</span> <span class="m">275</span><span class="p">,</span> <span class="m">275</span><span class="p">,</span> <span class="m">313</span><span class="p">,</span> <span class="m">313</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">338</span><span class="p">,</span> <span class="m">338</span><span class="p">,</span> <span class="m">341</span><span class="p">,</span> <span class="m">345</span><span class="p">,</span> <span class="m">345</span><span class="p">,</span> <span class="m">368</span><span class="p">,</span> <span class="m">368</span><span class="p">,</span> <span class="m">385</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">205</span><span class="p">,</span> <span class="m">205</span><span class="p">,</span> <span class="m">205</span><span class="p">,</span> <span class="m">215</span><span class="p">,</span> <span class="m">215</span><span class="p">,</span> <span class="m">215</span><span class="p">,</span> <span class="m">225</span><span class="p">,</span> <span class="m">241</span><span class="p">,</span> <span class="m">241</span><span class="p">,</span> <span class="m">252</span><span class="p">,</span> <span class="m">252</span><span class="p">,</span> <span class="m">265</span><span class="p">,</span> <span class="m">265</span><span class="p">,</span> <span class="m">275</span><span class="p">,</span> <span class="m">275</span><span class="p">,</span> <span class="m">313</span><span class="p">,</span> <span class="m">313</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">316</span><span class="p">,</span> <span class="m">338</span><span class="p">,</span> <span class="m">338</span><span class="p">,</span> <span class="m">341</span><span class="p">,</span> <span class="m">345</span><span class="p">,</span> <span class="m">345</span><span class="p">,</span> <span class="m">368</span><span class="p">,</span> <span class="m">368</span><span class="p">,</span> <span class="m">385</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13388,10 +13389,11 @@ $$ \mu_{\overline{X}} = \mu = 275. $$<p>To find the standard deviation $\sigma_{
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 286.1667
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+286.166666666667
 </div>
+
 </div>
 
 </div>
@@ -13408,11 +13410,11 @@ $$ \mu_{\overline{X}} = \mu = 275. $$<p>To find the standard deviation $\sigma_{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
+<span class="n">s</span>
 </pre></div>
 
     </div>
@@ -13428,10 +13430,11 @@ $$ \mu_{\overline{X}} = \mu = 275. $$<p>To find the standard deviation $\sigma_{
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 55.89836
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+55.8983580866344
 </div>
+
 </div>
 
 </div>
@@ -13450,7 +13453,7 @@ $$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{286.166
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pt</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">0.9962</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">29</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
@@ -13518,7 +13521,7 @@ $$ z = \frac{p' - \mu_{P'}}{\sigma_{P'}} = \frac{0.5368 - 0.50}{0.0513} = 0.7173
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">0.7173</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
@@ -13649,9 +13652,9 @@ $$ p\text{-value} = 0.4732 \geq 0.01 = \alpha, $$<p>we cannot reject the null hy
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

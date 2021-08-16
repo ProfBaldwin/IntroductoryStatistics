@@ -13147,14 +13147,14 @@ $$ \sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}} = \frac{5000}{\sqrt{25}} = 10
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">48230</span><span class="p">,</span> <span class="m">53491</span><span class="p">,</span> <span class="m">52926</span><span class="p">,</span> <span class="m">54832</span><span class="p">,</span> <span class="m">48080</span><span class="p">,</span> <span class="m">47101</span><span class="p">,</span> <span class="m">50126</span><span class="p">,</span> <span class="m">47433</span><span class="p">,</span> <span class="m">57753</span><span class="p">,</span> <span class="m">55107</span><span class="p">,</span> <span class="m">57205</span><span class="p">,</span> <span class="m">46297</span><span class="p">,</span> <span class="m">61249</span><span class="p">,</span> <span class="m">66936</span><span class="p">,</span> <span class="m">5463</span><span class="p">,</span> <span class="m">44429</span><span class="p">,</span> <span class="m">52696</span><span class="p">,</span> <span class="m">51243</span><span class="p">,</span> <span class="m">49008</span><span class="p">,</span> <span class="m">51522</span><span class="p">,</span> <span class="m">46658</span><span class="p">,</span> <span class="m">51788</span><span class="p">,</span> <span class="m">60244</span><span class="p">,</span> <span class="m">46164</span><span class="p">,</span> <span class="m">51103</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">48230</span><span class="p">,</span> <span class="m">53491</span><span class="p">,</span> <span class="m">52926</span><span class="p">,</span> <span class="m">54832</span><span class="p">,</span> <span class="m">48080</span><span class="p">,</span> <span class="m">47101</span><span class="p">,</span> <span class="m">50126</span><span class="p">,</span> <span class="m">47433</span><span class="p">,</span> <span class="m">57753</span><span class="p">,</span> <span class="m">55107</span><span class="p">,</span> <span class="m">57205</span><span class="p">,</span> <span class="m">46297</span><span class="p">,</span> <span class="m">61249</span><span class="p">,</span> <span class="m">66936</span><span class="p">,</span> <span class="m">5463</span><span class="p">,</span> <span class="m">44429</span><span class="p">,</span> <span class="m">52696</span><span class="p">,</span> <span class="m">51243</span><span class="p">,</span> <span class="m">49008</span><span class="p">,</span> <span class="m">51522</span><span class="p">,</span> <span class="m">46658</span><span class="p">,</span> <span class="m">51788</span><span class="p">,</span> <span class="m">60244</span><span class="p">,</span> <span class="m">46164</span><span class="p">,</span> <span class="m">51103</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13170,10 +13170,11 @@ $$ \sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}} = \frac{5000}{\sqrt{25}} = 10
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 50283.36
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+50283.36
 </div>
+
 </div>
 
 </div>
@@ -13192,10 +13193,10 @@ $$z = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{50283.3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">-2.7166</span><span class="p">,</span> <span class="n">lower.tail</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">-2.7166</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13256,7 +13257,7 @@ $$z = \frac{p' - \mu_{P'}}{\sigma_{P'}} = \frac{0.8222 - 0.90}{0.0447} = -1.7405
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">-1.7405</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
@@ -13322,14 +13323,14 @@ $$ \mu_{\overline{X}} = \mu = 65. $$<p>The distribution mean is given by the for
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">84</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">51</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">83</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">84</span><span class="p">,</span> <span class="m">67</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">51</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">66</span><span class="p">,</span> <span class="m">70</span><span class="p">,</span> <span class="m">83</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xbar</span><span class="p">)</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">xbar</span>
 </pre></div>
 
     </div>
@@ -13345,10 +13346,11 @@ $$ \mu_{\overline{X}} = \mu = 65. $$<p>The distribution mean is given by the for
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 66.66667
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+66.6666666666667
 </div>
+
 </div>
 
 </div>
@@ -13366,11 +13368,11 @@ $$ \mu_{\overline{X}} = \mu = 65. $$<p>The distribution mean is given by the for
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span><span class="n">^2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
+<span class="n">s</span>
 </pre></div>
 
     </div>
@@ -13386,10 +13388,11 @@ $$ \mu_{\overline{X}} = \mu = 65. $$<p>The distribution mean is given by the for
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 11.24722
-</pre>
+
+<div class="output_html rendered_html output_subarea ">
+11.247221879202
 </div>
+
 </div>
 
 </div>
@@ -13409,7 +13412,7 @@ $$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{66.6667
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pt</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="m">0.4446</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
@@ -13537,9 +13540,9 @@ $$t = \frac{\bar{x} - \mu_{\overline{X}}}{\sigma_{\overline{X}}} = \frac{66.6667
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><small style="color:gray">**License:** This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
-<p><small style="color:gray">**Author:** Taylor Baldwin, Mt. San Jacinto College</small></p>
-<p><small style="color:gray">**Adapted From:** *Introductory Statistics*, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
+<p><small style="color:gray"><b>License:</b> This work is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.</small></p>
+<p><small style="color:gray"><b>Author:</b> Taylor Baldwin, Mt. San Jacinto College</small></p>
+<p><small style="color:gray"><b>Adapted From:</b> <i>Introductory Statistics</i>, by Barbara Illowsky and Susan Dean. Access for free at [https://openstax.org/books/introductory-statistics/pages/1-introduction](https://openstax.org/books/introductory-statistics/pages/1-introduction).</small></p>
 
 </div>
 </div>

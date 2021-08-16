@@ -13311,7 +13311,7 @@ $\dfrac{1}{100}$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.1">Example 5.1<a class="anchor-link" href="#Example-5.1">&#182;</a></h3><p>The population in Park City is made up of children, working-age adults, and retirees. The table below shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a bar graph showing the proportions.</p>
+<h3 id="Example-1.5.1">Example 1.5.1<a class="anchor-link" href="#Example-1.5.1">&#182;</a></h3><p>The population in Park City is made up of children, working-age adults, and retirees. The table below shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a bar graph showing the proportions.</p>
 <table data-id="M01_Ch02_tbl011" summary="Table 2.10  ">
 <caption>Table 5.4: Population in Park City by age group.</caption>
 <thead>
@@ -13330,8 +13330,8 @@ $\dfrac{1}{100}$
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">age_groups</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Children&quot;</span><span class="p">,</span> <span class="s">&quot;Working-age Adults&quot;</span><span class="p">,</span> <span class="s">&quot;Retirees&quot;</span><span class="p">)</span>
-<span class="n">proportions</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">43</span><span class="p">,</span> <span class="m">38</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">age_groups</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Children&quot;</span><span class="p">,</span> <span class="s">&quot;Working-age Adults&quot;</span><span class="p">,</span> <span class="s">&quot;Retirees&quot;</span><span class="p">)</span>
+<span class="n">proportions</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">43</span><span class="p">,</span> <span class="m">38</span><span class="p">)</span>
 
 <span class="nf">barplot</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="n">proportions</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">age_groups</span><span class="p">)</span>
 </pre></div>
@@ -13534,7 +13534,7 @@ SAAJIBJAAogEkAAiASSASAAJIBJAAogEkMD/AfKyHVNHsi5LAAAAAElFTkSuQmCC"
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.2">Example 5.2<a class="anchor-link" href="#Example-5.2">&#182;</a></h3><p>The columns in the table below contain: the race or ethnicity of students in U.S. Public Schools for the class of 2011, percentages for the Advanced Placement examine population for that class, and percentages for the overall student population. Create a bar graph with the student race or ethnicity (qualitative data) on the x-axis, and the Advanced Placement examinee population percentages on the y-axis.</p>
+<h3 id="Example-1.5.2">Example 1.5.2<a class="anchor-link" href="#Example-1.5.2">&#182;</a></h3><p>The columns in the table below contain: the race or ethnicity of students in U.S. Public Schools for the class of 2011, percentages for the Advanced Placement examine population for that class, and percentages for the overall student population. Create a bar graph with the student race or ethnicity (qualitative data) on the x-axis, and the Advanced Placement examinee population percentages on the y-axis.</p>
 <table data-id="M01_Ch02_tbl012" summary="Table 2.11  ">
 <caption>Table 5.5: Race/Ethnicity of AP Examinee population vs. Overall Student Population<thead>
 <tr>
@@ -13580,11 +13580,11 @@ SAAJIBJAAogEkAAiASSASAAJIBJAAogEkMD/AfKyHVNHsi5LAAAAAElFTkSuQmCC"
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">race</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
-<span class="n">APproportion</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">10.3</span><span class="p">,</span> <span class="m">9.0</span><span class="p">,</span> <span class="m">17.0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">57.1</span><span class="p">,</span> <span class="m">6.0</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">race</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+<span class="n">APproportion</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10.3</span><span class="p">,</span> <span class="m">9.0</span><span class="p">,</span> <span class="m">17.0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">57.1</span><span class="p">,</span> <span class="m">6.0</span><span class="p">)</span>
 
 <span class="nf">barplot</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="n">APproportion</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">race</span><span class="p">)</span>
 </pre></div>
@@ -13774,7 +13774,7 @@ SUVORK5CYII="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.3">Example 5.3<a class="anchor-link" href="#Example-5.3">&#182;</a></h3><p>The population in Park City is made up of children, working-age adults, and retirees. The table below shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a pie chart of the data</p>
+<h3 id="Example-1.5.3">Example 1.5.3<a class="anchor-link" href="#Example-1.5.3">&#182;</a></h3><p>The population in Park City is made up of children, working-age adults, and retirees. The table below shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a pie chart of the data</p>
 <table data-id="M01_Ch02_tbl011" summary="Table 2.10  ">
 <caption>Table 5.6: Population in Park City by age group.</caption>
 <thead>
@@ -13790,11 +13790,11 @@ SUVORK5CYII="
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">age_groups</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Children&quot;</span><span class="p">,</span> <span class="s">&quot;Working-age Adults&quot;</span><span class="p">,</span> <span class="s">&quot;Retirees&quot;</span><span class="p">)</span>
-<span class="n">proportions</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">43</span><span class="p">,</span> <span class="m">38</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">age_groups</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Children&quot;</span><span class="p">,</span> <span class="s">&quot;Working-age Adults&quot;</span><span class="p">,</span> <span class="s">&quot;Retirees&quot;</span><span class="p">)</span>
+<span class="n">proportions</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">43</span><span class="p">,</span> <span class="m">38</span><span class="p">)</span>
 
 <span class="nf">pie</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">proportions</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">age_groups</span><span class="p">)</span>
 </pre></div>
@@ -14234,7 +14234,7 @@ gAKEBKAAIQEo8H8yHdnm7LnSHAAAAABJRU5ErkJggg=="
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5.4">Example 5.4<a class="anchor-link" href="#Example-5.4">&#182;</a></h3>
+<h3 id="Example-1.5.4">Example 1.5.4<a class="anchor-link" href="#Example-1.5.4">&#182;</a></h3>
 </div>
 </div>
 </div>
